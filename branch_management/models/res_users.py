@@ -61,6 +61,7 @@ class ResUsers(models.Model):
 
     def _is_branch_unrestricted(self):
         self.ensure_one()
+        # sudo: reading one's own groups/share flag; no document is read
         user = self.sudo()
         return user.share or user._has_group(BRANCH_ADMIN_GROUP)
 
@@ -77,6 +78,8 @@ class ResUsers(models.Model):
         """
         self.ensure_one()
         companies = companies if companies is not None else self.env.companies
+        # sudo: branch master data only (names/companies), filtered below on
+        # the given companies; business documents are never read here
         Branch = self.env["res.branch"].sudo()
         if self._is_branch_unrestricted() and not self.share:
             return Branch.search([("company_id", "in", companies.ids)])
@@ -111,6 +114,8 @@ class ResUsers(models.Model):
             )
         if self.default_branch_id in selectable:
             return Branch.browse(self.default_branch_id.id)
+        # sudo: the user's own allowed branches (also used from sudo-less
+        # contexts such as default values of other models)
         allowed = selectable & self.sudo().allowed_branch_ids
         return Branch.browse(allowed[:1].id)
 
