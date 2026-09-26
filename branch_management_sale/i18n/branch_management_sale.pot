@@ -1,0 +1,109 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* branch_management_sale
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-26 14:48+0000\n"
+"PO-Revision-Date: 2026-09-26 14:48+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: branch_management_sale
+#: model:ir.module.module,description:base.module_branch_management_sale
+msgid ""
+"\n"
+"Branch-aware sales\n"
+"==================\n"
+"\n"
+"* branch on quotations / sales orders (default: current branch, tracked)\n"
+"  and on order lines\n"
+"* invoices and down payment invoices created from an order keep its branch\n"
+"* optional branch-specific order numbering (e.g. AHM/SO/00001)\n"
+"* branch security on orders, order lines and sales analysis\n"
+"* branch block on the quotation / order PDF, Sales smart button on branches\n"
+msgstr ""
+
+#. module: branch_management_sale
+#: model:ir.model,name:branch_management_sale.model_res_branch
+#: model:ir.model.fields,field_description:branch_management_sale.field_sale_order__branch_id
+#: model:ir.model.fields,field_description:branch_management_sale.field_sale_order_line__branch_id
+#: model:ir.model.fields,field_description:branch_management_sale.field_sale_report__branch_id
+#: model_terms:ir.ui.view,arch_db:branch_management_sale.view_order_product_search_inherit_branch
+#: model_terms:ir.ui.view,arch_db:branch_management_sale.view_sales_order_filter_inherit_branch
+#: model_terms:ir.ui.view,arch_db:branch_management_sale.view_sales_order_line_filter_inherit_branch
+msgid "Branch"
+msgstr ""
+
+#. module: branch_management_sale
+#: model:ir.module.module,summary:base.module_branch_management_sale
+msgid "Branch on quotations and sales orders, propagated to invoices"
+msgstr ""
+
+#. module: branch_management_sale
+#: model_terms:ir.ui.view,arch_db:branch_management_sale.view_sales_order_filter_inherit_branch
+msgid "Current Branch"
+msgstr ""
+
+#. module: branch_management_sale
+#: model:ir.model.fields,field_description:branch_management_sale.field_res_branch__display_name
+#: model:ir.model.fields,field_description:branch_management_sale.field_sale_order__display_name
+#: model:ir.model.fields,field_description:branch_management_sale.field_sale_order_line__display_name
+#: model:ir.model.fields,field_description:branch_management_sale.field_sale_report__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: branch_management_sale
+#: model:ir.model.fields,field_description:branch_management_sale.field_res_branch__id
+#: model:ir.model.fields,field_description:branch_management_sale.field_sale_order__id
+#: model:ir.model.fields,field_description:branch_management_sale.field_sale_order_line__id
+#: model:ir.model.fields,field_description:branch_management_sale.field_sale_report__id
+msgid "ID"
+msgstr ""
+
+#. module: branch_management_sale
+#: model:ir.model.fields,field_description:branch_management_sale.field_sale_order__is_current_branch
+msgid "In Current Branch"
+msgstr ""
+
+#. module: branch_management_sale
+#: model:ir.module.module,shortdesc:base.module_branch_management_sale
+msgid "Multi Branch Management - Sales"
+msgstr ""
+
+#. module: branch_management_sale
+#. odoo-python
+#: code:addons/branch_management_sale/models/sale_order.py:0
+msgid "New"
+msgstr ""
+
+#. module: branch_management_sale
+#: model:ir.model.fields,field_description:branch_management_sale.field_res_branch__sale_order_count
+msgid "Sale Order Count"
+msgstr ""
+
+#. module: branch_management_sale
+#: model_terms:ir.ui.view,arch_db:branch_management_sale.view_res_branch_form_inherit_sale
+msgid "Sales"
+msgstr ""
+
+#. module: branch_management_sale
+#: model:ir.model,name:branch_management_sale.model_sale_report
+msgid "Sales Analysis Report"
+msgstr ""
+
+#. module: branch_management_sale
+#: model:ir.model,name:branch_management_sale.model_sale_order
+msgid "Sales Order"
+msgstr ""
+
+#. module: branch_management_sale
+#: model:ir.model,name:branch_management_sale.model_sale_order_line
+msgid "Sales Order Line"
+msgstr ""

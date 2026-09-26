@@ -1,0 +1,159 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* branch_management_hr
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-26 14:48+0000\n"
+"PO-Revision-Date: 2026-09-26 14:48+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: branch_management_hr
+#: model:ir.module.module,description:base.module_branch_management_hr
+msgid ""
+"# Multi Branch Management - Employees\n"
+"\n"
+"Integration of `branch_management` with the Employees application (Odoo 20.0).\n"
+"\n"
+"## Features\n"
+"\n"
+"* **Branch on employees** (`hr.employee.branch_id`, tracked), defaulting to\n"
+"  the current branch; also exposed on the public employee directory\n"
+"  (`hr.employee.public`) for search and grouping.\n"
+"* **Branch on departments** (optional `hr.department.branch_id`): picking a\n"
+"  department in the employee form proposes its branch (onchange only, nothing\n"
+"  automatic otherwise).\n"
+"* Employee list/search: branch column, *Current Branch* filter and *Branch*\n"
+"  group-by (also in the employee directory); department form, list and\n"
+"  search.\n"
+"* **Smart button** *Employees* on the branch form (HR officers only).\n"
+"\n"
+"## Security choice\n"
+"\n"
+"Odoo 20 serves employees through two models:\n"
+"\n"
+"* `hr.employee`: the full HR record, readable only by HR officers\n"
+"  (`hr.group_hr_user`);\n"
+"* `hr.employee.public`: the company-wide directory used by every internal\n"
+"  user (directory, org chart, avatar cards, many2one fields to employees).\n"
+"  `hr.employee` transparently falls back to it for users without HR rights.\n"
+"\n"
+"This module adds group-less `ir.access` **restrictions** on `hr.employee`\n"
+"and on `hr.version` (the contract/record data of an employee), for all\n"
+"operations. In practice they only affect HR officers and managers, who\n"
+"now manage the employees of their allowed branches (plus employees without\n"
+"branch); branch administrators are unrestricted.\n"
+"\n"
+"`hr.employee.public` is deliberately **not** restricted: everybody keeps the\n"
+"full company directory and org chart (a manager or colleague in another\n"
+"branch stays visible), and users linked to an employee of another branch keep\n"
+"reading their own profile (the related user fields are read as superuser by\n"
+"Odoo). The branch is informative in the directory.\n"
+"\n"
+"Limitation: in the *Employees* app (which uses `hr.employee` for HR\n"
+"officers), a restricted HR officer's hierarchy/org chart only shows the\n"
+"employees they can access; the *Employee Directory* (public model) still\n"
+"shows the whole structure.\n"
+"\n"
+"Using a branch the user is not allowed in raises a `ValidationError`; a\n"
+"department dedicated to a branch must belong to the branch's company.\n"
+msgstr ""
+
+#. module: branch_management_hr
+#: model_terms:ir.ui.view,arch_db:branch_management_hr.view_department_form_branch
+msgid "All branches"
+msgstr ""
+
+#. module: branch_management_hr
+#: model:ir.model,name:branch_management_hr.model_res_branch
+#: model:ir.model.fields,field_description:branch_management_hr.field_hr_department__branch_id
+#: model:ir.model.fields,field_description:branch_management_hr.field_hr_employee__branch_id
+#: model:ir.model.fields,field_description:branch_management_hr.field_hr_employee_public__branch_id
+#: model_terms:ir.ui.view,arch_db:branch_management_hr.hr_employee_public_view_search_branch
+#: model_terms:ir.ui.view,arch_db:branch_management_hr.view_department_filter_branch
+#: model_terms:ir.ui.view,arch_db:branch_management_hr.view_employee_filter_branch
+msgid "Branch"
+msgstr ""
+
+#. module: branch_management_hr
+#: model:ir.module.module,summary:base.module_branch_management_hr
+msgid "Branch on employees and departments, branch security for HR officers"
+msgstr ""
+
+#. module: branch_management_hr
+#: model:ir.model.fields,help:branch_management_hr.field_hr_department__branch_id
+msgid ""
+"Branch this department belongs to. New employees of the department are "
+"proposed this branch."
+msgstr ""
+
+#. module: branch_management_hr
+#: model_terms:ir.ui.view,arch_db:branch_management_hr.hr_employee_public_view_search_branch
+#: model_terms:ir.ui.view,arch_db:branch_management_hr.view_employee_filter_branch
+msgid "Current Branch"
+msgstr ""
+
+#. module: branch_management_hr
+#: model:ir.model,name:branch_management_hr.model_hr_department
+msgid "Department"
+msgstr ""
+
+#. module: branch_management_hr
+#. odoo-python
+#: code:addons/branch_management_hr/models/hr_department.py:0
+msgid ""
+"Department %(department)s belongs to branch %(branch)s: it must belong to "
+"the company of that branch (%(company)s)."
+msgstr ""
+
+#. module: branch_management_hr
+#: model:ir.model.fields,field_description:branch_management_hr.field_hr_department__display_name
+#: model:ir.model.fields,field_description:branch_management_hr.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:branch_management_hr.field_hr_employee_public__display_name
+#: model:ir.model.fields,field_description:branch_management_hr.field_res_branch__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: branch_management_hr
+#: model:ir.model,name:branch_management_hr.model_hr_employee
+msgid "Employee"
+msgstr ""
+
+#. module: branch_management_hr
+#. odoo-python
+#: code:addons/branch_management_hr/models/res_branch.py:0
+#: model:ir.model.fields,field_description:branch_management_hr.field_res_branch__employee_count
+#: model_terms:ir.ui.view,arch_db:branch_management_hr.view_res_branch_form_hr
+msgid "Employees"
+msgstr ""
+
+#. module: branch_management_hr
+#: model:ir.model.fields,field_description:branch_management_hr.field_hr_department__id
+#: model:ir.model.fields,field_description:branch_management_hr.field_hr_employee__id
+#: model:ir.model.fields,field_description:branch_management_hr.field_hr_employee_public__id
+#: model:ir.model.fields,field_description:branch_management_hr.field_res_branch__id
+msgid "ID"
+msgstr ""
+
+#. module: branch_management_hr
+#: model:ir.model.fields,field_description:branch_management_hr.field_hr_employee__is_current_branch
+#: model:ir.model.fields,field_description:branch_management_hr.field_hr_employee_public__is_current_branch
+msgid "In Current Branch"
+msgstr ""
+
+#. module: branch_management_hr
+#: model:ir.module.module,shortdesc:base.module_branch_management_hr
+msgid "Multi Branch Management - Employees"
+msgstr ""
+
+#. module: branch_management_hr
+#: model:ir.model,name:branch_management_hr.model_hr_employee_public
+msgid "Public Employee"
+msgstr ""

@@ -1,6 +1,3 @@
-# Translation of Odoo Server.
-# This file contains the translation of the following modules:
-# 	* branch_management
 #
 msgid ""
 msgstr ""
@@ -10,10 +7,11 @@ msgstr ""
 "PO-Revision-Date: 2026-09-26 14:48+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. module: branch_management
 #: model:ir.module.module,description:base.module_branch_management
@@ -39,23 +37,23 @@ msgstr ""
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__user_count
 msgid "# Users"
-msgstr ""
+msgstr "# Utilisateurs"
 
 #. module: branch_management
 #. odoo-python
 #: code:addons/branch_management/models/res_branch.py:0
 msgid "%s (copy)"
-msgstr ""
+msgstr "%s (copie)"
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.branch_address_block
 msgid "<br/><span>Email: </span>"
-msgstr ""
+msgstr "<br/><span>E-mail : </span>"
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.branch_address_block
 msgid "<br/><span>Phone: </span>"
-msgstr ""
+msgstr "<br/><span>Téléphone : </span>"
 
 #. module: branch_management
 #: model:ir.model,name:branch_management.model_res_groups
@@ -65,49 +63,51 @@ msgstr ""
 #. module: branch_management
 #: model:res.groups.privilege,description:branch_management.res_groups_privilege_branch
 msgid "Access to the branches of the company and to branch configuration."
-msgstr ""
+msgstr "Accès aux succursales de la société et à leur configuration."
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__active
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_search
 msgid "Active"
-msgstr ""
+msgstr "Actif"
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 msgid "Address"
-msgstr ""
+msgstr "Adresse"
 
 #. module: branch_management
 #: model:res.groups,name:branch_management.group_branch_admin
 msgid "Administrator"
-msgstr ""
+msgstr "Administrateur"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_users__allowed_branch_ids
 msgid "Allowed Branches"
-msgstr ""
+msgstr "Succursales autorisées"
 
 #. module: branch_management
 #: model:ir.model.fields,help:branch_management.field_branch_user_assign__set_default
 msgid "Also make the (first) branch the default branch of the users."
 msgstr ""
+"Faire aussi de la (première) succursale la succursale par défaut des "
+"utilisateurs."
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.view_branch_user_assign_form
 msgid "Apply"
-msgstr ""
+msgstr "Appliquer"
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_search
 msgid "Archived"
-msgstr ""
+msgstr "Archivé"
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 msgid "Assign Users"
-msgstr ""
+msgstr "Affecter des utilisateurs"
 
 #. module: branch_management
 #: model:ir.actions.act_window,name:branch_management.action_branch_user_assign
@@ -115,7 +115,7 @@ msgstr ""
 #: model:ir.ui.menu,name:branch_management.menu_branch_user_assign
 #: model_terms:ir.ui.view,arch_db:branch_management.view_branch_user_assign_form
 msgid "Assign Users to Branches"
-msgstr ""
+msgstr "Affecter des utilisateurs aux succursales"
 
 #. module: branch_management
 #: model:ir.model,name:branch_management.model_res_branch
@@ -123,7 +123,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 #: model_terms:ir.ui.view,arch_db:branch_management.view_users_search_branch
 msgid "Branch"
-msgstr ""
+msgstr "Succursale"
 
 #. module: branch_management
 #. odoo-python
@@ -132,6 +132,8 @@ msgid ""
 "Branch %(branch)s belongs to company %(branch_company)s, but %(document)s "
 "belongs to company %(company)s."
 msgstr ""
+"La succursale %(branch)s appartient à la société %(branch_company)s, mais "
+"%(document)s appartient à la société %(company)s."
 
 #. module: branch_management
 #. odoo-python
@@ -140,12 +142,14 @@ msgid ""
 "Branch %s is used by existing documents and cannot be deleted. Archive it "
 "instead to keep its history."
 msgstr ""
+"La succursale %s est utilisée par des documents existants et ne peut pas "
+"être supprimée. Archivez-la pour conserver son historique."
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_company__branch_sequence_enabled
 #: model:ir.model.fields,field_description:branch_management.field_res_config_settings__branch_sequence_enabled
 msgid "Branch Sequence Prefix"
-msgstr ""
+msgstr "Préfixe de séquence par succursale"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_users__branch_unrestricted
@@ -155,7 +159,7 @@ msgstr ""
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.branch_address_block
 msgid "Branch logo"
-msgstr ""
+msgstr "Logo de la succursale"
 
 #. module: branch_management
 #: model:ir.model.fields,help:branch_management.field_res_users__default_branch_id
@@ -163,6 +167,8 @@ msgid ""
 "Branch selected when no other working branch was chosen in the branch "
 "selector."
 msgstr ""
+"Succursale utilisée lorsqu'aucune autre succursale de travail n'a été "
+"choisie dans le sélecteur."
 
 #. module: branch_management
 #: model:ir.model,name:branch_management.model_res_branch_mixin
@@ -181,7 +187,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_search
 #: model_terms:ir.ui.view,arch_db:branch_management.view_users_form_branch
 msgid "Branches"
-msgstr ""
+msgstr "Succursales"
 
 #. module: branch_management
 #: model_terms:ir.actions.act_window,help:branch_management.action_res_branch
@@ -189,40 +195,44 @@ msgid ""
 "Branches split one company into units (offices, stores, regions)\n"
 "               with their own users, documents and numbering."
 msgstr ""
+"Les succursales divisent une société en unités (bureaux, magasins, régions)\n"
+"               avec leurs propres utilisateurs, documents et numérotation."
 
 #. module: branch_management
 #: model:ir.model.fields,help:branch_management.field_res_users__allowed_branch_ids
 msgid "Branches whose documents this user can access (security boundary)."
 msgstr ""
+"Succursales dont cet utilisateur peut consulter les documents (périmètre de "
+"sécurité)."
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_company__branch_ids
 #: model_terms:ir.ui.view,arch_db:branch_management.view_company_form_branch
 msgid "Business Branches"
-msgstr ""
+msgstr "Succursales commerciales"
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.view_branch_user_assign_form
 msgid "Cancel"
-msgstr ""
+msgstr "Annuler"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__city
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 msgid "City"
-msgstr ""
+msgstr "Ville"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__code
 msgid "Code"
-msgstr ""
+msgstr "Code"
 
 #. module: branch_management
 #: model:ir.model,name:branch_management.model_res_company
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__company_id
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_search
 msgid "Company"
-msgstr ""
+msgstr "Société"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__complete_name
@@ -237,28 +247,28 @@ msgstr ""
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 msgid "Configuration"
-msgstr ""
+msgstr "Configuration"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__partner_id
 msgid "Contact"
-msgstr ""
+msgstr "Contact"
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 msgid "Contact Information"
-msgstr ""
+msgstr "Coordonnées"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__country_id
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 msgid "Country"
-msgstr ""
+msgstr "Pays"
 
 #. module: branch_management
 #: model_terms:ir.actions.act_window,help:branch_management.action_res_branch
 msgid "Create your first branch"
-msgstr ""
+msgstr "Créez votre première succursale"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_branch_user_assign__create_uid
@@ -278,32 +288,34 @@ msgid ""
 "Creates branches, edits the branches they are allowed in and assigns users "
 "to them."
 msgstr ""
+"Crée des succursales, modifie celles où il est autorisé et y affecte des "
+"utilisateurs."
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__currency_id
 msgid "Currency"
-msgstr ""
+msgstr "Devise"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_users__current_branch_id
 msgid "Current Branch"
-msgstr ""
+msgstr "Succursale actuelle"
 
 #. module: branch_management
 #. odoo-javascript
 #: code:addons/branch_management/static/src/branch_selector/branch_selector.js:0
 msgid "Current branch: %s"
-msgstr ""
+msgstr "Succursale actuelle : %s"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_users__default_branch_id
 msgid "Default Branch"
-msgstr ""
+msgstr "Succursale par défaut"
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 msgid "Defaults to the branch code"
-msgstr ""
+msgstr "Par défaut le code de la succursale"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_branch_user_assign__display_name
@@ -320,22 +332,24 @@ msgstr ""
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__email
 msgid "Email"
-msgstr ""
+msgstr "E-mail"
 
 #. module: branch_management
 #: model:res.groups,comment:branch_management.group_branch_admin
 msgid "Full branch configuration; not restricted by branch security."
 msgstr ""
+"Configuration complète des succursales ; non restreint par la sécurité des "
+"succursales."
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 msgid "General Information"
-msgstr ""
+msgstr "Informations générales"
 
 #. module: branch_management
 #: model:ir.model.fields.selection,name:branch_management.selection__branch_user_assign__mode__add
 msgid "Grant access"
-msgstr ""
+msgstr "Accorder l'accès"
 
 #. module: branch_management
 #: model:ir.model,name:branch_management.model_ir_http
@@ -357,12 +371,12 @@ msgstr ""
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch_mixin__is_current_branch
 msgid "In Current Branch"
-msgstr ""
+msgstr "Dans la succursale actuelle"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__is_user_allowed
 msgid "Is one of My Branches"
-msgstr ""
+msgstr "Fait partie de mes succursales"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_branch_user_assign__write_uid
@@ -379,12 +393,12 @@ msgstr ""
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__logo
 msgid "Logo"
-msgstr ""
+msgstr "Logo"
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.res_config_settings_view_form_branch
 msgid "Manage Branches"
-msgstr ""
+msgstr "Gérer les succursales"
 
 #. module: branch_management
 #: model:ir.module.module,summary:base.module_branch_management
@@ -392,57 +406,59 @@ msgid ""
 "Manage multiple branches (units) inside one company: branch master, user "
 "access, branch switching and branch security"
 msgstr ""
+"Gérez plusieurs succursales (unités) au sein d'une société : fiche "
+"succursale, accès des utilisateurs, changement de succursale et sécurité"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__manager_id
 #: model:res.groups,name:branch_management.group_branch_manager
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_search
 msgid "Manager"
-msgstr ""
+msgstr "Responsable"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__mobile
 msgid "Mobile"
-msgstr ""
+msgstr "Mobile"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_branch_user_assign__mode
 msgid "Mode"
-msgstr ""
+msgstr "Mode"
 
 #. module: branch_management
 #: model:ir.module.module,shortdesc:base.module_branch_management
 msgid "Multi Branch Management"
-msgstr ""
+msgstr "Gestion multi-succursales"
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_search
 msgid "My Branches"
-msgstr ""
+msgstr "Mes succursales"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__name
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_list
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_search
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #. module: branch_management
 #: model:res.groups.privilege,placeholder:branch_management.res_groups_privilege_branch
 msgid "No"
-msgstr ""
+msgstr "Non"
 
 #. module: branch_management
 #. odoo-javascript
 #: code:addons/branch_management/static/src/branch_selector/branch_selector.xml:0
 msgid "No branch"
-msgstr ""
+msgstr "Aucune succursale"
 
 #. module: branch_management
 #. odoo-javascript
 #: code:addons/branch_management/static/src/branch_selector/branch_selector.js:0
 msgid "No branch selected"
-msgstr ""
+msgstr "Aucune succursale sélectionnée"
 
 #. module: branch_management
 #: model:ir.model.fields,help:branch_management.field_res_company__branch_sequence_enabled
@@ -452,27 +468,33 @@ msgid ""
 "AHM/SO/00001). Accounting documents keep Odoo's journal-based numbering: use"
 " one journal per branch to get branch-specific invoice numbers."
 msgstr ""
+"Numéroter les documents de vente et d'achat avec une séquence propre à la "
+"succursale (ex. AHM/SO/00001). Les documents comptables conservent la "
+"numérotation par journal d'Odoo : utilisez un journal par succursale pour "
+"obtenir des numéros de facture par succursale."
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.res_config_settings_view_form_branch
 msgid "Number sales and purchase orders per branch, e.g. AHM/SO/00001"
 msgstr ""
+"Numéroter les commandes de vente et d'achat par succursale, ex. AHM/SO/00001"
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 msgid "Numbering"
-msgstr ""
+msgstr "Numérotation"
 
 #. module: branch_management
 #: model:ir.model.fields,help:branch_management.field_res_branch__partner_id
 msgid "Optional contact representing the branch (e.g. for deliveries)."
 msgstr ""
+"Contact facultatif représentant la succursale (ex. pour les livraisons)."
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__parent_id
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_search
 msgid "Parent Branch"
-msgstr ""
+msgstr "Succursale parente"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__parent_path
@@ -482,7 +504,7 @@ msgstr ""
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__phone
 msgid "Phone"
-msgstr ""
+msgstr "Téléphone"
 
 #. module: branch_management
 #: model:ir.model.fields,help:branch_management.field_res_branch__sequence_prefix
@@ -490,26 +512,28 @@ msgid ""
 "Prefix used for branch-specific document numbering when it is enabled on the"
 " company (defaults to the branch code)."
 msgstr ""
+"Préfixe utilisé pour la numérotation propre à la succursale lorsqu'elle est "
+"activée sur la société (par défaut le code de la succursale)."
 
 #. module: branch_management
 #: model:ir.model.fields.selection,name:branch_management.selection__branch_user_assign__mode__remove
 msgid "Revoke access"
-msgstr ""
+msgstr "Retirer l'accès"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__sequence
 msgid "Sequence"
-msgstr ""
+msgstr "Séquence"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__sequence_prefix
 msgid "Sequence Prefix"
-msgstr ""
+msgstr "Préfixe de séquence"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_branch_user_assign__set_default
 msgid "Set as Default Branch"
-msgstr ""
+msgstr "Définir comme succursale par défaut"
 
 #. module: branch_management
 #: model:ir.model.fields,help:branch_management.field_res_branch__code
@@ -517,32 +541,36 @@ msgid ""
 "Short code of the branch, unique inside a company (e.g. AHM). It is used as "
 "default prefix for branch-specific numbering."
 msgstr ""
+"Code court de la succursale, unique au sein d'une société (ex. AHM). Il sert"
+" de préfixe par défaut pour la numérotation propre à la succursale."
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.res_config_settings_view_form_branch
 msgid "Split your company into branches with their own users and documents"
 msgstr ""
+"Divisez votre société en succursales avec leurs propres utilisateurs et "
+"documents"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__state_id
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 msgid "State"
-msgstr ""
+msgstr "État"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__street
 msgid "Street"
-msgstr ""
+msgstr "Rue"
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 msgid "Street 2..."
-msgstr ""
+msgstr "Rue 2..."
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 msgid "Street..."
-msgstr ""
+msgstr "Rue..."
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__street2
@@ -553,7 +581,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__child_ids
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 msgid "Sub-branches"
-msgstr ""
+msgstr "Sous-succursales"
 
 #. module: branch_management
 #: model:ir.model.fields,help:branch_management.field_res_users__branch_unrestricted
@@ -566,13 +594,15 @@ msgstr ""
 #. module: branch_management
 #: model:ir.model.constraint,message:branch_management.constraint_res_branch_code_company_uniq
 msgid "The branch code must be unique per company."
-msgstr ""
+msgstr "Le code de la succursale doit être unique par société."
 
 #. module: branch_management
 #. odoo-python
 #: code:addons/branch_management/models/res_users.py:0
 msgid "The default branch of %(user)s must be one of their allowed branches."
 msgstr ""
+"La succursale par défaut de %(user)s doit faire partie de ses succursales "
+"autorisées."
 
 #. module: branch_management
 #. odoo-python
@@ -580,12 +610,14 @@ msgstr ""
 msgid ""
 "The parent branch %(parent)s must belong to the same company as %(branch)s."
 msgstr ""
+"La succursale parente %(parent)s doit appartenir à la même société que "
+"%(branch)s."
 
 #. module: branch_management
 #: model:ir.model,name:branch_management.model_res_users
 #: model:res.groups,name:branch_management.group_branch_user
 msgid "User"
-msgstr ""
+msgstr "Utilisateur"
 
 #. module: branch_management
 #. odoo-python
@@ -594,6 +626,9 @@ msgid ""
 "User %(user)s cannot be allowed in branches %(branches)s: they belong to "
 "companies the user has no access to."
 msgstr ""
+"L'utilisateur %(user)s ne peut pas être autorisé dans les succursales "
+"%(branches)s : elles appartiennent à des sociétés auxquelles il n'a pas "
+"accès."
 
 #. module: branch_management
 #. odoo-python
@@ -602,7 +637,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__user_ids
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 msgid "Users"
-msgstr ""
+msgstr "Utilisateurs"
 
 #. module: branch_management
 #. odoo-python
@@ -611,16 +646,18 @@ msgid ""
 "Users %(users)s cannot be assigned to branch %(branch)s because they are not"
 " allowed in its company %(company)s."
 msgstr ""
+"Les utilisateurs %(users)s ne peuvent pas être affectés à la succursale "
+"%(branch)s car ils ne sont pas autorisés dans sa société %(company)s."
 
 #. module: branch_management
 #: model:ir.model.fields,help:branch_management.field_res_branch__user_ids
 msgid "Users allowed to work in this branch."
-msgstr ""
+msgstr "Utilisateurs autorisés à travailler dans cette succursale."
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__website
 msgid "Website"
-msgstr ""
+msgstr "Site web"
 
 #. module: branch_management
 #: model:ir.model.fields,help:branch_management.field_res_users__current_branch_id
@@ -628,6 +665,8 @@ msgid ""
 "Working branch of the current session: the branch chosen in the branch "
 "selector if still valid, else the default branch."
 msgstr ""
+"Succursale de travail de la session : celle choisie dans le sélecteur si "
+"elle est toujours valide, sinon la succursale par défaut."
 
 #. module: branch_management
 #: model:res.groups,comment:branch_management.group_branch_user
@@ -635,18 +674,20 @@ msgid ""
 "Works in the branches they are allowed in: sees and creates documents of "
 "these branches only."
 msgstr ""
+"Travaille dans les succursales autorisées : ne voit et ne crée que les "
+"documents de ces succursales."
 
 #. module: branch_management
 #. odoo-python
 #: code:addons/branch_management/models/res_branch_mixin.py:0
 msgid "You are not allowed to use branch %(branch)s."
-msgstr ""
+msgstr "Vous n'êtes pas autorisé à utiliser la succursale %(branch)s."
 
 #. module: branch_management
 #. odoo-python
 #: code:addons/branch_management/models/res_branch.py:0
 msgid "You cannot create recursive branch hierarchies."
-msgstr ""
+msgstr "Vous ne pouvez pas créer de hiérarchies de succursales récursives."
 
 #. module: branch_management
 #. odoo-python
@@ -655,32 +696,34 @@ msgid ""
 "You cannot move branch %s to another company because documents already "
 "reference it."
 msgstr ""
+"Vous ne pouvez pas déplacer la succursale %s vers une autre société car des "
+"documents y font déjà référence."
 
 #. module: branch_management
 #. odoo-javascript
 #: code:addons/branch_management/static/src/branch_selector/branch_selector.js:0
 msgid "You cannot work in branch %s."
-msgstr ""
+msgstr "Vous ne pouvez pas travailler dans la succursale %s."
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 msgid "ZIP"
-msgstr ""
+msgstr "Code postal"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__zip
 msgid "Zip"
-msgstr ""
+msgstr "Code postal"
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 msgid "e.g. AHM"
-msgstr ""
+msgstr "ex. AHM"
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 msgid "e.g. Ahmedabad"
-msgstr ""
+msgstr "ex. Ahmedabad"
 
 #. module: branch_management
 #. odoo-python

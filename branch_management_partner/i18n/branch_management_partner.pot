@@ -1,0 +1,183 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* branch_management_partner
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-26 14:48+0000\n"
+"PO-Revision-Date: 2026-09-26 14:48+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: branch_management_partner
+#: model:ir.module.module,description:base.module_branch_management_partner
+msgid ""
+"# Multi Branch Management - Contacts\n"
+"\n"
+"Links contacts (customers, vendors) to branches (Odoo 20.0). Depends only on\n"
+"`branch_management` (`res.partner` is in `base`).\n"
+"\n"
+"## Features\n"
+"\n"
+"* `res.partner.branch_ids`: a contact can work with several branches; an\n"
+"  **empty** value means the contact is shared by every branch.\n"
+"* *My Branches* search filter: contacts without branch or linked to one of\n"
+"  the user's allowed branches (searchable computed field `in_my_branches`;\n"
+"  every contact for branch administrators). *Branch* group-by and column.\n"
+"* Company setting **Default Contact Branch** (`res.company.branch_partner_default`,\n"
+"  off by default, in *Settings > Branches*): contacts created from a contact\n"
+"  form get the creator's working branch. Contacts created by code (users,\n"
+"  incoming emails, imports, portal sign-up) never get one.\n"
+"* **Smart button** *Contacts* on the branch form.\n"
+"* Validation: branches must belong to the contact's company (when it has\n"
+"  one) and a user can only add branches they are allowed in (branches linked\n"
+"  by others are kept when they edit the contact).\n"
+"\n"
+"## Why contacts are not a security boundary\n"
+"\n"
+"Contacts are shared, structural data: every user is a partner, companies are\n"
+"partners, and messaging, followers, activities, invoices, deliveries,\n"
+"portal access and the address book all read them, often through other\n"
+"records. Hiding contacts per branch with `ir.access` would break chatter\n"
+"(authors and followers from other branches), user and company management,\n"
+"and any document of a visible branch whose customer is also linked to\n"
+"another branch. So branches on contacts are **organisational only**: use the\n"
+"*My Branches* filter to focus the list. Sensitive documents (orders,\n"
+"invoices, leads...) are protected by the branch restrictions of their own\n"
+"integration modules.\n"
+"\n"
+"`branch_ids` is restricted to internal users (`groups=\"base.group_user\"`):\n"
+"portal and public users cannot read branches.\n"
+msgstr ""
+
+#. module: branch_management_partner
+#: model_terms:ir.ui.view,arch_db:branch_management_partner.view_partner_form_branch
+msgid "All branches"
+msgstr ""
+
+#. module: branch_management_partner
+#: model:ir.model,name:branch_management_partner.model_res_branch
+#: model_terms:ir.ui.view,arch_db:branch_management_partner.view_res_partner_filter_branch
+msgid "Branch"
+msgstr ""
+
+#. module: branch_management_partner
+#: model:ir.model.fields,field_description:branch_management_partner.field_res_partner__branch_ids
+#: model:ir.model.fields,field_description:branch_management_partner.field_res_users__branch_ids
+msgid "Branches"
+msgstr ""
+
+#. module: branch_management_partner
+#: model:ir.model.fields,help:branch_management_partner.field_res_partner__branch_ids
+#: model:ir.model.fields,help:branch_management_partner.field_res_users__branch_ids
+msgid ""
+"Branches working with this contact. Leave empty to share it with every "
+"branch."
+msgstr ""
+
+#. module: branch_management_partner
+#: model:ir.model,name:branch_management_partner.model_res_company
+msgid "Company"
+msgstr ""
+
+#. module: branch_management_partner
+#: model:ir.model,name:branch_management_partner.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: branch_management_partner
+#: model:ir.model,name:branch_management_partner.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: branch_management_partner
+#. odoo-python
+#: code:addons/branch_management_partner/models/res_partner.py:0
+msgid ""
+"Contact %(partner)s belongs to company %(company)s: it cannot be linked to "
+"branches of another company (%(branches)s)."
+msgstr ""
+
+#. module: branch_management_partner
+#. odoo-python
+#: code:addons/branch_management_partner/models/res_branch.py:0
+#: model:ir.model.fields,field_description:branch_management_partner.field_res_branch__partner_count
+#: model_terms:ir.ui.view,arch_db:branch_management_partner.view_res_branch_form_partner
+msgid "Contacts"
+msgstr ""
+
+#. module: branch_management_partner
+#: model:ir.model.fields,help:branch_management_partner.field_res_company__branch_partner_default
+#: model:ir.model.fields,help:branch_management_partner.field_res_config_settings__branch_partner_default
+msgid ""
+"Contacts created from a contact form are linked to the working branch of the"
+" user who creates them."
+msgstr ""
+
+#. module: branch_management_partner
+#: model:ir.model.fields,field_description:branch_management_partner.field_res_company__branch_partner_default
+#: model:ir.model.fields,field_description:branch_management_partner.field_res_config_settings__branch_partner_default
+msgid "Default Contact Branch"
+msgstr ""
+
+#. module: branch_management_partner
+#: model:ir.model.fields,field_description:branch_management_partner.field_res_branch__display_name
+#: model:ir.model.fields,field_description:branch_management_partner.field_res_company__display_name
+#: model:ir.model.fields,field_description:branch_management_partner.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:branch_management_partner.field_res_partner__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: branch_management_partner
+#: model:ir.model.fields,field_description:branch_management_partner.field_res_branch__id
+#: model:ir.model.fields,field_description:branch_management_partner.field_res_company__id
+#: model:ir.model.fields,field_description:branch_management_partner.field_res_config_settings__id
+#: model:ir.model.fields,field_description:branch_management_partner.field_res_partner__id
+msgid "ID"
+msgstr ""
+
+#. module: branch_management_partner
+#: model:ir.model.fields,field_description:branch_management_partner.field_res_partner__in_my_branches
+#: model:ir.model.fields,field_description:branch_management_partner.field_res_users__in_my_branches
+msgid "In My Branches"
+msgstr ""
+
+#. module: branch_management_partner
+#: model:ir.module.module,summary:base.module_branch_management_partner
+msgid ""
+"Link customers and vendors to branches (informative, not a security "
+"boundary)"
+msgstr ""
+
+#. module: branch_management_partner
+#: model_terms:ir.ui.view,arch_db:branch_management_partner.res_config_settings_view_form_branch_partner
+msgid "Link new contacts to the working branch of their creator"
+msgstr ""
+
+#. module: branch_management_partner
+#: model:ir.module.module,shortdesc:base.module_branch_management_partner
+msgid "Multi Branch Management - Contacts"
+msgstr ""
+
+#. module: branch_management_partner
+#: model_terms:ir.ui.view,arch_db:branch_management_partner.view_res_partner_filter_branch
+msgid "My Branches"
+msgstr ""
+
+#. module: branch_management_partner
+#. odoo-python
+#: code:addons/branch_management_partner/models/res_partner.py:0
+msgid "You are not allowed to use branch %(branch)s."
+msgstr ""
+
+#. module: branch_management_partner
+#. odoo-python
+#: code:addons/branch_management_partner/models/res_branch.py:0
+msgid "branch_ids"
+msgstr ""

@@ -1,6 +1,3 @@
-# Translation of Odoo Server.
-# This file contains the translation of the following modules:
-# 	* branch_management
 #
 msgid ""
 msgstr ""
@@ -10,10 +7,11 @@ msgstr ""
 "PO-Revision-Date: 2026-09-26 14:48+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 ? 4 : 5);\n"
 
 #. module: branch_management
 #: model:ir.module.module,description:base.module_branch_management
@@ -39,23 +37,23 @@ msgstr ""
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__user_count
 msgid "# Users"
-msgstr ""
+msgstr "عدد المستخدمين"
 
 #. module: branch_management
 #. odoo-python
 #: code:addons/branch_management/models/res_branch.py:0
 msgid "%s (copy)"
-msgstr ""
+msgstr "%s (نسخة)"
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.branch_address_block
 msgid "<br/><span>Email: </span>"
-msgstr ""
+msgstr "<br/><span>البريد الإلكتروني: </span>"
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.branch_address_block
 msgid "<br/><span>Phone: </span>"
-msgstr ""
+msgstr "<br/><span>الهاتف: </span>"
 
 #. module: branch_management
 #: model:ir.model,name:branch_management.model_res_groups
@@ -65,49 +63,49 @@ msgstr ""
 #. module: branch_management
 #: model:res.groups.privilege,description:branch_management.res_groups_privilege_branch
 msgid "Access to the branches of the company and to branch configuration."
-msgstr ""
+msgstr "الوصول إلى فروع الشركة وإعدادات الفروع."
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__active
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_search
 msgid "Active"
-msgstr ""
+msgstr "نشط"
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 msgid "Address"
-msgstr ""
+msgstr "العنوان"
 
 #. module: branch_management
 #: model:res.groups,name:branch_management.group_branch_admin
 msgid "Administrator"
-msgstr ""
+msgstr "المسؤول"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_users__allowed_branch_ids
 msgid "Allowed Branches"
-msgstr ""
+msgstr "الفروع المسموح بها"
 
 #. module: branch_management
 #: model:ir.model.fields,help:branch_management.field_branch_user_assign__set_default
 msgid "Also make the (first) branch the default branch of the users."
-msgstr ""
+msgstr "اجعل الفرع (الأول) أيضًا الفرع الافتراضي للمستخدمين."
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.view_branch_user_assign_form
 msgid "Apply"
-msgstr ""
+msgstr "تطبيق"
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_search
 msgid "Archived"
-msgstr ""
+msgstr "مؤرشف"
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 msgid "Assign Users"
-msgstr ""
+msgstr "تعيين المستخدمين"
 
 #. module: branch_management
 #: model:ir.actions.act_window,name:branch_management.action_branch_user_assign
@@ -115,7 +113,7 @@ msgstr ""
 #: model:ir.ui.menu,name:branch_management.menu_branch_user_assign
 #: model_terms:ir.ui.view,arch_db:branch_management.view_branch_user_assign_form
 msgid "Assign Users to Branches"
-msgstr ""
+msgstr "تعيين المستخدمين إلى الفروع"
 
 #. module: branch_management
 #: model:ir.model,name:branch_management.model_res_branch
@@ -123,7 +121,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 #: model_terms:ir.ui.view,arch_db:branch_management.view_users_search_branch
 msgid "Branch"
-msgstr ""
+msgstr "الفرع"
 
 #. module: branch_management
 #. odoo-python
@@ -132,6 +130,8 @@ msgid ""
 "Branch %(branch)s belongs to company %(branch_company)s, but %(document)s "
 "belongs to company %(company)s."
 msgstr ""
+"ينتمي الفرع %(branch)s إلى الشركة %(branch_company)s، لكن %(document)s ينتمي"
+" إلى الشركة %(company)s."
 
 #. module: branch_management
 #. odoo-python
@@ -140,12 +140,14 @@ msgid ""
 "Branch %s is used by existing documents and cannot be deleted. Archive it "
 "instead to keep its history."
 msgstr ""
+"الفرع %s مستخدم في مستندات موجودة ولا يمكن حذفه. قم بأرشفته بدلاً من ذلك "
+"للاحتفاظ بسجله."
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_company__branch_sequence_enabled
 #: model:ir.model.fields,field_description:branch_management.field_res_config_settings__branch_sequence_enabled
 msgid "Branch Sequence Prefix"
-msgstr ""
+msgstr "بادئة تسلسل الفرع"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_users__branch_unrestricted
@@ -155,14 +157,14 @@ msgstr ""
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.branch_address_block
 msgid "Branch logo"
-msgstr ""
+msgstr "شعار الفرع"
 
 #. module: branch_management
 #: model:ir.model.fields,help:branch_management.field_res_users__default_branch_id
 msgid ""
 "Branch selected when no other working branch was chosen in the branch "
 "selector."
-msgstr ""
+msgstr "الفرع المحدد عند عدم اختيار فرع عمل آخر في محدد الفروع."
 
 #. module: branch_management
 #: model:ir.model,name:branch_management.model_res_branch_mixin
@@ -181,7 +183,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_search
 #: model_terms:ir.ui.view,arch_db:branch_management.view_users_form_branch
 msgid "Branches"
-msgstr ""
+msgstr "الفروع"
 
 #. module: branch_management
 #: model_terms:ir.actions.act_window,help:branch_management.action_res_branch
@@ -189,40 +191,42 @@ msgid ""
 "Branches split one company into units (offices, stores, regions)\n"
 "               with their own users, documents and numbering."
 msgstr ""
+"تقسم الفروع الشركة الواحدة إلى وحدات (مكاتب، متاجر، مناطق)\n"
+"               لكل منها مستخدموها ومستنداتها وترقيمها."
 
 #. module: branch_management
 #: model:ir.model.fields,help:branch_management.field_res_users__allowed_branch_ids
 msgid "Branches whose documents this user can access (security boundary)."
-msgstr ""
+msgstr "الفروع التي يمكن لهذا المستخدم الوصول إلى مستنداتها (حدود الأمان)."
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_company__branch_ids
 #: model_terms:ir.ui.view,arch_db:branch_management.view_company_form_branch
 msgid "Business Branches"
-msgstr ""
+msgstr "فروع الأعمال"
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.view_branch_user_assign_form
 msgid "Cancel"
-msgstr ""
+msgstr "إلغاء"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__city
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 msgid "City"
-msgstr ""
+msgstr "المدينة"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__code
 msgid "Code"
-msgstr ""
+msgstr "الرمز"
 
 #. module: branch_management
 #: model:ir.model,name:branch_management.model_res_company
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__company_id
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_search
 msgid "Company"
-msgstr ""
+msgstr "الشركة"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__complete_name
@@ -237,28 +241,28 @@ msgstr ""
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 msgid "Configuration"
-msgstr ""
+msgstr "الإعدادات"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__partner_id
 msgid "Contact"
-msgstr ""
+msgstr "جهة الاتصال"
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 msgid "Contact Information"
-msgstr ""
+msgstr "معلومات الاتصال"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__country_id
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 msgid "Country"
-msgstr ""
+msgstr "الدولة"
 
 #. module: branch_management
 #: model_terms:ir.actions.act_window,help:branch_management.action_res_branch
 msgid "Create your first branch"
-msgstr ""
+msgstr "أنشئ فرعك الأول"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_branch_user_assign__create_uid
@@ -277,33 +281,33 @@ msgstr ""
 msgid ""
 "Creates branches, edits the branches they are allowed in and assigns users "
 "to them."
-msgstr ""
+msgstr "ينشئ الفروع، ويعدّل الفروع المسموح له بها ويعيّن المستخدمين فيها."
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__currency_id
 msgid "Currency"
-msgstr ""
+msgstr "العملة"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_users__current_branch_id
 msgid "Current Branch"
-msgstr ""
+msgstr "الفرع الحالي"
 
 #. module: branch_management
 #. odoo-javascript
 #: code:addons/branch_management/static/src/branch_selector/branch_selector.js:0
 msgid "Current branch: %s"
-msgstr ""
+msgstr "الفرع الحالي: %s"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_users__default_branch_id
 msgid "Default Branch"
-msgstr ""
+msgstr "الفرع الافتراضي"
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 msgid "Defaults to the branch code"
-msgstr ""
+msgstr "افتراضيًا رمز الفرع"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_branch_user_assign__display_name
@@ -320,22 +324,22 @@ msgstr ""
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__email
 msgid "Email"
-msgstr ""
+msgstr "البريد الإلكتروني"
 
 #. module: branch_management
 #: model:res.groups,comment:branch_management.group_branch_admin
 msgid "Full branch configuration; not restricted by branch security."
-msgstr ""
+msgstr "إعداد كامل للفروع؛ غير مقيد بأمان الفروع."
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 msgid "General Information"
-msgstr ""
+msgstr "معلومات عامة"
 
 #. module: branch_management
 #: model:ir.model.fields.selection,name:branch_management.selection__branch_user_assign__mode__add
 msgid "Grant access"
-msgstr ""
+msgstr "منح الوصول"
 
 #. module: branch_management
 #: model:ir.model,name:branch_management.model_ir_http
@@ -357,12 +361,12 @@ msgstr ""
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch_mixin__is_current_branch
 msgid "In Current Branch"
-msgstr ""
+msgstr "في الفرع الحالي"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__is_user_allowed
 msgid "Is one of My Branches"
-msgstr ""
+msgstr "من فروعي"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_branch_user_assign__write_uid
@@ -379,12 +383,12 @@ msgstr ""
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__logo
 msgid "Logo"
-msgstr ""
+msgstr "الشعار"
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.res_config_settings_view_form_branch
 msgid "Manage Branches"
-msgstr ""
+msgstr "إدارة الفروع"
 
 #. module: branch_management
 #: model:ir.module.module,summary:base.module_branch_management
@@ -392,57 +396,59 @@ msgid ""
 "Manage multiple branches (units) inside one company: branch master, user "
 "access, branch switching and branch security"
 msgstr ""
+"إدارة فروع (وحدات) متعددة داخل شركة واحدة: بيانات الفروع، وصول المستخدمين، "
+"تبديل الفرع وأمان الفروع"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__manager_id
 #: model:res.groups,name:branch_management.group_branch_manager
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_search
 msgid "Manager"
-msgstr ""
+msgstr "المدير"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__mobile
 msgid "Mobile"
-msgstr ""
+msgstr "الجوال"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_branch_user_assign__mode
 msgid "Mode"
-msgstr ""
+msgstr "الوضع"
 
 #. module: branch_management
 #: model:ir.module.module,shortdesc:base.module_branch_management
 msgid "Multi Branch Management"
-msgstr ""
+msgstr "إدارة الفروع المتعددة"
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_search
 msgid "My Branches"
-msgstr ""
+msgstr "فروعي"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__name
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_list
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_search
 msgid "Name"
-msgstr ""
+msgstr "الاسم"
 
 #. module: branch_management
 #: model:res.groups.privilege,placeholder:branch_management.res_groups_privilege_branch
 msgid "No"
-msgstr ""
+msgstr "لا"
 
 #. module: branch_management
 #. odoo-javascript
 #: code:addons/branch_management/static/src/branch_selector/branch_selector.xml:0
 msgid "No branch"
-msgstr ""
+msgstr "لا يوجد فرع"
 
 #. module: branch_management
 #. odoo-javascript
 #: code:addons/branch_management/static/src/branch_selector/branch_selector.js:0
 msgid "No branch selected"
-msgstr ""
+msgstr "لم يتم تحديد فرع"
 
 #. module: branch_management
 #: model:ir.model.fields,help:branch_management.field_res_company__branch_sequence_enabled
@@ -452,27 +458,30 @@ msgid ""
 "AHM/SO/00001). Accounting documents keep Odoo's journal-based numbering: use"
 " one journal per branch to get branch-specific invoice numbers."
 msgstr ""
+"ترقيم مستندات المبيعات والمشتريات بتسلسل خاص بالفرع (مثل AHM/SO/00001). "
+"تحتفظ المستندات المحاسبية بترقيم أودو المعتمد على اليومية: استخدم يومية لكل "
+"فرع للحصول على أرقام فواتير خاصة بالفرع."
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.res_config_settings_view_form_branch
 msgid "Number sales and purchase orders per branch, e.g. AHM/SO/00001"
-msgstr ""
+msgstr "ترقيم أوامر البيع والشراء حسب الفرع، مثل AHM/SO/00001"
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 msgid "Numbering"
-msgstr ""
+msgstr "الترقيم"
 
 #. module: branch_management
 #: model:ir.model.fields,help:branch_management.field_res_branch__partner_id
 msgid "Optional contact representing the branch (e.g. for deliveries)."
-msgstr ""
+msgstr "جهة اتصال اختيارية تمثل الفرع (مثلاً للتسليم)."
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__parent_id
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_search
 msgid "Parent Branch"
-msgstr ""
+msgstr "الفرع الأصل"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__parent_path
@@ -482,7 +491,7 @@ msgstr ""
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__phone
 msgid "Phone"
-msgstr ""
+msgstr "الهاتف"
 
 #. module: branch_management
 #: model:ir.model.fields,help:branch_management.field_res_branch__sequence_prefix
@@ -490,26 +499,28 @@ msgid ""
 "Prefix used for branch-specific document numbering when it is enabled on the"
 " company (defaults to the branch code)."
 msgstr ""
+"البادئة المستخدمة لترقيم المستندات الخاص بالفرع عند تفعيله على الشركة "
+"(افتراضيًا رمز الفرع)."
 
 #. module: branch_management
 #: model:ir.model.fields.selection,name:branch_management.selection__branch_user_assign__mode__remove
 msgid "Revoke access"
-msgstr ""
+msgstr "سحب الوصول"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__sequence
 msgid "Sequence"
-msgstr ""
+msgstr "التسلسل"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__sequence_prefix
 msgid "Sequence Prefix"
-msgstr ""
+msgstr "بادئة التسلسل"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_branch_user_assign__set_default
 msgid "Set as Default Branch"
-msgstr ""
+msgstr "تعيين كفرع افتراضي"
 
 #. module: branch_management
 #: model:ir.model.fields,help:branch_management.field_res_branch__code
@@ -517,32 +528,34 @@ msgid ""
 "Short code of the branch, unique inside a company (e.g. AHM). It is used as "
 "default prefix for branch-specific numbering."
 msgstr ""
+"رمز مختصر للفرع، فريد داخل الشركة (مثل AHM). يُستخدم كبادئة افتراضية للترقيم"
+" الخاص بالفرع."
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.res_config_settings_view_form_branch
 msgid "Split your company into branches with their own users and documents"
-msgstr ""
+msgstr "قسّم شركتك إلى فروع لكل منها مستخدموها ومستنداتها"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__state_id
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 msgid "State"
-msgstr ""
+msgstr "الولاية"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__street
 msgid "Street"
-msgstr ""
+msgstr "الشارع"
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 msgid "Street 2..."
-msgstr ""
+msgstr "الشارع 2..."
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 msgid "Street..."
-msgstr ""
+msgstr "الشارع..."
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__street2
@@ -553,7 +566,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__child_ids
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 msgid "Sub-branches"
-msgstr ""
+msgstr "الفروع الفرعية"
 
 #. module: branch_management
 #: model:ir.model.fields,help:branch_management.field_res_users__branch_unrestricted
@@ -566,26 +579,26 @@ msgstr ""
 #. module: branch_management
 #: model:ir.model.constraint,message:branch_management.constraint_res_branch_code_company_uniq
 msgid "The branch code must be unique per company."
-msgstr ""
+msgstr "يجب أن يكون رمز الفرع فريدًا لكل شركة."
 
 #. module: branch_management
 #. odoo-python
 #: code:addons/branch_management/models/res_users.py:0
 msgid "The default branch of %(user)s must be one of their allowed branches."
-msgstr ""
+msgstr "يجب أن يكون الفرع الافتراضي لـ %(user)s أحد الفروع المسموح بها له."
 
 #. module: branch_management
 #. odoo-python
 #: code:addons/branch_management/models/res_branch.py:0
 msgid ""
 "The parent branch %(parent)s must belong to the same company as %(branch)s."
-msgstr ""
+msgstr "يجب أن ينتمي الفرع الأصل %(parent)s إلى نفس شركة %(branch)s."
 
 #. module: branch_management
 #: model:ir.model,name:branch_management.model_res_users
 #: model:res.groups,name:branch_management.group_branch_user
 msgid "User"
-msgstr ""
+msgstr "المستخدم"
 
 #. module: branch_management
 #. odoo-python
@@ -594,6 +607,8 @@ msgid ""
 "User %(user)s cannot be allowed in branches %(branches)s: they belong to "
 "companies the user has no access to."
 msgstr ""
+"لا يمكن السماح للمستخدم %(user)s بالفروع %(branches)s: فهي تنتمي إلى شركات "
+"لا يملك المستخدم حق الوصول إليها."
 
 #. module: branch_management
 #. odoo-python
@@ -602,7 +617,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__user_ids
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 msgid "Users"
-msgstr ""
+msgstr "المستخدمون"
 
 #. module: branch_management
 #. odoo-python
@@ -611,16 +626,18 @@ msgid ""
 "Users %(users)s cannot be assigned to branch %(branch)s because they are not"
 " allowed in its company %(company)s."
 msgstr ""
+"لا يمكن تعيين المستخدمين %(users)s إلى الفرع %(branch)s لأنهم غير مسموح لهم "
+"في شركته %(company)s."
 
 #. module: branch_management
 #: model:ir.model.fields,help:branch_management.field_res_branch__user_ids
 msgid "Users allowed to work in this branch."
-msgstr ""
+msgstr "المستخدمون المسموح لهم بالعمل في هذا الفرع."
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__website
 msgid "Website"
-msgstr ""
+msgstr "الموقع الإلكتروني"
 
 #. module: branch_management
 #: model:ir.model.fields,help:branch_management.field_res_users__current_branch_id
@@ -628,25 +645,27 @@ msgid ""
 "Working branch of the current session: the branch chosen in the branch "
 "selector if still valid, else the default branch."
 msgstr ""
+"فرع العمل للجلسة الحالية: الفرع المختار في المحدد إذا كان لا يزال صالحًا، "
+"وإلا الفرع الافتراضي."
 
 #. module: branch_management
 #: model:res.groups,comment:branch_management.group_branch_user
 msgid ""
 "Works in the branches they are allowed in: sees and creates documents of "
 "these branches only."
-msgstr ""
+msgstr "يعمل في الفروع المسموح بها: يرى وينشئ مستندات هذه الفروع فقط."
 
 #. module: branch_management
 #. odoo-python
 #: code:addons/branch_management/models/res_branch_mixin.py:0
 msgid "You are not allowed to use branch %(branch)s."
-msgstr ""
+msgstr "غير مسموح لك باستخدام الفرع %(branch)s."
 
 #. module: branch_management
 #. odoo-python
 #: code:addons/branch_management/models/res_branch.py:0
 msgid "You cannot create recursive branch hierarchies."
-msgstr ""
+msgstr "لا يمكنك إنشاء تسلسلات هرمية متكررة للفروع."
 
 #. module: branch_management
 #. odoo-python
@@ -655,32 +674,33 @@ msgid ""
 "You cannot move branch %s to another company because documents already "
 "reference it."
 msgstr ""
+"لا يمكنك نقل الفرع %s إلى شركة أخرى لأن هناك مستندات تشير إليه بالفعل."
 
 #. module: branch_management
 #. odoo-javascript
 #: code:addons/branch_management/static/src/branch_selector/branch_selector.js:0
 msgid "You cannot work in branch %s."
-msgstr ""
+msgstr "لا يمكنك العمل في الفرع %s."
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 msgid "ZIP"
-msgstr ""
+msgstr "الرمز البريدي"
 
 #. module: branch_management
 #: model:ir.model.fields,field_description:branch_management.field_res_branch__zip
 msgid "Zip"
-msgstr ""
+msgstr "الرمز البريدي"
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 msgid "e.g. AHM"
-msgstr ""
+msgstr "مثال: AHM"
 
 #. module: branch_management
 #: model_terms:ir.ui.view,arch_db:branch_management.view_res_branch_form
 msgid "e.g. Ahmedabad"
-msgstr ""
+msgstr "مثال: أحمد آباد"
 
 #. module: branch_management
 #. odoo-python

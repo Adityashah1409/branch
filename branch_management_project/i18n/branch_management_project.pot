@@ -1,0 +1,146 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* branch_management_project
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-26 14:48+0000\n"
+"PO-Revision-Date: 2026-09-26 14:48+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: branch_management_project
+#: model:ir.module.module,description:base.module_branch_management_project
+msgid ""
+"# Multi Branch Management - Project\n"
+"\n"
+"Integration of `branch_management` with the Project application (Odoo 20.0).\n"
+"\n"
+"## Features\n"
+"\n"
+"* **Branch on projects** (`project.project.branch_id`, tracked), defaulting\n"
+"  to the current branch.\n"
+"* **Branch on tasks**: stored, read-only `project.task.branch_id` related to\n"
+"  the task's project. Changing the project (or the project's branch) moves\n"
+"  the tasks with it.\n"
+"* Project and task lists/search: branch column, *Current Branch* filter and\n"
+"  *Branch* group-by; `branch_id` added to the *Tasks Analysis* SQL report\n"
+"  (`report.project.task.user`) with its group-by.\n"
+"* **Smart button** *Projects* on the branch form (project users only).\n"
+"\n"
+"## Security\n"
+"\n"
+"Group-less `ir.access` **restrictions** on `project.project`,\n"
+"`project.task` and `report.project.task.user`:\n"
+"\n"
+"```\n"
+"[] if user.branch_unrestricted else\n"
+"['|', ('branch_id', '=', False), ('branch_id', 'in', user.allowed_branch_ids.ids)]\n"
+"```\n"
+"\n"
+"* private tasks and tasks without project have no branch: they stay visible\n"
+"  to everybody allowed by the Project rules;\n"
+"* being assignee or follower of a task of another branch does not bypass the\n"
+"  boundary;\n"
+"* portal users (project sharing) are governed by the Project portal rules\n"
+"  only (external users are unrestricted by branches); the branch column is\n"
+"  hidden from them.\n"
+"\n"
+"Projects may have no company (\"visible to all\"), so the branch field does not\n"
+"use `check_company`; the mixin constraint enforces branch company = project\n"
+"company whenever a company is set. Using a branch the user is not allowed in\n"
+"raises a `ValidationError`.\n"
+msgstr ""
+
+#. module: branch_management_project
+#: model:ir.model,name:branch_management_project.model_res_branch
+#: model:ir.model.fields,field_description:branch_management_project.field_project_project__branch_id
+#: model:ir.model.fields,field_description:branch_management_project.field_project_task__branch_id
+#: model:ir.model.fields,field_description:branch_management_project.field_report_project_task_user__branch_id
+#: model_terms:ir.ui.view,arch_db:branch_management_project.view_project_project_filter_branch
+#: model_terms:ir.ui.view,arch_db:branch_management_project.view_task_project_user_search_branch
+#: model_terms:ir.ui.view,arch_db:branch_management_project.view_task_search_form_branch
+msgid "Branch"
+msgstr ""
+
+#. module: branch_management_project
+#: model:ir.module.module,summary:base.module_branch_management_project
+msgid ""
+"Branch on projects and tasks, branch security and reporting for Project"
+msgstr ""
+
+#. module: branch_management_project
+#: model_terms:ir.ui.view,arch_db:branch_management_project.view_project_project_filter_branch
+#: model_terms:ir.ui.view,arch_db:branch_management_project.view_task_search_form_branch
+msgid "Current Branch"
+msgstr ""
+
+#. module: branch_management_project
+#: model:ir.model.fields,field_description:branch_management_project.field_project_project__display_name
+#: model:ir.model.fields,field_description:branch_management_project.field_project_task__display_name
+#: model:ir.model.fields,field_description:branch_management_project.field_report_project_task_user__display_name
+#: model:ir.model.fields,field_description:branch_management_project.field_res_branch__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: branch_management_project
+#: model:ir.model.fields,field_description:branch_management_project.field_project_project__id
+#: model:ir.model.fields,field_description:branch_management_project.field_project_task__id
+#: model:ir.model.fields,field_description:branch_management_project.field_report_project_task_user__id
+#: model:ir.model.fields,field_description:branch_management_project.field_res_branch__id
+msgid "ID"
+msgstr ""
+
+#. module: branch_management_project
+#: model:ir.model.fields,field_description:branch_management_project.field_project_project__is_current_branch
+#: model:ir.model.fields,field_description:branch_management_project.field_project_task__is_current_branch
+msgid "In Current Branch"
+msgstr ""
+
+#. module: branch_management_project
+#: model:ir.module.module,shortdesc:base.module_branch_management_project
+msgid "Multi Branch Management - Project"
+msgstr ""
+
+#. module: branch_management_project
+#: model:ir.model,name:branch_management_project.model_project_project
+msgid "Project"
+msgstr ""
+
+#. module: branch_management_project
+#. odoo-python
+#: code:addons/branch_management_project/models/res_branch.py:0
+#: model:ir.model.fields,field_description:branch_management_project.field_res_branch__project_count
+#: model_terms:ir.ui.view,arch_db:branch_management_project.view_res_branch_form_project
+msgid "Projects"
+msgstr ""
+
+#. module: branch_management_project
+#: model:ir.model,name:branch_management_project.model_project_task
+msgid "Task"
+msgstr ""
+
+#. module: branch_management_project
+#: model:ir.model,name:branch_management_project.model_report_project_task_user
+msgid "Tasks Analysis"
+msgstr ""
+
+#. module: branch_management_project
+#: model:ir.model.fields,help:branch_management_project.field_project_task__display_name
+msgid ""
+"Use these keywords in the title to set new tasks:\n"
+"\n"
+"            #tags Set tags on the task\n"
+"            @user Assign the task to a user\n"
+"            ! Set the task a medium priority\n"
+"            !! Set the task a high priority\n"
+"            !!! Set the task a urgent priority\n"
+"\n"
+"            Make sure to use the right format and order e.g. Improve the configuration screen #feature #v16 @Mitchell !"
+msgstr ""
