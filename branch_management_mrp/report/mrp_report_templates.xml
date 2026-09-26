@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_mrporder_branch" inherit_id="mrp.report_mrporder">
+        <xpath expr="(//div[hasclass('o_mrp_mo_report')]/div[hasclass('row')])[1]" position="after">
+            <!-- Odoo 20 QWeb: values are passed to t-call as attributes -->
+            <t t-call="branch_management.branch_address_block" branch="o.branch_id"/>
+        </xpath>
+    </template>
+</odoo>

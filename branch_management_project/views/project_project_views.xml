@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="edit_project_branch" model="ir.ui.view">
+        <field name="name">project.project.form.branch</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.edit_project"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="branch_id" options="{'no_create': True}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_project_branch" model="ir.ui.view">
+        <field name="name">project.project.list.branch</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.view_project"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="branch_id" optional="show" options="{'no_create': True}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_project_project_filter_branch" model="ir.ui.view">
+        <field name="name">project.project.search.branch</field>
+        <field name="model">project.project</field>
+        <field name="inherit_id" ref="project.view_project_project_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="branch_id"/>
+            </xpath>
+            <xpath expr="//filter[@name='unassigned_projects']" position="after">
+                <separator/>
+                <filter string="Current Branch" name="current_branch"
+                        domain="[('is_current_branch', '=', True)]"/>
+            </xpath>
+            <xpath expr="//filter[@name='company']" position="after">
+                <filter string="Branch" name="group_by_branch" context="{'group_by': 'branch_id'}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -3,9 +3,7 @@
     <!--
         Reusable branch block for printed documents.
         Usage in an inherited report template:
-            <t t-call="branch_management.branch_address_block">
-                <t t-set="branch" t-value="doc.branch_id"/>
-            </t>
+            <t t-call="branch_management.branch_address_block" branch="doc.branch_id"/>
     -->
     <template id="branch_address_block">
         <div t-if="branch" class="o_branch_address_block mb-3" name="branch_address_block">

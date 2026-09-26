@@ -1,0 +1,3 @@
+id,name,model_id,group_id/id,operation,domain
+hr_employee_branch_rule,Employee: allowed branches,hr.employee,,crud,"[] if user.branch_unrestricted else ['|', ('branch_id', '=', False), ('branch_id', 'in', user.allowed_branch_ids.ids)]"
+hr_version_branch_rule,Employee Record: allowed branches,hr.version,,crud,"[] if user.branch_unrestricted else ['|', '|', ('employee_id', '=', False), ('employee_id.branch_id', '=', False), ('employee_id.branch_id', 'in', user.allowed_branch_ids.ids)]"

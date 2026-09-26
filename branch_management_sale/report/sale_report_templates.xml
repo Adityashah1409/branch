@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Quotation / Sales Order PDF: branch block above the order information.
+         Odoo 20 t-call: the callee only receives the values passed as attributes. -->
+    <template id="report_saleorder_document_branch" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//div[@id='informations']" position="before">
+            <t t-call="branch_management.branch_address_block" branch="doc.branch_id"/>
+        </xpath>
+    </template>
+</odoo>

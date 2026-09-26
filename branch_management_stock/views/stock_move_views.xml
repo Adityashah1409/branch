@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_move_tree_branch" model="ir.ui.view">
+        <field name="name">stock.move.list.branch</field>
+        <field name="model">stock.move</field>
+        <field name="inherit_id" ref="stock.view_move_tree"/>
+        <field name="arch" type="xml">
+            <field name="location_dest_id" position="after">
+                <field name="branch_id" optional="show" readonly="1"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_move_form_branch" model="ir.ui.view">
+        <field name="name">stock.move.form.branch</field>
+        <field name="model">stock.move</field>
+        <field name="inherit_id" ref="stock.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='company_id'][@groups='base.group_multi_company']" position="before">
+                <field name="branch_id" readonly="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_move_search_branch" model="ir.ui.view">
+        <field name="name">stock.move.search.branch</field>
+        <field name="model">stock.move</field>
+        <field name="inherit_id" ref="stock.view_move_search"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="branch_id"/>
+            </field>
+            <filter name="groupby_picking_type_id" position="after">
+                <filter string="Branch" name="groupby_branch_id" context="{'group_by': 'branch_id'}"/>
+            </filter>
+        </field>
+    </record>
+
+    <record id="view_move_line_tree_branch" model="ir.ui.view">
+        <field name="name">stock.move.line.list.branch</field>
+        <field name="model">stock.move.line</field>
+        <field name="inherit_id" ref="stock.view_move_line_tree"/>
+        <field name="arch" type="xml">
+            <field name="location_dest_id" position="after">
+                <field name="branch_id" optional="hide"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="stock_move_line_view_search_branch" model="ir.ui.view">
+        <field name="name">stock.move.line.search.branch</field>
+        <field name="model">stock.move.line</field>
+        <field name="inherit_id" ref="stock.stock_move_line_view_search"/>
+        <field name="arch" type="xml">
+            <field name="picking_id" position="after">
+                <field name="branch_id"/>
+            </field>
+            <filter name="by_location" position="after">
+                <filter string="Branch" name="by_branch" context="{'group_by': 'branch_id'}"/>
+            </filter>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_order_form_inherit_branch" model="ir.ui.view">
+        <field name="name">sale.order.form.branch</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='order_details']/field[@name='validity_date']" position="before">
+                <field name="branch_id" readonly="state in ['sale', 'cancel']" options="{'no_create': True}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="sale_order_tree_inherit_branch" model="ir.ui.view">
+        <field name="name">sale.order.list.branch</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.sale_order_tree"/>
+        <field name="arch" type="xml">
+            <field name="team_id" position="after">
+                <field name="branch_id" optional="show" readonly="1"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_sales_order_filter_inherit_branch" model="ir.ui.view">
+        <field name="name">sale.order.search.branch</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+        <field name="arch" type="xml">
+            <field name="team_id" position="after">
+                <field name="branch_id"/>
+            </field>
+            <filter name="my_sale_orders_filter" position="before">
+                <filter name="current_branch" string="Current Branch" domain="[('is_current_branch', '=', True)]"/>
+                <separator/>
+            </filter>
+            <filter name="salesperson" position="after">
+                <filter name="group_by_branch" string="Branch" context="{'group_by': 'branch_id'}"/>
+            </filter>
+        </field>
+    </record>
+
+    <record id="view_order_line_tree_inherit_branch" model="ir.ui.view">
+        <field name="name">sale.order.line.list.branch</field>
+        <field name="model">sale.order.line</field>
+        <field name="inherit_id" ref="sale.view_order_line_tree"/>
+        <field name="arch" type="xml">
+            <field name="order_id" position="after">
+                <field name="branch_id" optional="hide"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_sales_order_line_filter_inherit_branch" model="ir.ui.view">
+        <field name="name">sale.order.line.search.branch</field>
+        <field name="model">sale.order.line</field>
+        <field name="inherit_id" ref="sale.view_sales_order_line_filter"/>
+        <field name="arch" type="xml">
+            <field name="order_id" position="after">
+                <field name="branch_id"/>
+            </field>
+            <filter name="salesperson" position="after">
+                <filter name="group_by_branch" string="Branch" context="{'group_by': 'branch_id'}"/>
+            </filter>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_form_branch" model="ir.ui.view">
+        <field name="name">res.partner.form.branch</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='misc']/field[@name='industry_id']" position="before">
+                <field name="branch_ids" widget="many2many_tags" options="{'no_create': True}"
+                       placeholder="All branches" groups="base.group_user"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_partner_tree_branch" model="ir.ui.view">
+        <field name="name">res.partner.list.branch</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="branch_ids" widget="many2many_tags" optional="hide" groups="base.group_user"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_res_partner_filter_branch" model="ir.ui.view">
+        <field name="name">res.partner.search.branch</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="branch_ids" groups="base.group_user"/>
+            </xpath>
+            <xpath expr="//filter[@name='filter_vat_set']" position="before">
+                <filter string="My Branches" name="my_branches"
+                        domain="[('in_my_branches', '=', True)]" groups="base.group_user"/>
+                <separator/>
+            </xpath>
+            <xpath expr="//filter[@name='group_country']" position="after">
+                <filter name="group_branch" string="Branch" context="{'group_by': 'branch_ids'}"
+                        groups="base.group_user"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

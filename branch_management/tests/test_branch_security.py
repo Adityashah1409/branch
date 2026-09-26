@@ -103,3 +103,9 @@ class TestBranchSecurity(BranchTestCommon):
         self.branch_ahm.action_archive()
         self.assertIn(self.branch_ahm, self.user_a.allowed_branch_ids)
         self.assertNotIn(self.branch_ahm, self.env_for(self.user_a).user._get_selectable_branches())
+
+    def test_branch_user_group_keeps_light_users_light(self):
+        """Implying the branch user group from base.group_user must not
+        change the role (licensing tier) of light users."""
+        self.assertEqual(self.user_a.role, "light_user")
+        self.assertEqual(self.user_none.role, "light_user")

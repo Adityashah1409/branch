@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_res_branch_form_stock" model="ir.ui.view">
+        <field name="name">res.branch.form.stock</field>
+        <field name="model">res.branch</field>
+        <field name="inherit_id" ref="branch_management.view_res_branch_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_view_warehouses" type="object" class="oe_stat_button"
+                        icon="warehouse" groups="stock.group_stock_user" invisible="not id">
+                    <field name="warehouse_count" widget="statinfo" string="Warehouses"/>
+                </button>
+                <button name="action_view_pickings" type="object" class="oe_stat_button"
+                        icon="local_shipping" groups="stock.group_stock_user" invisible="not id">
+                    <div class="o_stat_info">
+                        <span class="o_stat_text">Transfers</span>
+                    </div>
+                </button>
+            </xpath>
+            <xpath expr="//group[@name='configuration_extra']" position="inside">
+                <field name="default_warehouse_id" groups="stock.group_stock_user"
+                       options="{'no_create': True}"/>
+            </xpath>
+            <xpath expr="//page[@name='configuration']" position="inside">
+                <field name="warehouse_ids" groups="stock.group_stock_user" readonly="1"
+                       invisible="not warehouse_ids">
+                    <list>
+                        <field name="name"/>
+                        <field name="code"/>
+                        <field name="lot_stock_id" groups="stock.group_stock_multi_locations"/>
+                    </list>
+                </field>
+            </xpath>
+        </field>
+    </record>
+</odoo>

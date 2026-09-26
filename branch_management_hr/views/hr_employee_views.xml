@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_employee_form_branch" model="ir.ui.view">
+        <field name="name">hr.employee.form.branch</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='work']/field[@name='department_id']" position="after">
+                <field name="branch_id" options="{'no_create': True}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_employee_tree_branch" model="ir.ui.view">
+        <field name="name">hr.employee.list.branch</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='department_id']" position="after">
+                <field name="branch_id" optional="show" options="{'no_create': True}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_employee_filter_branch" model="ir.ui.view">
+        <field name="name">hr.employee.search.branch</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='job_id']" position="after">
+                <field name="branch_id"/>
+            </xpath>
+            <xpath expr="//filter[@name='message_needaction']" position="before">
+                <filter string="Current Branch" name="current_branch"
+                        domain="[('is_current_branch', '=', True)]"/>
+                <separator/>
+            </xpath>
+            <xpath expr="//filter[@name='group_department']" position="after">
+                <filter name="group_branch" string="Branch" domain="[]" context="{'group_by': 'branch_id'}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

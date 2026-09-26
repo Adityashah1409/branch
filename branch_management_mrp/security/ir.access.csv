@@ -1,0 +1,3 @@
+id,name,model_id,group_id/id,operation,domain
+mrp_production_branch_rule,Manufacturing Order: allowed branches,mrp.production,,crud,"[] if user.branch_unrestricted else ['|', ('branch_id', '=', False), ('branch_id', 'in', user.allowed_branch_ids.ids)]"
+mrp_unbuild_branch_rule,Unbuild Order: allowed branches,mrp.unbuild,,crud,"[] if user.branch_unrestricted else ['|', ('branch_id', '=', False), ('branch_id', 'in', user.allowed_branch_ids.ids)]"

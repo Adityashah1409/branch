@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_purchase_order_search_inherit_branch" model="ir.ui.view">
+        <field name="name">report.purchase.order.search.branch</field>
+        <field name="model">purchase.report</field>
+        <field name="inherit_id" ref="purchase.view_purchase_order_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='user_id']" position="after">
+                <field name="branch_id"/>
+            </xpath>
+            <xpath expr="//filter[@name='user_id']" position="after">
+                <filter string="Branch" name="group_by_branch" context="{'group_by': 'branch_id'}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

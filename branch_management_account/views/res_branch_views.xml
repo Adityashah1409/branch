@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_res_branch_form_inherit_account" model="ir.ui.view">
+        <field name="name">res.branch.form.account</field>
+        <field name="model">res.branch</field>
+        <field name="inherit_id" ref="branch_management.view_res_branch_form"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button name="action_view_invoices" type="object" class="oe_stat_button" icon="receipt_long"
+                        groups="account.group_account_invoice,account.group_account_readonly" invisible="not id">
+                    <field name="invoice_count" widget="statinfo" string="Invoices"/>
+                </button>
+                <button name="action_view_bills" type="object" class="oe_stat_button" icon="request_quote"
+                        groups="account.group_account_invoice,account.group_account_readonly" invisible="not id">
+                    <field name="bill_count" widget="statinfo" string="Bills"/>
+                </button>
+                <button name="action_view_payments" type="object" class="oe_stat_button" icon="payments"
+                        groups="account.group_account_invoice,account.group_account_readonly" invisible="not id">
+                    <field name="payment_count" widget="statinfo" string="Payments"/>
+                </button>
+            </div>
+        </field>
+    </record>
+</odoo>

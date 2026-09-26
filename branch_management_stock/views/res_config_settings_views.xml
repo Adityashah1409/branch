@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_branch_stock" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.branch.stock</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="branch_management.res_config_settings_view_form_branch"/>
+        <field name="arch" type="xml">
+            <xpath expr="//setting[@id='branch_sequence_setting']" position="after">
+                <setting id="branch_cross_transfer_setting" company_dependent="1"
+                         help="Allow validating internal transfers between locations of different branches">
+                    <field name="branch_allow_cross_transfer"/>
+                </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo>

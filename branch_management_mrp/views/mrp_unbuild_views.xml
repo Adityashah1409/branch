@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="mrp_unbuild_form_view_branch" model="ir.ui.view">
+        <field name="name">mrp.unbuild.form.branch</field>
+        <field name="model">mrp.unbuild</field>
+        <field name="inherit_id" ref="mrp.mrp_unbuild_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='mo_id']" position="after">
+                <field name="branch_id" options="{'no_create': True}" readonly="state == 'done'" force_save="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="mrp_unbuild_tree_view_branch" model="ir.ui.view">
+        <field name="name">mrp.unbuild.list.branch</field>
+        <field name="model">mrp.unbuild</field>
+        <field name="inherit_id" ref="mrp.mrp_unbuild_tree_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='location_id']" position="after">
+                <field name="branch_id" optional="show" readonly="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="mrp_unbuild_search_view_branch" model="ir.ui.view">
+        <field name="name">mrp.unbuild.search.branch</field>
+        <field name="model">mrp.unbuild</field>
+        <field name="inherit_id" ref="mrp.mrp_unbuild_search_view"/>
+        <field name="arch" type="xml">
+            <field name="mo_id" position="after">
+                <field name="branch_id"/>
+            </field>
+            <filter name="done" position="after">
+                <separator/>
+                <filter name="current_branch" string="Current Branch"
+                        domain="[('is_current_branch', '=', True)]"/>
+            </filter>
+            <filter name="mogroup" position="after">
+                <filter string="Branch" name="group_branch" context="{'group_by': 'branch_id'}"/>
+            </filter>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_delivery_document_branch" inherit_id="stock.report_delivery_document">
+        <xpath expr="//div[@id='informations']" position="before">
+            <!-- Odoo 20 QWeb: t-set inside a t-call body is not visible to the
+                 callee, the value is passed as a t-call attribute -->
+            <t t-call="branch_management.branch_address_block" branch="o.branch_id"/>
+        </xpath>
+    </template>
+
+    <template id="report_picking_branch" inherit_id="stock.report_picking">
+        <xpath expr="//div[@name='div_outgoing_address']/parent::div" position="before">
+            <!-- Odoo 20 QWeb: t-set inside a t-call body is not visible to the
+                 callee, the value is passed as a t-call attribute -->
+            <t t-call="branch_management.branch_address_block" branch="o.branch_id"/>
+            <div t-if="o.is_cross_branch and o.dest_branch_id" class="mb-3" name="div_dest_branch">
+                <strong>Destination Branch:</strong>
+                <span t-field="o.dest_branch_id"/>
+            </div>
+        </xpath>
+    </template>
+</odoo>

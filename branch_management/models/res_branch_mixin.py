@@ -80,10 +80,62 @@ class ResBranchMixin(models.AbstractModel):
         self.ensure_one()
         return self["company_id"] if "company_id" in self._fields else False
 
+    # ------------------------------------------------------------------
+    # CRUD: user authorization of the branch
+    # ------------------------------------------------------------------
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        self._check_branch_vals_access(vals_list)
+        return super().create(vals_list)
+
+    def write(self, vals):
+        if vals.get("branch_id"):
+            self._check_branch_vals_access([vals])
+        return super().write(vals)
+
+    def _check_branch_vals_access(self, vals_list):
+        """Refuse ``branch_id`` values the current user may not use.
+
+        Done in create/write, *before* saving, and not in an
+        ``@api.constrains``: Odoo 20 runs constraint methods on sudo records
+        (``BaseModel._validate_fields``), so the calling user would be
+        unknown there. Checking first also gives a clear message instead of
+        the generic error of the branch access restriction.
+
+        Skipped in sudo mode: server-side flows (crons, automatic document
+        generation) are authorized by the business action that triggered
+        them.
+        """
+        if self.env.su:
+            return
+        branch_ids = {vals["branch_id"] for vals in vals_list if vals.get("branch_id")}
+        if not branch_ids:
+            return
+        user = self.env.user
+        if user._is_branch_unrestricted():
+            return
+        forbidden = self.env["res.branch"].browse(branch_ids) - user.allowed_branch_ids
+        if forbidden:
+            _logger.info(
+                "Unauthorized branch access: user %s tried to use branch(es) %s on %s",
+                user.id, forbidden.ids, self._name,
+            )
+            # sudo: only the names of the refused branches are shown to the
+            # user who typed them (they may belong to a company the user
+            # cannot read); no document is read.
+            raise ValidationError(self.env._(
+                "You are not allowed to use branch %(branch)s.",
+                branch=", ".join(forbidden.sudo().mapped("display_name")),
+            ))
+
+    # ------------------------------------------------------------------
+    # Constraints (run as superuser by the ORM)
+    # ------------------------------------------------------------------
+
     @api.constrains("branch_id")
     def _check_branch_consistency(self):
         self._check_branch_company_match()
-        self._check_branch_user_access()
 
     def _check_branch_company_match(self):
         for record in self:
@@ -100,30 +152,6 @@ class ResBranchMixin(models.AbstractModel):
                     branch_company=record.branch_id.company_id.name,
                     document=record.display_name,
                     company=company.name,
-                ))
-
-    def _check_branch_user_access(self):
-        """The branch set on a document must be allowed for the user.
-
-        Skipped in sudo mode: server-side flows (crons, automatic document
-        generation) are already authorized by the business action that
-        triggered them.
-        """
-        if self.env.su:
-            return
-        user = self.env.user
-        if user._is_branch_unrestricted():
-            return
-        allowed = user.allowed_branch_ids
-        for record in self:
-            if record.branch_id and record.branch_id not in allowed:
-                _logger.info(
-                    "Unauthorized branch access: user %s tried to use branch %s on %s",
-                    user.id, record.branch_id.id, record._name,
-                )
-                raise ValidationError(self.env._(
-                    "You are not allowed to use branch %(branch)s.",
-                    branch=record.branch_id.display_name,
                 ))
 
     def _branch_sync_with_company(self):

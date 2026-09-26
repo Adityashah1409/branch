@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_task_project_user_search_branch" model="ir.ui.view">
+        <field name="name">report.project.task.user.search.branch</field>
+        <field name="model">report.project.task.user</field>
+        <field name="inherit_id" ref="project.view_task_project_user_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='project_id']" position="after">
+                <field name="branch_id"/>
+            </xpath>
+            <xpath expr="//filter[@name='project']" position="after">
+                <filter string="Branch" name="group_by_branch" context="{'group_by': 'branch_id'}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

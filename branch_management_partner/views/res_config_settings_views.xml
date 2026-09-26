@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_branch_partner" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.branch.partner</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="branch_management.res_config_settings_view_form_branch"/>
+        <field name="arch" type="xml">
+            <xpath expr="//setting[@id='branch_sequence_setting']" position="after">
+                <setting id="branch_partner_default_setting" company_dependent="1"
+                         help="Link new contacts to the working branch of their creator">
+                    <field name="branch_partner_default"/>
+                </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo>

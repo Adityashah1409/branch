@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_task_form2_branch" model="ir.ui.view">
+        <field name="name">project.task.form.branch</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='project_id']" position="after">
+                <field name="branch_id" invisible="not branch_id" groups="base.group_user"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- groups: the project sharing (portal) list view inherits this one -->
+    <record id="view_task_tree2_branch" model="ir.ui.view">
+        <field name="name">project.task.list.branch</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_tree2"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='project_id']" position="after">
+                <field name="branch_id" optional="hide" groups="base.group_user"
+                       column_invisible="context.get('default_project_id')"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_task_search_form_branch" model="ir.ui.view">
+        <field name="name">project.task.search.branch</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_search_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='project_id']" position="after">
+                <field name="branch_id"/>
+            </xpath>
+            <xpath expr="//filter[@name='private_tasks']" position="after">
+                <separator/>
+                <filter string="Current Branch" name="current_branch"
+                        domain="[('is_current_branch', '=', True)]"/>
+            </xpath>
+            <xpath expr="//filter[@name='project']" position="after">
+                <filter string="Branch" name="group_by_branch" context="{'group_by': 'branch_id'}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

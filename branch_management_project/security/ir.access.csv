@@ -1,0 +1,4 @@
+id,name,model_id,group_id/id,operation,domain
+project_project_branch_rule,Project: allowed branches,project.project,,crud,"[] if user.branch_unrestricted else ['|', ('branch_id', '=', False), ('branch_id', 'in', user.allowed_branch_ids.ids)]"
+project_task_branch_rule,Task: allowed branches,project.task,,crud,"[] if user.branch_unrestricted else ['|', ('branch_id', '=', False), ('branch_id', 'in', user.allowed_branch_ids.ids)]"
+report_project_task_user_branch_rule,Tasks Analysis: allowed branches,report.project.task.user,,crud,"[] if user.branch_unrestricted else ['|', ('branch_id', '=', False), ('branch_id', 'in', user.allowed_branch_ids.ids)]"

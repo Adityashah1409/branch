@@ -1,0 +1,4 @@
+id,name,model_id,group_id/id,operation,domain
+purchase_order_branch_rule,Purchase Order: allowed branches,purchase.order,,crud,"[] if user.branch_unrestricted else ['|', ('branch_id', '=', False), ('branch_id', 'in', user.allowed_branch_ids.ids)]"
+purchase_order_line_branch_rule,Purchase Order Line: allowed branches,purchase.order.line,,crud,"[] if user.branch_unrestricted else ['|', ('branch_id', '=', False), ('branch_id', 'in', user.allowed_branch_ids.ids)]"
+purchase_report_branch_rule,Purchase Analysis: allowed branches,purchase.report,,crud,"[] if user.branch_unrestricted else ['|', ('branch_id', '=', False), ('branch_id', 'in', user.allowed_branch_ids.ids)]"

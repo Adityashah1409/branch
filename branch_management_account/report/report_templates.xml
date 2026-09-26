@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Invoices, credit notes and bills: branch block above the document information -->
+    <template id="report_invoice_document_branch" inherit_id="account.report_invoice_document">
+        <xpath expr="//div[@id='informations']" position="before">
+            <!-- Odoo 20 t-call: the callee only receives the values passed as attributes -->
+            <t t-call="branch_management.branch_address_block" branch="o.branch_id"/>
+        </xpath>
+    </template>
+
+    <template id="report_payment_receipt_document_branch" inherit_id="account.report_payment_receipt_document">
+        <xpath expr="//div[hasclass('page')]/h3" position="after">
+            <!-- Odoo 20 t-call: the callee only receives the values passed as attributes -->
+            <t t-call="branch_management.branch_address_block" branch="o.branch_id"/>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_res_branch_form_partner" model="ir.ui.view">
+        <field name="name">res.branch.form.partner</field>
+        <field name="model">res.branch</field>
+        <field name="inherit_id" ref="branch_management.view_res_branch_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_view_partners" type="object" class="oe_stat_button" icon="person">
+                    <field name="partner_count" widget="statinfo" string="Contacts"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>

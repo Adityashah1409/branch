@@ -1,0 +1,3 @@
+id,name,model_id,group_id/id,operation,domain
+stock_picking_branch_rule,Transfer: allowed branches,stock.picking,,crud,"[] if user.branch_unrestricted else ['|', '|', ('branch_id', '=', False), ('branch_id', 'in', user.allowed_branch_ids.ids), ('dest_branch_id', 'in', user.allowed_branch_ids.ids)]"
+stock_move_branch_rule,Stock Move: allowed branches,stock.move,,crud,"[] if user.branch_unrestricted else ['|', '|', ('branch_id', '=', False), ('branch_id', 'in', user.allowed_branch_ids.ids), ('dest_branch_id', 'in', user.allowed_branch_ids.ids)]"

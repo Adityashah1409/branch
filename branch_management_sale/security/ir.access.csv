@@ -1,0 +1,4 @@
+id,name,model_id,group_id/id,operation,domain
+sale_order_branch_rule,Sales Order: allowed branches,sale.order,,crud,"[] if user.branch_unrestricted else ['|', ('branch_id', '=', False), ('branch_id', 'in', user.allowed_branch_ids.ids)]"
+sale_order_line_branch_rule,Sales Order Line: allowed branches,sale.order.line,,crud,"[] if user.branch_unrestricted else ['|', ('branch_id', '=', False), ('branch_id', 'in', user.allowed_branch_ids.ids)]"
+sale_report_branch_rule,Sales Analysis: allowed branches,sale.report,,crud,"[] if user.branch_unrestricted else ['|', ('branch_id', '=', False), ('branch_id', 'in', user.allowed_branch_ids.ids)]"

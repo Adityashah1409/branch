@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="crm_lead_view_form_branch" model="ir.ui.view">
+        <field name="name">crm.lead.form.branch</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='Misc']/field[@name='team_id']" position="after">
+                <field name="branch_id" options="{'no_create': True}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="crm_case_tree_view_leads_branch" model="ir.ui.view">
+        <field name="name">crm.lead.list.lead.branch</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_leads"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='team_id']" position="after">
+                <field name="branch_id" optional="show" options="{'no_create': True}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="crm_case_tree_view_oppor_branch" model="ir.ui.view">
+        <field name="name">crm.lead.list.opportunity.branch</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='team_id']" position="after">
+                <field name="branch_id" optional="show" options="{'no_create': True}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_crm_case_leads_filter_branch" model="ir.ui.view">
+        <field name="name">crm.lead.search.lead.branch</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.view_crm_case_leads_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='team_id']" position="after">
+                <field name="branch_id"/>
+            </xpath>
+            <xpath expr="//filter[@name='unassigned_leads']" position="after">
+                <separator/>
+                <filter string="Current Branch" name="current_branch"
+                        domain="[('is_current_branch', '=', True)]"/>
+            </xpath>
+            <xpath expr="//filter[@name='saleschannel']" position="after">
+                <filter string="Branch" name="group_by_branch" context="{'group_by': 'branch_id'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_crm_case_opportunities_filter_branch" model="ir.ui.view">
+        <field name="name">crm.lead.search.opportunity.branch</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.view_crm_case_opportunities_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='team_id']" position="after">
+                <field name="branch_id"/>
+            </xpath>
+            <xpath expr="//filter[@name='unassigned']" position="after">
+                <separator/>
+                <filter string="Current Branch" name="current_branch"
+                        domain="[('is_current_branch', '=', True)]"/>
+            </xpath>
+            <xpath expr="//filter[@name='saleschannel']" position="after">
+                <filter string="Branch" name="group_by_branch" context="{'group_by': 'branch_id'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Pipeline / Leads Analysis (pivot and graph reports on crm.lead) -->
+    <record id="crm_opportunity_report_view_search_branch" model="ir.ui.view">
+        <field name="name">crm.lead.search.report.branch</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_opportunity_report_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='team_id']" position="after">
+                <field name="branch_id"/>
+            </xpath>
+            <xpath expr="//filter[@name='my']" position="after">
+                <filter string="Current Branch" name="current_branch"
+                        domain="[('is_current_branch', '=', True)]"/>
+            </xpath>
+            <xpath expr="//filter[@name='saleschannel']" position="after">
+                <filter string="Branch" name="group_by_branch" context="{'group_by': 'branch_id'}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

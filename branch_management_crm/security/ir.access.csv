@@ -1,0 +1,3 @@
+id,name,model_id,group_id/id,operation,domain
+crm_lead_branch_rule,CRM Lead: allowed branches,crm.lead,,crud,"[] if user.branch_unrestricted else ['|', ('branch_id', '=', False), ('branch_id', 'in', user.allowed_branch_ids.ids)]"
+crm_activity_report_branch_rule,CRM Activity Analysis: allowed branches,crm.activity.report,,crud,"[] if user.branch_unrestricted else ['|', ('branch_id', '=', False), ('branch_id', 'in', user.allowed_branch_ids.ids)]"

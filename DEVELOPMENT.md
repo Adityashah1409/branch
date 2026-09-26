@@ -65,10 +65,12 @@ python3.12 -m venv venv && ./venv/bin/pip install -r odoo/requirements.txt
    The mixin gives `branch_id` (default = current branch of the record's
    company, `check_company=True`, `ondelete='restrict'`, indexed),
    `is_current_branch` (searchable, for "Current Branch" filters) and a
-   constraint that validates, on create/write of `branch_id`:
-   * branch company == record company (`_branch_company()` can be overridden);
-   * the branch is allowed for the user (skipped for `sudo()` and unrestricted
-     users).
+   validation of `branch_id`:
+   * in `create`/`write`, before saving: the branch is allowed for the user
+     (skipped for `sudo()` and unrestricted users). It is not an
+     `@api.constrains` because Odoo 20 runs constraints as superuser;
+   * constraint: branch company == record company (`_branch_company()` can be
+     overridden).
 
    Redefine `branch_id` in the model to add `tracking=True`, `readonly`
    rules, `compute=...` (e.g. derived from a warehouse), etc.
@@ -106,10 +108,11 @@ python3.12 -m venv venv && ./venv/bin/pip install -r odoo/requirements.txt
 5. Reports: inherit the QWeb report and call
 
    ```xml
-   <t t-call="branch_management.branch_address_block">
-       <t t-set="branch" t-value="doc.branch_id"/>
-   </t>
+   <t t-call="branch_management.branch_address_block" branch="doc.branch_id"/>
    ```
+
+   (In Odoo 20 a `t-set` inside the `t-call` body is *not* passed to the
+   called template: pass values as attributes of the `t-call` element.)
 
 6. Smart button on the branch form: inherit
    `branch_management.view_res_branch_form`, add a button in

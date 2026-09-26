@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Employee directory: branch is informative only (no security, see README) -->
+    <record id="hr_employee_public_view_search_branch" model="ir.ui.view">
+        <field name="name">hr.employee.public.search.branch</field>
+        <field name="model">hr.employee.public</field>
+        <field name="inherit_id" ref="hr.hr_employee_public_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='job_title']" position="after">
+                <field name="branch_id"/>
+            </xpath>
+            <xpath expr="//filter[@name='archived']" position="before">
+                <filter string="Current Branch" name="current_branch"
+                        domain="[('is_current_branch', '=', True)]"/>
+                <separator/>
+            </xpath>
+            <xpath expr="//filter[@name='group_department']" position="after">
+                <filter name="group_branch" string="Branch" domain="[]" context="{'group_by': 'branch_id'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hr_employee_public_view_tree_branch" model="ir.ui.view">
+        <field name="name">hr.employee.public.list.branch</field>
+        <field name="model">hr.employee.public</field>
+        <field name="inherit_id" ref="hr.hr_employee_public_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='department_id']" position="after">
+                <field name="branch_id" optional="show"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hr_employee_public_view_form_branch" model="ir.ui.view">
+        <field name="name">hr.employee.public.form.branch</field>
+        <field name="model">hr.employee.public</field>
+        <field name="inherit_id" ref="hr.hr_employee_public_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='work_information']//field[@name='department_id']" position="after">
+                <field name="branch_id" invisible="not branch_id"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

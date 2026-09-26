@@ -1,0 +1,5 @@
+id,name,model_id,group_id/id,operation,domain
+account_move_branch_rule,Journal Entry: allowed branches,account.move,,crud,"[] if user.branch_unrestricted else ['|', ('branch_id', '=', False), ('branch_id', 'in', user.allowed_branch_ids.ids)]"
+account_move_line_branch_rule,Journal Item: allowed branches,account.move.line,,crud,"[] if user.branch_unrestricted else ['|', ('branch_id', '=', False), ('branch_id', 'in', user.allowed_branch_ids.ids)]"
+account_payment_branch_rule,Payment: allowed branches,account.payment,,crud,"[] if user.branch_unrestricted else ['|', ('branch_id', '=', False), ('branch_id', 'in', user.allowed_branch_ids.ids)]"
+account_invoice_report_branch_rule,Invoice Analysis: allowed branches,account.invoice.report,,crud,"[] if user.branch_unrestricted else ['|', ('branch_id', '=', False), ('branch_id', 'in', user.allowed_branch_ids.ids)]"
