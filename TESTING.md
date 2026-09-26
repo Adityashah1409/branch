@@ -28,11 +28,11 @@ of the branch selector.
 | TC-015 Purchase → Receipt keeps branch | `test_tc015_*` | branch_management_purchase_stock |
 | TC-016 Purchase → Bill keeps branch | `test_tc016_*` | branch_management_purchase |
 | TC-017 Transfer validates branch | `test_tc017_*` | branch_management_stock |
-| TC-018 Cross-branch transfer | `test_tc018_*` | branch_management_stock |
+| TC-018 Cross-branch transfer | `TestStockCrossBranch` (`test_cross_branch_*`) | branch_management_stock |
 | TC-019 Invoice branch/company mismatch rejected | `test_tc019_*` | branch_management_account |
 | TC-020 Multi-company isolation | `test_tc020_branch_isolation_between_companies` | branch_management |
 | TC-021 Direct RPC access blocked | `test_tc021_*` | branch_management_account (plus read/write/unlink checks in every restricted module) |
-| TC-022 Archive keeps history readable | `test_tc022_*` | branch_management_sale, _purchase |
+| TC-022 Archive keeps history readable | `test_tc022_archived_branch_keeps_orders_readable` | branch_management_sale (also purchase) |
 | TC-023 Selector shows only valid branches | `test_tc023_selector_displays_valid_branches` + browser tour | branch_management |
 | TC-024 User with zero branches | `test_tc024_user_without_branch` | branch_management |
 | TC-025 Superuser behaviour | `test_tc025_superuser_behavior` | branch_management |

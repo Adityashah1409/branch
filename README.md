@@ -45,6 +45,7 @@ limitations. Helpdesk is an Odoo Enterprise app, so there is no
 * [CONFIGURATION.md](CONFIGURATION.md): setting up branches, users and numbering
 * [SECURITY.md](SECURITY.md): the security model and how it was verified
 * [DEVELOPMENT.md](DEVELOPMENT.md): Odoo 20 notes and how to make a model branch-aware
+* [TESTING.md](TESTING.md): test results, TC-001 to TC-025 mapping and the quality gate
 * [CHANGELOG.md](CHANGELOG.md)
 
 ## Tests
