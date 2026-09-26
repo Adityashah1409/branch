@@ -1,0 +1,93 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* branch_management_sale_stock
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-26 15:13+0000\n"
+"PO-Revision-Date: 2026-09-26 15:13+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: branch_management_sale_stock
+#: model:ir.module.module,description:base.module_branch_management_sale_stock
+msgid ""
+"\n"
+"Bridge between branch-aware Sales and Inventory\n"
+"===============================================\n"
+"\n"
+"* the warehouse of a quotation is the default warehouse of its branch\n"
+"  (recomputed when the branch changes on a quotation);\n"
+"* an order cannot ship from a warehouse of another branch;\n"
+"* procurements carry the order's branch: deliveries, stock moves and\n"
+"  returns belong to the branch of the sales order (TC-013);\n"
+"* Deliveries smart button on the branch form.\n"
+msgstr ""
+
+#. module: branch_management_sale_stock
+#: model:ir.model.fields,field_description:branch_management_sale_stock.field_res_branch__sale_delivery_count
+msgid "# Deliveries"
+msgstr ""
+
+#. module: branch_management_sale_stock
+#: model:ir.model,name:branch_management_sale_stock.model_res_branch
+msgid "Branch"
+msgstr ""
+
+#. module: branch_management_sale_stock
+#. odoo-python
+#: code:addons/branch_management_sale_stock/models/res_branch.py:0
+#: model_terms:ir.ui.view,arch_db:branch_management_sale_stock.view_res_branch_form_sale_stock
+msgid "Deliveries"
+msgstr ""
+
+#. module: branch_management_sale_stock
+#: model:ir.model.fields,field_description:branch_management_sale_stock.field_res_branch__display_name
+#: model:ir.model.fields,field_description:branch_management_sale_stock.field_sale_order__display_name
+#: model:ir.model.fields,field_description:branch_management_sale_stock.field_sale_order_line__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: branch_management_sale_stock
+#: model:ir.model.fields,field_description:branch_management_sale_stock.field_res_branch__id
+#: model:ir.model.fields,field_description:branch_management_sale_stock.field_sale_order__id
+#: model:ir.model.fields,field_description:branch_management_sale_stock.field_sale_order_line__id
+msgid "ID"
+msgstr ""
+
+#. module: branch_management_sale_stock
+#: model:ir.module.module,shortdesc:base.module_branch_management_sale_stock
+msgid "Multi Branch Management - Sales & Inventory"
+msgstr ""
+
+#. module: branch_management_sale_stock
+#: model:ir.model,name:branch_management_sale_stock.model_sale_order
+msgid "Sales Order"
+msgstr ""
+
+#. module: branch_management_sale_stock
+#: model:ir.model,name:branch_management_sale_stock.model_sale_order_line
+msgid "Sales Order Line"
+msgstr ""
+
+#. module: branch_management_sale_stock
+#. odoo-python
+#: code:addons/branch_management_sale_stock/models/sale_order.py:0
+msgid ""
+"Sales order %(order)s belongs to branch %(branch)s but ships from warehouse "
+"%(warehouse)s of branch %(warehouse_branch)s. Choose a warehouse of the "
+"order's branch (or a warehouse shared by all branches)."
+msgstr ""
+
+#. module: branch_management_sale_stock
+#: model:ir.module.module,summary:base.module_branch_management_sale_stock
+msgid ""
+"Sales orders ship from their branch's warehouse; deliveries keep the order's"
+" branch"
+msgstr ""

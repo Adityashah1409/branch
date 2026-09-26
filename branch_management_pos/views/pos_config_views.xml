@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="pos_config_view_form_branch" model="ir.ui.view">
+        <field name="name">pos.config.form.branch</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='title']" position="after">
+                <group name="branch">
+                    <field name="branch_id" options="{'no_create': True}" readonly="has_active_session"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_pos_config_tree_branch" model="ir.ui.view">
+        <field name="name">pos.config.list.branch</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_config_tree"/>
+        <field name="arch" type="xml">
+            <field name="company_id" position="before">
+                <field name="branch_id" optional="show"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_pos_config_search_branch" model="ir.ui.view">
+        <field name="name">pos.config.search.branch</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_config_search"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="branch_id"/>
+            </field>
+            <filter name="inactive" position="before">
+                <filter string="Current Branch" name="current_branch" domain="[('is_current_branch', '=', True)]"/>
+                <separator/>
+            </filter>
+            <filter name="inactive" position="after">
+                <group>
+                    <filter string="Branch" name="group_by_branch" context="{'group_by': 'branch_id'}"/>
+                </group>
+            </filter>
+        </field>
+    </record>
+</odoo>

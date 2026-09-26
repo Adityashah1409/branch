@@ -29,6 +29,7 @@ works alongside Odoo's multi-company rules.
 | `branch_management_purchase_stock` *(auto)* | purchase + stock integrations | The receipt's operation type comes from the branch; receipts keep the order's branch |
 | `branch_management_mrp` | stock integration, mrp | Branch on manufacturing and unbuild orders and their moves |
 | `branch_management_pos` | account integration, point_of_sale | Branch on shops, sessions, orders, POS invoices and closing entries |
+| `branch_management_pos_stock` *(auto)* | POS + stock integrations | POS pickings use the shop's branch warehouse and keep the branch |
 | `branch_management_crm` | core, crm | Branch on leads/opportunities, sales teams dedicated to a branch, activity analysis |
 | `branch_management_hr` | core, hr | Branch on employees and departments; the public directory is unaffected |
 | `branch_management_project` | core, project | Branch on projects and tasks, task analysis |

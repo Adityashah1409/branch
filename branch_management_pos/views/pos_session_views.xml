@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_pos_session_form_branch" model="ir.ui.view">
+        <field name="name">pos.session.form.branch</field>
+        <field name="model">pos.session</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_session_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group/field[@name='user_id']" position="after">
+                <field name="branch_id" invisible="not branch_id"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_pos_session_tree_branch" model="ir.ui.view">
+        <field name="name">pos.session.list.branch</field>
+        <field name="model">pos.session</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_session_tree"/>
+        <field name="arch" type="xml">
+            <field name="config_id" position="after">
+                <field name="branch_id" optional="show"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_pos_session_search_branch" model="ir.ui.view">
+        <field name="name">pos.session.search.branch</field>
+        <field name="model">pos.session</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_session_search"/>
+        <field name="arch" type="xml">
+            <field name="config_id" position="after">
+                <field name="branch_id"/>
+            </field>
+            <filter name="my_sessions" position="after">
+                <filter string="Current Branch" name="current_branch" domain="[('is_current_branch', '=', True)]"/>
+            </filter>
+            <filter name="point_of_sale" position="after">
+                <filter string="Branch" name="group_by_branch" context="{'group_by': 'branch_id'}"/>
+            </filter>
+        </field>
+    </record>
+</odoo>

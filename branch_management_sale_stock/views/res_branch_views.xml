@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_res_branch_form_sale_stock" model="ir.ui.view">
+        <field name="name">res.branch.form.sale.stock</field>
+        <field name="model">res.branch</field>
+        <field name="inherit_id" ref="branch_management.view_res_branch_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_view_sale_deliveries" type="object" class="oe_stat_button"
+                        icon="local_shipping" groups="stock.group_stock_user" invisible="not id">
+                    <field name="sale_delivery_count" widget="statinfo" string="Deliveries"/>
+                </button>
+            </xpath>
+        </field>
+    </record>
+</odoo>

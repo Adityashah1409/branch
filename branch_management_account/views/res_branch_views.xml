@@ -10,7 +10,7 @@
                         groups="account.group_account_invoice,account.group_account_readonly" invisible="not id">
                     <field name="invoice_count" widget="statinfo" string="Invoices"/>
                 </button>
-                <button name="action_view_bills" type="object" class="oe_stat_button" icon="request_quote"
+                <button name="action_view_bills" type="object" class="oe_stat_button" icon="receipt_long"
                         groups="account.group_account_invoice,account.group_account_readonly" invisible="not id">
                     <field name="bill_count" widget="statinfo" string="Bills"/>
                 </button>

@@ -1,0 +1,102 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* branch_management_purchase_stock
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-26 15:13+0000\n"
+"PO-Revision-Date: 2026-09-26 15:13+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: branch_management_purchase_stock
+#: model:ir.module.module,description:base.module_branch_management_purchase_stock
+msgid ""
+"\n"
+"Bridge between branch-aware Purchase and Inventory\n"
+"==================================================\n"
+"\n"
+"* the operation type (Deliver To) of an RFQ is the receipt type of its\n"
+"  branch's default warehouse, and follows the branch when it changes;\n"
+"* an order cannot receive in a warehouse of another branch;\n"
+"* receipts and their stock moves belong to the branch of the purchase order\n"
+"  (TC-015); vendor bills created after reception keep it;\n"
+"* replenishment (buy rule) creates purchase orders in the branch of the\n"
+"  warehouse to resupply;\n"
+"* Receipts smart button on the branch form.\n"
+msgstr ""
+
+#. module: branch_management_purchase_stock
+#: model:ir.model.fields,field_description:branch_management_purchase_stock.field_res_branch__purchase_receipt_count
+msgid "# Receipts"
+msgstr ""
+
+#. module: branch_management_purchase_stock
+#: model:ir.model,name:branch_management_purchase_stock.model_res_branch
+msgid "Branch"
+msgstr ""
+
+#. module: branch_management_purchase_stock
+#: model:ir.model.fields,field_description:branch_management_purchase_stock.field_purchase_order__display_name
+#: model:ir.model.fields,field_description:branch_management_purchase_stock.field_purchase_order_line__display_name
+#: model:ir.model.fields,field_description:branch_management_purchase_stock.field_res_branch__display_name
+#: model:ir.model.fields,field_description:branch_management_purchase_stock.field_stock_rule__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: branch_management_purchase_stock
+#: model:ir.model.fields,field_description:branch_management_purchase_stock.field_purchase_order__id
+#: model:ir.model.fields,field_description:branch_management_purchase_stock.field_purchase_order_line__id
+#: model:ir.model.fields,field_description:branch_management_purchase_stock.field_res_branch__id
+#: model:ir.model.fields,field_description:branch_management_purchase_stock.field_stock_rule__id
+msgid "ID"
+msgstr ""
+
+#. module: branch_management_purchase_stock
+#: model:ir.module.module,shortdesc:base.module_branch_management_purchase_stock
+msgid "Multi Branch Management - Purchase & Inventory"
+msgstr ""
+
+#. module: branch_management_purchase_stock
+#: model:ir.model,name:branch_management_purchase_stock.model_purchase_order
+msgid "Purchase Order"
+msgstr ""
+
+#. module: branch_management_purchase_stock
+#: model:ir.model,name:branch_management_purchase_stock.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr ""
+
+#. module: branch_management_purchase_stock
+#. odoo-python
+#: code:addons/branch_management_purchase_stock/models/purchase_order.py:0
+msgid ""
+"Purchase order %(order)s belongs to branch %(branch)s but is received with "
+"operation type %(type)s of branch %(type_branch)s. Choose an operation type "
+"of the order's branch (or of a warehouse shared by all branches)."
+msgstr ""
+
+#. module: branch_management_purchase_stock
+#: model:ir.module.module,summary:base.module_branch_management_purchase_stock
+msgid ""
+"Purchase orders receive in their branch's warehouse; receipts keep the "
+"order's branch"
+msgstr ""
+
+#. module: branch_management_purchase_stock
+#. odoo-python
+#: code:addons/branch_management_purchase_stock/models/res_branch.py:0
+#: model_terms:ir.ui.view,arch_db:branch_management_purchase_stock.view_res_branch_form_purchase_stock
+msgid "Receipts"
+msgstr ""
+
+#. module: branch_management_purchase_stock
+#: model:ir.model,name:branch_management_purchase_stock.model_stock_rule
+msgid "Stock Rule"
+msgstr ""

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_report_pos_order_search_branch" model="ir.ui.view">
+        <field name="name">report.pos.order.search.branch</field>
+        <field name="model">report.pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_report_pos_order_search"/>
+        <field name="arch" type="xml">
+            <field name="config_id" position="after">
+                <field name="branch_id"/>
+            </field>
+            <filter name="pos" position="after">
+                <filter string="Branch" name="group_by_branch" context="{'group_by': 'branch_id'}"/>
+            </filter>
+        </field>
+    </record>
+
+    <record id="report_pos_order_view_tree_branch" model="ir.ui.view">
+        <field name="name">report.pos.order.list.branch</field>
+        <field name="model">report.pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.report_pos_order_view_tree"/>
+        <field name="arch" type="xml">
+            <field name="config_id" position="after">
+                <field name="branch_id" optional="show"/>
+            </field>
+        </field>
+    </record>
+</odoo>

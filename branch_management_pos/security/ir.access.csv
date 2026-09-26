@@ -1,0 +1,7 @@
+id,name,model_id,group_id/id,operation,domain
+pos_config_branch_rule,Point of Sale: allowed branches,pos.config,,crud,"[] if user.branch_unrestricted else ['|', ('branch_id', '=', False), ('branch_id', 'in', user.allowed_branch_ids.ids)]"
+pos_session_branch_rule,PoS Session: allowed branches,pos.session,,crud,"[] if user.branch_unrestricted else ['|', ('branch_id', '=', False), ('branch_id', 'in', user.allowed_branch_ids.ids)]"
+pos_order_branch_rule,PoS Order: allowed branches,pos.order,,crud,"[] if user.branch_unrestricted else ['|', ('branch_id', '=', False), ('branch_id', 'in', user.allowed_branch_ids.ids)]"
+pos_order_line_branch_rule,PoS Order Line: allowed branches,pos.order.line,,crud,"[] if user.branch_unrestricted else ['|', ('branch_id', '=', False), ('branch_id', 'in', user.allowed_branch_ids.ids)]"
+pos_payment_branch_rule,PoS Payment: allowed branches,pos.payment,,crud,"[] if user.branch_unrestricted else ['|', ('branch_id', '=', False), ('branch_id', 'in', user.allowed_branch_ids.ids)]"
+report_pos_order_branch_rule,PoS Order Analysis: allowed branches,report.pos.order,,crud,"[] if user.branch_unrestricted else ['|', ('branch_id', '=', False), ('branch_id', 'in', user.allowed_branch_ids.ids)]"

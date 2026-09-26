@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <xpath expr="//div[@name='button_box']" position="inside">
                 <button name="action_view_productions" type="object" class="oe_stat_button"
-                        icon="precision_manufacturing" groups="mrp.group_mrp_user" invisible="not id">
+                        icon="factory" groups="mrp.group_mrp_user" invisible="not id">
                     <field name="production_count" widget="statinfo" string="Manufacturing Orders"/>
                 </button>
             </xpath>
