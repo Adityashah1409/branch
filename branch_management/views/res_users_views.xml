@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_users_form_branch" model="ir.ui.view">
+        <field name="name">res.users.form.branch</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='access_rights']/group[1]" position="after">
+                <group string="Branches" name="branches" invisible="share">
+                    <field name="allowed_branch_ids" widget="many2many_tags"
+                           options="{'no_create': True}"
+                           domain="[('company_id', 'in', company_ids)]"/>
+                    <field name="default_branch_id" options="{'no_create': True}"
+                           domain="[('id', 'in', allowed_branch_ids), ('active', '=', True)]"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_users_list_branch" model="ir.ui.view">
+        <field name="name">res.users.list.branch</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//list" position="inside">
+                <field name="default_branch_id" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_users_search_branch" model="ir.ui.view">
+        <field name="name">res.users.search.branch</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <field name="allowed_branch_ids" string="Branch"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_company_form_branch" model="ir.ui.view">
+        <field name="name">res.company.form.branch</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page string="Business Branches" name="business_branches"
+                      groups="branch_management.group_branch_manager">
+                    <field name="branch_ids" context="{'default_company_id': id}">
+                        <list>
+                            <field name="complete_name"/>
+                            <field name="code"/>
+                            <field name="manager_id"/>
+                            <field name="city"/>
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,7 @@
+id,name,model_id,group_id/id,operation,domain
+access_res_branch_user,res.branch: read,res.branch,base.group_user,r,
+access_res_branch_manager_create,res.branch: managers create branches,res.branch,group_branch_manager,c,
+access_res_branch_manager_write,res.branch: managers edit their branches,res.branch,group_branch_manager,u,"[('id', 'in', user.allowed_branch_ids.ids)]"
+access_res_branch_admin,res.branch: administrators,res.branch,group_branch_admin,crud,
+res_branch_company_rule,res.branch: multi-company,res.branch,,crud,"[('company_id', 'in', company_ids)]"
+access_branch_user_assign_manager,branch.user.assign: managers,branch.user.assign,group_branch_manager,crud,

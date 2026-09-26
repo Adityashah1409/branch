@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_res_branch"
+              name="Branches"
+              parent="base.menu_users"
+              action="action_res_branch"
+              sequence="15"
+              groups="base.group_user"/>
+    <menuitem id="menu_branch_user_assign"
+              name="Assign Users to Branches"
+              parent="base.menu_users"
+              action="action_branch_user_assign"
+              sequence="16"
+              groups="branch_management.group_branch_manager"/>
+</odoo>

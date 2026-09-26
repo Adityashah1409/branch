@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_branch_user_assign_form" model="ir.ui.view">
+        <field name="name">branch.user.assign.form</field>
+        <field name="model">branch.user.assign</field>
+        <field name="arch" type="xml">
+            <form string="Assign Users to Branches">
+                <group>
+                    <field name="mode" widget="radio" options="{'horizontal': true}"/>
+                    <field name="branch_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                    <field name="user_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                    <field name="set_default" invisible="mode != 'add'"/>
+                </group>
+                <footer>
+                    <button name="action_apply" type="object" string="Apply" class="btn-primary" data-hotkey="q"/>
+                    <button string="Cancel" special="cancel" class="btn-secondary" data-hotkey="x"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_branch_user_assign" model="ir.actions.act_window">
+        <field name="name">Assign Users to Branches</field>
+        <field name="res_model">branch.user.assign</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="model_res_branch"/>
+        <field name="binding_view_types">list</field>
+        <field name="group_ids" eval="[(4, ref('branch_management.group_branch_manager'))]"/>
+    </record>
+</odoo>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_groups_privilege_branch" model="res.groups.privilege">
+        <field name="name">Branches</field>
+        <field name="sequence">50</field>
+        <field name="category_id" ref="base.module_category_administration"/>
+        <field name="description">Access to the branches of the company and to branch configuration.</field>
+    </record>
+
+    <record id="group_branch_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="sequence">10</field>
+        <field name="privilege_id" ref="res_groups_privilege_branch"/>
+        <field name="comment">Works in the branches they are allowed in: sees and creates documents of these branches only.</field>
+    </record>
+
+    <record id="group_branch_manager" model="res.groups">
+        <field name="name">Manager</field>
+        <field name="sequence">20</field>
+        <field name="privilege_id" ref="res_groups_privilege_branch"/>
+        <field name="implied_ids" eval="[(4, ref('group_branch_user'))]"/>
+        <field name="comment">Creates branches, edits the branches they are allowed in and assigns users to them.</field>
+    </record>
+
+    <record id="group_branch_admin" model="res.groups">
+        <field name="name">Administrator</field>
+        <field name="sequence">30</field>
+        <field name="privilege_id" ref="res_groups_privilege_branch"/>
+        <field name="implied_ids" eval="[(4, ref('group_branch_manager'))]"/>
+        <field name="comment">Full branch configuration; not restricted by branch security.</field>
+        <field name="user_ids" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+    </record>
+
+    <!-- Every internal user is at least a branch user: the branch security
+         boundary applies to all employees unless they are branch admins. -->
+    <record id="base.group_user" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('group_branch_user'))]"/>
+    </record>
+    <!-- Settings administrators manage the branch configuration -->
+    <record id="base.group_system" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('group_branch_admin'))]"/>
+    </record>
+</odoo>

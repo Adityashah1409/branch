@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+<t t-name="branch_management.BranchSelector">
+    <Dropdown position="'bottom-end'" menuClass="'o_branch_selector_dropdown'"
+              disabled="this.branches.length &lt;= 1">
+        <button class="o_branch_selector d-none d-md-flex align-items-center"
+                t-att-title="this.title" t-att-disabled="this.branches.length &lt;= 1">
+            <i class="oi d-lg-none" data-icon="account_tree"/>
+            <span class="oe_topbar_name d-none d-lg-block text-truncate o_branch_selector_name">
+                <t t-if="this.currentBranch" t-out="this.currentBranch.name"/>
+                <t t-else="">No branch</t>
+            </span>
+        </button>
+        <t t-set-slot="content">
+            <div class="dropdown-header">Branches</div>
+            <t t-foreach="this.branches" t-as="branch" t-key="branch.id">
+                <DropdownItem onSelected="() => this.selectBranch(branch)"
+                              class="{'o_branch_selector_item d-flex align-items-center gap-2': true, 'fw-bold': this.isCurrent(branch)}"
+                              attrs="{'data-branch-id': branch.id}">
+                    <i class="oi" t-att-class="{'invisible': !this.isCurrent(branch)}" data-icon="check"/>
+                    <span t-out="branch.display_name"/>
+                    <small class="text-muted ms-auto" t-out="branch.code"/>
+                </DropdownItem>
+            </t>
+        </t>
+    </Dropdown>
+</t>
+
+</templates>

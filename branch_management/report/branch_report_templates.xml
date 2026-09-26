@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        Reusable branch block for printed documents.
+        Usage in an inherited report template:
+            <t t-call="branch_management.branch_address_block">
+                <t t-set="branch" t-value="doc.branch_id"/>
+            </t>
+    -->
+    <template id="branch_address_block">
+        <div t-if="branch" class="o_branch_address_block mb-3" name="branch_address_block">
+            <div class="d-flex align-items-start gap-2">
+                <img t-if="branch.logo" t-att-src="image_data_uri(branch.logo)"
+                     style="max-height: 45px; max-width: 120px;" alt="Branch logo"/>
+                <div>
+                    <strong t-field="branch.name"/>
+                    <t t-foreach="branch._get_address_lines()" t-as="line">
+                        <br/><span t-out="line"/>
+                    </t>
+                    <t t-if="branch.phone"><br/><span>Phone: </span><span t-field="branch.phone"/></t>
+                    <t t-if="branch.email"><br/><span>Email: </span><span t-field="branch.email"/></t>
+                    <t t-if="branch.website"><br/><span t-field="branch.website"/></t>
+                </div>
+            </div>
+        </div>
+    </template>
+</odoo>

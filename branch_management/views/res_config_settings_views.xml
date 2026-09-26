@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_branch" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.branch</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@name='companies_setting_container']" position="after">
+                <block title="Branches" name="branch_setting_container"
+                       groups="branch_management.group_branch_manager">
+                    <setting id="branch_management_setting" string="Branches"
+                             help="Split your company into branches with their own users and documents">
+                        <div class="mt8">
+                            <button name="%(branch_management.action_res_branch)d" type="action"
+                                    string="Manage Branches" icon="east" class="btn-link"/>
+                        </div>
+                    </setting>
+                    <setting id="branch_sequence_setting" company_dependent="1"
+                             help="Number sales and purchase orders per branch, e.g. AHM/SO/00001">
+                        <field name="branch_sequence_enabled"/>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>
