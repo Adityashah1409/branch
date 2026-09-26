@@ -39,8 +39,8 @@ in separate ``branch_management_*`` modules.
         "web.assets_backend": [
             "branch_management/static/src/branch_selector/*",
         ],
-        "web.assets_unit_tests": [
-            "branch_management/static/tests/**/*",
+        "web.assets_tests": [
+            "branch_management/static/tests/tours/*",
         ],
     },
     "installable": True,
