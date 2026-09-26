@@ -53,7 +53,8 @@ class TestSaleBranch(BranchAccountTestCommon):
         order_b = self._create_order(env_b, company_id=self.company_b.id)
         self.assertEqual(order_b.branch_id, self.branch_mum)
 
-    def test_order_unauthorized_branch_rejected(self):
+    def test_tc005_order_unauthorized_branch_rejected(self):
+        """TC-005: a user cannot use a branch they are not allowed in."""
         env = self.env_for(self.user_a)
         with self.assertRaises(ValidationError):
             self._create_order(env, branch_id=self.branch_srt.id)
