@@ -1,0 +1,45 @@
+// Aurora footers.
+
+// '#wrapwrap' raises specificity above the color combination link colors
+// (o_cc*), so footer links stay readable on every background.
+#wrapwrap .o_aurora_footer {
+    h6 {
+        letter-spacing: 0.06em;
+        margin-bottom: 1rem;
+    }
+    .o_aurora_footer_links li,
+    .o_aurora_footer_contact li {
+        margin-bottom: 0.5rem;
+    }
+    .o_aurora_footer_contact li {
+        display: flex;
+        align-items: baseline;
+        overflow-wrap: anywhere;
+    }
+    .o_aurora_footer_links a,
+    .o_aurora_footer_contact a {
+        color: inherit;
+        opacity: 0.8;
+        text-decoration: none;
+        &:hover,
+        &:focus-visible {
+            opacity: 1;
+            text-decoration: underline;
+        }
+    }
+    .s_social_media a {
+        margin-inline-end: 0.25rem;
+    }
+}
+
+.o_aurora_footer_cta .o_aurora_footer_cta_band {
+    margin-inline: 0;
+}
+
+.o_aurora_footer_services .oi {
+    color: var(--o-color-1);
+}
+
+.o_aurora_footer_mega .o_aurora_footer_payments {
+    opacity: 0.75;
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Theme assets are copied to each website that uses the theme. -->
+    <asset id="theme_aurora20.primary_variables_scss" name="Aurora primary variables">
+        <field name="key">theme_aurora20.primary_variables_scss</field>
+        <bundle>web._assets_primary_variables</bundle>
+        <path>theme_aurora20/static/src/scss/primary_variables.scss</path>
+    </asset>
+
+    <asset id="theme_aurora20.bootstrap_overridden_scss" name="Aurora Bootstrap overrides">
+        <field name="key">theme_aurora20.bootstrap_overridden_scss</field>
+        <bundle directive="prepend">web._assets_frontend_helpers</bundle>
+        <path>theme_aurora20/static/src/scss/bootstrap_overridden.scss</path>
+    </asset>
+
+    <asset id="theme_aurora20.frontend_scss" name="Aurora theme styles">
+        <field name="key">theme_aurora20.frontend_scss</field>
+        <bundle>web.assets_frontend</bundle>
+        <path>theme_aurora20/static/src/scss/aurora/*.scss</path>
+    </asset>
+</odoo>

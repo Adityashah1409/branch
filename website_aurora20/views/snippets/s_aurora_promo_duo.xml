@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="s_aurora_promo_duo" name="Aurora Promo Banners">
+        <section class="s_aurora_promo_duo pt48 pb48">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="s_aurora_promo_card o_cc o_cc4 rounded-4 overflow-hidden h-100 d-flex">
+                            <div class="p-4 p-lg-5 d-flex flex-column justify-content-center">
+                                <p class="text-uppercase small fw-semibold mb-2">Limited offer</p>
+                                <h3 class="h2">Weekend essentials</h3>
+                                <p>Up to 40% off on a curated selection.</p>
+                                <p class="mb-0"><a href="/shop" class="btn btn-light">Shop now</a></p>
+                            </div>
+                            <img src="/web/image/website.s_product_list_default_image_1" alt="" class="s_aurora_promo_img img d-none d-lg-block object-fit-cover"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="s_aurora_promo_card o_cc o_cc2 rounded-4 overflow-hidden h-100 d-flex">
+                            <div class="p-4 p-lg-5 d-flex flex-column justify-content-center">
+                                <p class="text-uppercase small fw-semibold mb-2">Just landed</p>
+                                <h3 class="h2">The new arrivals</h3>
+                                <p>Be the first to discover this week's novelties.</p>
+                                <p class="mb-0"><a href="/shop" class="btn btn-primary">Discover</a></p>
+                            </div>
+                            <img src="/web/image/website.s_product_list_default_image_2" alt="" class="s_aurora_promo_img img d-none d-lg-block object-fit-cover"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

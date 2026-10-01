@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="snippets" inherit_id="website.snippets" name="Aurora building blocks">
+        <xpath expr="//snippets[@id='snippet_groups']/t[@id='installed_snippets_hook']" position="before">
+            <t snippet-group="aurora" t-snippet="website.s_snippet_group" string="Aurora"
+               t-thumbnail="/website_aurora20/static/src/img/snippets_thumbs/aurora_group.svg"/>
+        </xpath>
+        <xpath expr="//snippets[@id='snippet_structure']" position="inside">
+            <t t-snippet="website_aurora20.s_aurora_hero" string="Aurora Hero" group="aurora">
+                <keywords>hero, banner, intro, headline, shop, collection, aurora</keywords>
+            </t>
+            <t t-snippet="website_aurora20.s_aurora_promo_duo" string="Promo Banners" group="aurora">
+                <keywords>promotion, offer, sale, banner, campaign, aurora</keywords>
+            </t>
+            <t t-snippet="website_aurora20.s_aurora_category_tiles" string="Category Tiles" group="aurora">
+                <keywords>categories, collections, tiles, departments, aurora</keywords>
+            </t>
+            <t t-snippet="website_aurora20.s_aurora_services" string="Services Bar" group="aurora">
+                <keywords>services, shipping, returns, support, guarantees, trust, aurora</keywords>
+            </t>
+            <t t-snippet="website_aurora20.s_aurora_countdown_banner" string="Countdown Banner" group="aurora">
+                <keywords>countdown, timer, flash sale, deal, urgency, aurora</keywords>
+            </t>
+            <t t-snippet="website_aurora20.s_aurora_brands" string="Brand Logos" group="aurora">
+                <keywords>brands, logos, partners, labels, manufacturers, aurora</keywords>
+            </t>
+            <t t-snippet="website_aurora20.s_aurora_testimonials" string="Customer Reviews" group="aurora">
+                <keywords>testimonials, reviews, quotes, customers, ratings, aurora</keywords>
+            </t>
+            <t t-snippet="website_aurora20.s_aurora_gallery" string="Social Gallery" group="aurora">
+                <keywords>instagram, gallery, social, pictures, community, aurora</keywords>
+            </t>
+            <t t-snippet="website_aurora20.s_aurora_newsletter" string="Newsletter Strip" group="aurora">
+                <keywords>newsletter, subscribe, discount, mailing list, call to action, aurora</keywords>
+            </t>
+        </xpath>
+    </template>
+</odoo>

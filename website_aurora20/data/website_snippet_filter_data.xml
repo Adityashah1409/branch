@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Extra data sources for Odoo's "Products" building blocks (carousel and grid). -->
+    <record id="dynamic_snippet_featured_products_filter" model="ir.filters">
+        <field name="name">Featured (with a ribbon)</field>
+        <field name="model_id">product.product</field>
+        <field name="user_ids" eval="False"/>
+        <field name="domain">[('website_published', '=', True), ('product_tmpl_id.website_ribbon_id', '!=', False)]</field>
+        <field name="sort">["website_sequence asc"]</field>
+        <field name="action_id" ref="website.action_website"/>
+    </record>
+    <record id="dynamic_snippet_on_sale_products_filter" model="ir.filters">
+        <field name="name">On Sale (with a compare price)</field>
+        <field name="model_id">product.product</field>
+        <field name="user_ids" eval="False"/>
+        <field name="domain">[('website_published', '=', True), ('product_tmpl_id.compare_list_price', '&gt;', 0)]</field>
+        <field name="sort">["website_sequence asc"]</field>
+        <field name="action_id" ref="website.action_website"/>
+    </record>
+
+    <record id="dynamic_filter_featured_products" model="website.snippet.filter">
+        <field name="filter_id" ref="dynamic_snippet_featured_products_filter"/>
+        <field name="field_names">display_name,description_sale,image_512</field>
+        <field name="limit" eval="16"/>
+        <field name="name">Featured</field>
+    </record>
+    <record id="dynamic_filter_on_sale_products" model="website.snippet.filter">
+        <field name="filter_id" ref="dynamic_snippet_on_sale_products_filter"/>
+        <field name="field_names">display_name,description_sale,image_512</field>
+        <field name="limit" eval="16"/>
+        <field name="name">On Sale</field>
+    </record>
+</odoo>

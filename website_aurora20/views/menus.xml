@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_aurora_brands"
+        name="Brands"
+        parent="website_sale.menu_catalog"
+        action="aurora_product_brand_action"
+        sequence="35"/>
+
+    <menuitem id="menu_aurora_storefront_settings"
+        name="Storefront Settings"
+        parent="website.menu_website_global_configuration"
+        action="website_action_aurora_settings"
+        groups="website.group_website_designer"
+        sequence="15"/>
+</odoo>

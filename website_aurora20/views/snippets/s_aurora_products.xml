@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        Ready-to-use product carousels for the homepage designs. They are Odoo's
+        own "Products" block, preconfigured with a data source, so they show
+        products as soon as the page is created and stay editable as usual.
+    -->
+    <template id="s_aurora_products" name="Aurora Products">
+        <t t-set="aurora_filter" t-value="env.ref(aurora_filter_xmlid or 'website_sale.dynamic_filter_newest_arrivals', raise_if_not_found=False)"/>
+        <section data-snippet="s_dynamic_snippet_products"
+                 data-name="Products"
+                 class="s_dynamic_snippet_products s_dynamic o_dynamic_carousel_snippet o_carousel_multi_items oe_website_sale pt64 pb64"
+                 t-att-data-filter-id="aurora_filter.id if aurora_filter else None"
+                 data-template-key="website_sale.dynamic_filter_template_product_product_products_item"
+                 data-product-category-id="all"
+                 data-number-of-elements="4"
+                 data-number-of-elements-small-devices="1"
+                 data-number-of-records="12"
+                 data-carousel-interval="5000">
+            <div class="container">
+                <div class="row s_nb_column_fixed">
+                    <section class="s_dynamic_snippet_title oe_unremovable oe_unmovable d-flex flex-column flex-md-row justify-content-between mb-lg-0 pb-3 pb-md-0">
+                        <div>
+                            <h2 class="h3" t-out="aurora_title or 'New arrivals'"/>
+                            <p class="lead" t-out="aurora_subtitle or 'Just landed in the shop.'"/>
+                        </div>
+                        <div><a class="btn btn-outline-primary" href="/shop">Shop all</a></div>
+                    </section>
+                    <section class="s_dynamic_snippet_content oe_unremovable oe_unmovable o_not_editable col s_col_no_resize">
+                        <div class="css_non_editable_mode_hidden">
+                            <div class="missing_option_warning alert alert-info fade show d-none d-print-none rounded-0">
+                                Choose a product source in the block options to display products here.
+                            </div>
+                        </div>
+                        <div class="dynamic_snippet_template"/>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <template id="s_aurora_products_newest" name="Aurora New Arrivals">
+        <t t-call="website_aurora20.s_aurora_products"
+           aurora_filter_xmlid.f="website_sale.dynamic_filter_newest_arrivals"
+           aurora_title.f="New arrivals"
+           aurora_subtitle.f="Just landed in the shop."/>
+    </template>
+
+    <template id="s_aurora_products_featured" name="Aurora Featured Products">
+        <t t-call="website_aurora20.s_aurora_products"
+           aurora_filter_xmlid.f="website_aurora20.dynamic_filter_featured_products"
+           aurora_title.f="Featured picks"
+           aurora_subtitle.f="Products our team recommends this week."/>
+    </template>
+
+    <template id="s_aurora_products_on_sale" name="Aurora Products On Sale">
+        <t t-call="website_aurora20.s_aurora_products"
+           aurora_filter_xmlid.f="website_aurora20.dynamic_filter_on_sale_products"
+           aurora_title.f="On sale now"
+           aurora_subtitle.f="Limited-time prices on selected products."/>
+    </template>
+
+    <template id="s_aurora_products_best_sellers" name="Aurora Best Sellers">
+        <t t-call="website_aurora20.s_aurora_products"
+           aurora_filter_xmlid.f="website_sale.dynamic_filter_latest_sold_products"
+           aurora_title.f="Best sellers"
+           aurora_subtitle.f="What other customers are buying right now."/>
+    </template>
+</odoo>

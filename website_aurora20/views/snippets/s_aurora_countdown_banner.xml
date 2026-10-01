@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Sale banner with a live countdown. The end date is the data-end
+         attribute (ISO 8601); without it the banner counts to midnight. -->
+    <template id="s_aurora_countdown_banner" name="Aurora Countdown Banner">
+        <section class="s_aurora_countdown_banner o_cc o_cc5 pt48 pb48">
+            <div class="container">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-6">
+                        <p class="text-uppercase small fw-semibold mb-2">Flash sale</p>
+                        <h2 class="display-6 fw-bold mb-2">Ends tonight</h2>
+                        <p class="mb-0">Extra 20% off at checkout on the whole sale section.</p>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="s_aurora_countdown o_not_editable d-flex gap-2 justify-content-lg-end" data-end="" role="timer" aria-live="off">
+                            <div class="s_aurora_countdown_unit text-center rounded-3 px-3 py-2"><span class="s_aurora_countdown_value h3 d-block mb-0" data-unit="days">00</span><small>days</small></div>
+                            <div class="s_aurora_countdown_unit text-center rounded-3 px-3 py-2"><span class="s_aurora_countdown_value h3 d-block mb-0" data-unit="hours">00</span><small>hours</small></div>
+                            <div class="s_aurora_countdown_unit text-center rounded-3 px-3 py-2"><span class="s_aurora_countdown_value h3 d-block mb-0" data-unit="minutes">00</span><small>min</small></div>
+                            <div class="s_aurora_countdown_unit text-center rounded-3 px-3 py-2"><span class="s_aurora_countdown_value h3 d-block mb-0" data-unit="seconds">00</span><small>sec</small></div>
+                        </div>
+                        <p class="text-lg-end mt-3 mb-0"><a href="/shop" class="btn btn-primary">Shop the sale</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

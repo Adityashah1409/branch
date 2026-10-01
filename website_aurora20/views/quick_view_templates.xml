@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Empty dialog, filled by the quick view interaction. -->
+    <template id="quick_view_dialog" name="Quick View Dialog">
+        <div id="o_aurora_quick_view" class="modal fade o_aurora_quick_view o_not_editable" tabindex="-1"
+             aria-labelledby="o_aurora_quick_view_title" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl modal-fullscreen-md-down">
+                <div class="modal-content">
+                    <div class="modal-header border-0 pb-0">
+                        <h2 id="o_aurora_quick_view_title" class="modal-title h5 visually-hidden">Quick view</h2>
+                        <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal" aria-label="Close"/>
+                    </div>
+                    <div class="modal-body o_aurora_quick_view_body" aria-live="polite">
+                        <div class="o_aurora_quick_view_loading d-flex justify-content-center py-5">
+                            <span class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- Content of the dialog for one product (rendered by /aurora/quick_view). -->
+    <template id="quick_view_content" name="Quick View Content">
+        <t t-set="hide_price" t-value="combination_info.get('hide_price')"/>
+        <t t-set="prevent_sale" t-value="combination_info.get('prevent_sale')"/>
+        <div class="o_aurora_qv oe_website_sale row g-4"
+             t-att-data-product-template-id="product.id">
+            <div class="col-md-6">
+                <div class="o_aurora_qv_media ratio ratio-1x1 rounded overflow-hidden bg-light">
+                    <t t-set="image_holder" t-value="product_variant or product"/>
+                    <img t-att-src="website.image_url(image_holder, 'image_1024')"
+                         t-att-alt="product.name" class="object-fit-contain w-100 h-100" loading="lazy"/>
+                </div>
+            </div>
+            <div class="col-md-6 js_product">
+                <p t-if="product.aurora_brand_id.website_published and website.aurora_enable_brand_pages" class="mb-1">
+                    <a t-att-href="product.aurora_brand_id.website_url" class="o_aurora_brand_link small text-uppercase text-decoration-none"
+                       t-out="product.aurora_brand_id.name"/>
+                </p>
+                <h3 class="o_aurora_qv_name h4 mb-2" t-out="combination_info['display_name']"/>
+                <div t-if="is_view_active('website_sale.product_comment')" class="mb-2">
+                    <t t-call="portal_rating.rating_widget_stars_static"
+                       rating_avg="product.sudo().rating_avg"
+                       rating_count="product.sudo().rating_count"/>
+                </div>
+                <p t-if="product_variant.default_code" class="small text-muted mb-2">
+                    <span>Reference:</span> <span class="o_aurora_qv_sku" t-out="product_variant.default_code"/>
+                </p>
+                <div t-if="not hide_price" class="o_aurora_qv_price d-flex align-items-baseline gap-2 h4 mb-3">
+                    <span class="oe_price" t-out="combination_info['price']"
+                          t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                    <del t-if="combination_info['has_discounted_price']" class="text-muted h6 mb-0"
+                         t-out="combination_info['list_price']"
+                         t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                    <del t-elif="combination_info.get('compare_list_price') and combination_info['compare_list_price'] &gt; combination_info['price']"
+                         class="text-muted h6 mb-0" t-out="combination_info['compare_list_price']"
+                         t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                </div>
+                <t t-call="website_aurora20.b2b_guest_notice"/>
+                <div t-if="product.description_sale" class="o_aurora_qv_description text-muted mb-3"
+                     t-out="product.description_sale"/>
+                <div class="mb-3">
+                    <t t-call="website_sale.variants" ul_class.f="flex-column"/>
+                </div>
+                <p t-if="not combination_info['is_combination_possible']" class="alert alert-warning small" role="alert">
+                    This combination does not exist.
+                </p>
+                <p t-elif="combination_info.get('is_sold_out')" class="o_aurora_qv_stock text-danger small mb-3">
+                    Out of stock
+                </p>
+                <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+                    <t t-if="not prevent_sale and combination_info['is_combination_possible'] and not combination_info.get('is_sold_out')">
+                        <div class="css_quantity input-group w-auto" contenteditable="false">
+                            <button type="button" class="btn btn-light o_aurora_qty_minus" aria-label="Remove one">
+                                <i class="oi" data-icon="remove" role="presentation"/>
+                            </button>
+                            <input type="number" class="form-control quantity text-center" name="add_qty"
+                                   value="1" min="1" step="1" inputmode="numeric" aria-label="Quantity"/>
+                            <button type="button" class="btn btn-light o_aurora_qty_plus" aria-label="Add one">
+                                <i class="oi" data-icon="add" role="presentation"/>
+                            </button>
+                        </div>
+                        <button type="button" name="add_to_cart" class="btn btn-primary flex-grow-1"
+                                data-action="add_to_cart"
+                                t-att-data-product-id="combination_info['product_id']"
+                                t-att-data-product-template-id="product.id"
+                                t-att-data-product-type="product.type"
+                                data-show-quantity="False">
+                            <i class="oi me-2" data-icon="shopping_cart" role="presentation"/>Add to cart
+                        </button>
+                    </t>
+                    <a t-elif="prevent_sale and (not website.aurora_block_purchase() or website.aurora_b2b_show_inquiry)"
+                       t-att-href="website._get_contact_us_url(combination_info['display_name'])"
+                       class="btn btn-outline-primary flex-grow-1">
+                        <i class="oi me-2" data-icon="mail" role="presentation"/>Contact us
+                    </a>
+                </div>
+                <div class="d-flex flex-wrap gap-2 mb-3">
+                    <t t-if="is_view_active('website_sale.add_to_wishlist') and combination_info['product_id']"
+                       t-call="website_sale.wishlist_button"/>
+                    <t t-if="is_view_active('website_sale.add_to_compare') and combination_info['product_id']"
+                       t-call="website_sale.comparison_button"/>
+                </div>
+                <a t-att-href="product.website_url" class="o_aurora_qv_details link-primary">
+                    View full details <i class="oi ms-1" data-icon="arrow_forward" role="presentation"/>
+                </a>
+            </div>
+        </div>
+    </template>
+</odoo>

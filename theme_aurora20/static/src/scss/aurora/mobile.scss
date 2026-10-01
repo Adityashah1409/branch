@@ -1,0 +1,23 @@
+// Aurora: small screens.
+
+@include media-breakpoint-down(lg) {
+    .o_aurora_footer {
+        text-align: start;
+        .row > [class*="col-"] {
+            padding-block: 0.75rem;
+        }
+    }
+    // Comfortable tap targets for the cart, wishlist and account icons.
+    .o_header_mobile .o_navlink_background,
+    .o_header_mobile .o_navlink_background_hover {
+        min-width: 2.5rem;
+        min-height: 2.5rem;
+    }
+}
+
+@include media-breakpoint-down(md) {
+    #wrapwrap h1,
+    #wrapwrap .display-4 {
+        font-size: 2rem;
+    }
+}

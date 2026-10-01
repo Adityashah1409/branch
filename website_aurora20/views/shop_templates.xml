@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Brand filter: sidebar (desktop) and offcanvas (mobile) -->
+    <template id="brand_filter" name="Brand Filter">
+        <div t-if="aurora_brands" t-attf-class="o_aurora_brand_filter border-top py-3 #{_classes or ''}">
+            <h3 class="h6 fw-bold mb-2">Brands</h3>
+            <ul class="list-unstyled d-flex flex-wrap gap-2 mb-0">
+                <li t-foreach="aurora_brands" t-as="filter_brand">
+                    <t t-set="is_active_brand" t-value="aurora_brand == filter_brand"/>
+                    <a t-att-href="keep(brand=0 if is_active_brand else filter_brand.id, page=None)"
+                       t-attf-class="btn btn-sm border #{'active bg-primary-subtle border-primary text-primary-emphasis' if is_active_brand else ''}"
+                       t-att-aria-pressed="'true' if is_active_brand else 'false'"
+                       t-out="filter_brand.name"/>
+                </li>
+            </ul>
+        </div>
+    </template>
+
+    <template id="products_brand_filter" inherit_id="website_sale.products" name="Shop: brand filter and header">
+        <xpath expr="//div[contains(@t-attf-class, 'products_attributes_filters')]" position="after">
+            <t t-call="website_aurora20.brand_filter"/>
+        </xpath>
+        <xpath expr="//div[hasclass('o_wsale_products_grid_table_wrapper')]" position="before">
+            <div t-if="aurora_brand" class="o_aurora_active_brand d-flex flex-wrap align-items-center gap-2 mb-3">
+                <span class="text-muted small">Brand:</span>
+                <a t-att-href="keep(brand=0)" class="badge rounded-pill text-bg-light border text-decoration-none"
+                   t-att-aria-label="'Remove the brand filter %s' % aurora_brand.name">
+                    <t t-out="aurora_brand.name"/>
+                    <i class="oi ms-1" data-icon="close_small" role="presentation"/>
+                </a>
+                <a t-att-href="aurora_brand.website_url" class="small ms-auto">About this brand</a>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="offcanvas_brand_filter" inherit_id="website_sale.o_wsale_offcanvas" name="Shop offcanvas: brand filter">
+        <xpath expr="//div[@id='o_wsale_offcanvas_content']" position="inside">
+            <t t-call="website_aurora20.brand_filter" _classes.f="px-4"/>
+        </xpath>
+    </template>
+
+    <!-- Product tiles: quick view button, B2B price and inquiry -->
+    <template id="product_tile_aurora" inherit_id="website_sale.products_item" name="Product tile: Aurora">
+        <xpath expr="//t[@t-if='product_price']" position="before">
+            <t t-if="website.aurora_hide_prices()" t-set="product_price">
+                <a t-attf-href="/web/login?redirect=#{product.website_url}" class="o_aurora_login_price small">
+                    Sign in to see the price
+                </a>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="product_tile_buttons_aurora" inherit_id="website_sale.shop_product_buttons"
+              name="Product tile buttons: Aurora" priority="40">
+        <xpath expr="//div[hasclass('o_wsale_product_action_row')]" position="inside">
+            <a t-if="website.aurora_block_purchase() and website.aurora_b2b_show_inquiry"
+               t-att-href="website._get_contact_us_url(product.with_context(display_default_code=False).display_name)"
+               class="o_wsale_product_btn_primary btn btn-outline-primary o_aurora_inquiry_btn"
+               title="Send an inquiry" aria-label="Send an inquiry">
+                <i class="oi oi-fw o_not-animable" data-icon="mail" role="presentation"/>
+                <span class="o_label small ms-1">Inquire</span>
+            </a>
+            <button t-if="website.aurora_enable_quick_view" type="button"
+                    class="btn o_aurora_quick_view_btn"
+                    t-att-data-product-template-id="product.id"
+                    t-att-aria-label="'Quick view of %s' % product.name"
+                    title="Quick view">
+                <span class="oi oi-fw o_not-animable" data-icon="visibility" role="presentation"/>
+                <span class="o_label small ms-2">Quick view</span>
+            </button>
+        </xpath>
+    </template>
+</odoo>

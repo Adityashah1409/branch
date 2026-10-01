@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="s_aurora_services" name="Aurora Services">
+        <section class="s_aurora_services o_cc o_cc1 pt48 pb48">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+                    <div class="col">
+                        <div class="s_aurora_service d-flex gap-3 align-items-start">
+                            <i class="s_aurora_service_icon oi" data-icon="local_shipping" role="presentation"/>
+                            <div>
+                                <h3 class="h6 mb-1">Free shipping</h3>
+                                <p class="small text-muted mb-0">On every order above the threshold.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="s_aurora_service d-flex gap-3 align-items-start">
+                            <i class="s_aurora_service_icon oi" data-icon="autorenew" role="presentation"/>
+                            <div>
+                                <h3 class="h6 mb-1">Easy returns</h3>
+                                <p class="small text-muted mb-0">30 days to change your mind.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="s_aurora_service d-flex gap-3 align-items-start">
+                            <i class="s_aurora_service_icon oi" data-icon="headphones" role="presentation"/>
+                            <div>
+                                <h3 class="h6 mb-1">Real support</h3>
+                                <p class="small text-muted mb-0">People who answer, seven days a week.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="s_aurora_service d-flex gap-3 align-items-start">
+                            <i class="s_aurora_service_icon oi" data-icon="lock" role="presentation"/>
+                            <div>
+                                <h3 class="h6 mb-1">Secure checkout</h3>
+                                <p class="small text-muted mb-0">Trusted payment providers only.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

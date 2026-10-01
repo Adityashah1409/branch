@@ -1,0 +1,160 @@
+// Aurora storefront features. Colors come from the website palette
+// (o-color() / o_cc classes) so every theme keeps its own look.
+
+// Announcement bar
+.o_aurora_announcement {
+    background-color: o-color('o-color-1');
+    color: color-contrast(o-color('o-color-1'));
+    letter-spacing: .02em;
+}
+
+// Brand link above product names
+.o_aurora_brand_link {
+    letter-spacing: .08em;
+    font-weight: 600;
+}
+
+// B2B
+.o_aurora_login_price {
+    white-space: nowrap;
+}
+
+// Quick view
+.o_aurora_quick_view {
+    .o_aurora_qv_media img {
+        background-color: $white;
+    }
+    .css_quantity {
+        max-width: 9rem;
+    }
+}
+
+// Cart drawer
+.o_aurora_cart_drawer {
+    --bs-offcanvas-width: min(26rem, 100vw);
+
+    .o_aurora_cart_line_img {
+        width: 4rem;
+        height: 4rem;
+    }
+    .o_aurora_cart_qty_input {
+        max-width: 3.5rem;
+        // Hide the browser spinners: the buttons do the job.
+        -moz-appearance: textfield;
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+    .min-w-0 {
+        min-width: 0;
+    }
+}
+
+// Brands
+.o_aurora_brand_card {
+    transition: box-shadow .2s ease, transform .2s ease;
+
+    &:hover,
+    &:focus-visible {
+        box-shadow: $box-shadow;
+        transform: translateY(-2px);
+    }
+    .o_aurora_brand_logo {
+        height: 4.5rem;
+        img {
+            max-height: 100%;
+            object-fit: contain;
+        }
+    }
+    .o_aurora_brand_initial {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        background-color: o-color('o-color-3');
+        font-size: 1.75rem;
+        font-weight: 700;
+    }
+}
+
+.o_aurora_brand_hero_has_banner {
+    .o_aurora_brand_banner {
+        max-height: 22rem;
+    }
+}
+
+.o_aurora_brand_page_logo {
+    max-height: 6rem;
+    max-width: 10rem;
+    object-fit: contain;
+}
+
+.o_aurora_product_card_media img,
+.o_aurora_qv_media img {
+    transition: transform .3s ease;
+}
+.o_aurora_product_card:hover .o_aurora_product_card_media img {
+    transform: scale(1.03);
+}
+
+// Product card styles (website setting "Product Card Style")
+#wrapwrap[data-aurora-card-style="elevated"] {
+    .oe_product_cart {
+        border-radius: $border-radius-lg;
+        transition: box-shadow .2s ease;
+
+        &:hover,
+        &:focus-within {
+            box-shadow: $box-shadow;
+        }
+    }
+}
+
+#wrapwrap[data-aurora-card-style="minimal"] {
+    .oe_product_cart {
+        border: 0;
+        box-shadow: none;
+        background: transparent;
+
+        .o_wsale_product_btn .btn:not(.o_wsale_product_btn_primary) .o_label {
+            display: none;
+        }
+    }
+}
+
+#wrapwrap[data-aurora-card-style="compact"] {
+    .oe_product_cart {
+        font-size: $font-size-sm;
+
+        .o_wsale_product_information {
+            padding-block: map-get($spacers, 2);
+        }
+    }
+}
+
+// Accessibility: visible keyboard focus on our controls
+.o_aurora_quick_view_btn,
+.o_aurora_cart_line .btn,
+.o_aurora_brand_card,
+.o_aurora_brand_filter .btn {
+    &:focus-visible {
+        outline: 2px solid o-color('o-color-1');
+        outline-offset: 2px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .o_aurora_brand_card,
+    .o_aurora_product_card_media img,
+    #wrapwrap[data-aurora-card-style="elevated"] .oe_product_cart {
+        transition: none;
+    }
+    .o_aurora_brand_card:hover,
+    .o_aurora_product_card:hover .o_aurora_product_card_media img {
+        transform: none;
+    }
+}

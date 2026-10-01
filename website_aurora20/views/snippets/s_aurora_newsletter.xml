@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Call-to-action strip. It links to the contact page by default; with the
+         Email Marketing app the editor can replace it by a newsletter form block. -->
+    <template id="s_aurora_newsletter" name="Aurora Newsletter Strip">
+        <section class="s_aurora_newsletter o_cc o_cc4 pt48 pb48">
+            <div class="container">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-7">
+                        <h2 class="h3 mb-1">Get 10% off your first order</h2>
+                        <p class="mb-0">Join our list for early access to sales and new arrivals. No spam, ever.</p>
+                    </div>
+                    <div class="col-lg-5 text-lg-end">
+                        <a t-att-href="cta_btn_href" class="btn btn-light btn-lg">Subscribe</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

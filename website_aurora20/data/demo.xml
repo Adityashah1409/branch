@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Demo brands (only loaded in demo databases). -->
+    <record id="demo_brand_northwind" model="aurora.product.brand">
+        <field name="name">Northwind</field>
+        <field name="is_published" eval="True"/>
+        <field name="is_featured" eval="True"/>
+        <field name="description" type="html"><p>Outdoor clothing designed in the mountains and tested in the rain.</p></field>
+    </record>
+    <record id="demo_brand_lumen" model="aurora.product.brand">
+        <field name="name">Lumen Home</field>
+        <field name="is_published" eval="True"/>
+        <field name="description" type="html"><p>Lighting and furniture with a calm, natural style.</p></field>
+    </record>
+    <record id="demo_brand_volt" model="aurora.product.brand">
+        <field name="name">Volt Electronics</field>
+        <field name="is_published" eval="True"/>
+        <field name="description" type="html"><p>Everyday tech, built to last and easy to repair.</p></field>
+    </record>
+</odoo>

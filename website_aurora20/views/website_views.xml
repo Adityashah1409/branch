@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Storefront settings: one record per website, so every website keeps its own. -->
+    <record id="website_view_form_aurora" model="ir.ui.view">
+        <field name="name">website.form.aurora.storefront</field>
+        <field name="model">website</field>
+        <field name="priority">90</field>
+        <field name="arch" type="xml">
+            <form string="Storefront Settings" create="0" delete="0" duplicate="0">
+                <header>
+                    <button name="action_aurora_reset_settings" type="object" string="Reset Storefront Settings"
+                            confirm="Restore the default storefront settings of this website? Products, brands, orders, customers and pages are not changed."/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <group string="Features" name="features">
+                            <field name="aurora_enable_quick_view"/>
+                            <field name="aurora_enable_cart_drawer"/>
+                            <field name="aurora_cart_drawer_auto_open" invisible="not aurora_enable_cart_drawer"/>
+                            <field name="aurora_enable_brand_pages"/>
+                            <field name="aurora_enable_recent_searches"/>
+                            <field name="aurora_product_card_style"/>
+                        </group>
+                        <group string="Announcement Bar" name="announcement">
+                            <field name="aurora_announcement_enabled"/>
+                            <field name="aurora_announcement_text" invisible="not aurora_announcement_enabled"/>
+                            <field name="aurora_announcement_url" invisible="not aurora_announcement_enabled" placeholder="/shop"/>
+                        </group>
+                    </group>
+                    <group string="B2B Mode" name="b2b">
+                        <group>
+                            <field name="aurora_b2b_mode"/>
+                            <field name="aurora_b2b_hide_prices" invisible="not aurora_b2b_mode"/>
+                            <field name="aurora_b2b_hide_add_to_cart" invisible="not aurora_b2b_mode"/>
+                            <field name="aurora_b2b_show_inquiry" invisible="not aurora_b2b_mode"/>
+                        </group>
+                        <group invisible="not aurora_b2b_mode">
+                            <field name="aurora_b2b_message"/>
+                            <field name="ecommerce_access" widget="radio" string="Shop Visible To"/>
+                        </group>
+                    </group>
+                    <label for="aurora_b2b_wholesale_info" invisible="not aurora_b2b_mode"/>
+                    <field name="aurora_b2b_wholesale_info" invisible="not aurora_b2b_mode"
+                           placeholder="Volume discounts, minimum order quantities, payment terms..."/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="website_view_list_aurora" model="ir.ui.view">
+        <field name="name">website.list.aurora.storefront</field>
+        <field name="model">website</field>
+        <field name="priority">90</field>
+        <field name="arch" type="xml">
+            <list string="Storefront Settings" create="0" delete="0">
+                <field name="name"/>
+                <field name="domain"/>
+                <field name="aurora_enable_quick_view"/>
+                <field name="aurora_enable_cart_drawer"/>
+                <field name="aurora_b2b_mode"/>
+                <field name="aurora_product_card_style"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="website_action_aurora_settings" model="ir.actions.act_window">
+        <field name="name">Storefront Settings</field>
+        <field name="res_model">website</field>
+        <field name="path">storefront-settings</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_ids" eval="[Command.clear(),
+            Command.create({'view_mode': 'list', 'view_id': ref('website_view_list_aurora')}),
+            Command.create({'view_mode': 'form', 'view_id': ref('website_view_form_aurora')})]"/>
+    </record>
+</odoo>

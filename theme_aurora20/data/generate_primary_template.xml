@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Generate the snippet templates used by the website configurator -->
+    <function model="ir.module.module" name="_generate_primary_snippet_templates">
+        <value eval="[ref('base.module_theme_aurora20')]"/>
+    </function>
+</odoo>

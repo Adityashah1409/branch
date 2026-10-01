@@ -1,0 +1,119 @@
+// Aurora building blocks
+
+.s_aurora_hero {
+    .s_aurora_eyebrow {
+        letter-spacing: .14em;
+        opacity: .85;
+    }
+    .s_aurora_accent {
+        color: o-color('o-color-1');
+    }
+    .s_aurora_hero_badge {
+        inset-block-end: -1rem;
+        inset-inline-start: -1rem;
+        min-width: 8rem;
+    }
+}
+
+.s_aurora_promo_duo {
+    .s_aurora_promo_card {
+        min-height: 16rem;
+    }
+    .s_aurora_promo_img {
+        width: 45%;
+        margin-inline-start: auto;
+    }
+}
+
+.s_aurora_services .s_aurora_service_icon {
+    font-size: 2rem;
+    color: o-color('o-color-1');
+    line-height: 1;
+}
+
+.s_aurora_category_tiles .s_aurora_tile {
+    img {
+        aspect-ratio: 3 / 4;
+        transition: transform .4s ease;
+    }
+    &:hover img,
+    &:focus-visible img {
+        transform: scale(1.04);
+    }
+}
+
+.s_aurora_testimonials .s_aurora_stars {
+    color: #F5A524;
+}
+
+.s_aurora_countdown_banner .s_aurora_countdown_unit {
+    min-width: 4.5rem;
+    background-color: rgba($white, .12);
+}
+
+.s_aurora_gallery .s_aurora_gallery_grid {
+    display: grid;
+    gap: map-get($spacers, 2);
+    grid-template-columns: repeat(3, 1fr);
+
+    @include media-breakpoint-up(lg) {
+        grid-template-columns: repeat(6, 1fr);
+    }
+    img {
+        width: 100%;
+        aspect-ratio: 1;
+    }
+}
+
+.s_aurora_brands {
+    .o_aurora_brand_logo_link {
+        height: 3.5rem;
+        min-width: 6rem;
+        opacity: .75;
+        filter: grayscale(1);
+        transition: opacity .2s ease, filter .2s ease;
+
+        &:hover,
+        &:focus-visible {
+            opacity: 1;
+            filter: none;
+        }
+        img {
+            max-height: 100%;
+            max-width: 8rem;
+            object-fit: contain;
+        }
+    }
+}
+
+// Mega menus
+.s_aurora_mega_menu_shop {
+    .s_aurora_mega_menu_title {
+        letter-spacing: .08em;
+    }
+    .s_aurora_mega_menu_promo img {
+        aspect-ratio: 4 / 3;
+    }
+}
+
+.s_aurora_mega_menu_features .s_aurora_mega_menu_feature {
+    color: inherit;
+
+    &:hover,
+    &:focus-visible {
+        background-color: o-color('o-color-3');
+    }
+    .oi {
+        color: o-color('o-color-1');
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .s_aurora_category_tiles .s_aurora_tile img,
+    .s_aurora_brands .o_aurora_brand_logo_link {
+        transition: none;
+    }
+    .s_aurora_category_tiles .s_aurora_tile:hover img {
+        transform: none;
+    }
+}

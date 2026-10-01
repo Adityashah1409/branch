@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="s_aurora_testimonials" name="Aurora Testimonials">
+        <section class="s_aurora_testimonials o_cc o_cc2 pt64 pb64">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2>Loved by our customers</h2>
+                    <p class="lead text-muted">A few words from people who shop with us.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <figure class="s_aurora_quote o_cc o_cc1 h-100 rounded-4 p-4 mb-0">
+                            <div class="s_aurora_stars mb-3" aria-label="5 out of 5">
+                                <i class="oi oi-filled" data-icon="star" role="presentation"/><i class="oi oi-filled" data-icon="star" role="presentation"/><i class="oi oi-filled" data-icon="star" role="presentation"/><i class="oi oi-filled" data-icon="star" role="presentation"/><i class="oi oi-filled" data-icon="star" role="presentation"/>
+                            </div>
+                            <blockquote class="mb-3"><p>"Delivered two days early and the quality is even better than in the pictures."</p></blockquote>
+                            <figcaption class="small"><strong>Maya R.</strong><br/><span class="text-muted">Verified buyer</span></figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-lg-4">
+                        <figure class="s_aurora_quote o_cc o_cc1 h-100 rounded-4 p-4 mb-0">
+                            <div class="s_aurora_stars mb-3" aria-label="5 out of 5">
+                                <i class="oi oi-filled" data-icon="star" role="presentation"/><i class="oi oi-filled" data-icon="star" role="presentation"/><i class="oi oi-filled" data-icon="star" role="presentation"/><i class="oi oi-filled" data-icon="star" role="presentation"/><i class="oi oi-filled" data-icon="star" role="presentation"/>
+                            </div>
+                            <blockquote class="mb-3"><p>"The return was painless. I ordered the right size the same evening."</p></blockquote>
+                            <figcaption class="small"><strong>Jonas K.</strong><br/><span class="text-muted">Verified buyer</span></figcaption>
+                        </figure>
+                    </div>
+                    <div class="col-lg-4">
+                        <figure class="s_aurora_quote o_cc o_cc1 h-100 rounded-4 p-4 mb-0">
+                            <div class="s_aurora_stars mb-3" aria-label="4 out of 5">
+                                <i class="oi oi-filled" data-icon="star" role="presentation"/><i class="oi oi-filled" data-icon="star" role="presentation"/><i class="oi oi-filled" data-icon="star" role="presentation"/><i class="oi oi-filled" data-icon="star" role="presentation"/><i class="oi" data-icon="star" role="presentation"/>
+                            </div>
+                            <blockquote class="mb-3"><p>"Great choice of brands and the filters make it quick to find what I need."</p></blockquote>
+                            <figcaption class="small"><strong>Priya S.</strong><br/><span class="text-muted">Verified buyer</span></figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

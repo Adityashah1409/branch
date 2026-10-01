@@ -1,0 +1,12 @@
+// Aurora: right-to-left languages.
+// The theme uses logical properties (margin-inline, inset-inline) wherever
+// possible; this file only flips what can't be expressed that way.
+
+[dir="rtl"] {
+    .o_aurora_header .oi[data-icon="east"],
+    .o_aurora_header .oi[data-icon="arrow_forward"],
+    .o_aurora_footer .oi[data-icon="east"],
+    .o_aurora_footer .oi[data-icon="arrow_forward"] {
+        transform: scaleX(-1);
+    }
+}

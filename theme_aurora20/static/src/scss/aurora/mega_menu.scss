@@ -1,0 +1,14 @@
+// Aurora: mega menus (applies to any mega menu in an Aurora header).
+
+.o_aurora_header .o_mega_menu {
+    border: 0;
+    border-radius: 0 0 var(--aurora-radius) var(--aurora-radius);
+    box-shadow: var(--aurora-shadow);
+    a:not(.btn) {
+        text-decoration: none;
+        &:hover,
+        &:focus-visible {
+            text-decoration: underline;
+        }
+    }
+}

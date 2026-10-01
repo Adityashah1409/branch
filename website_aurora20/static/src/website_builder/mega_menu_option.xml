@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <!-- Adds the Aurora mega menu layouts to the "Template" select of mega menus. -->
+    <t t-inherit="website.MegaMenuOption" t-inherit-mode="extension">
+        <xpath expr="//BuilderSelect[@id=&quot;'mega_menu_template_opt'&quot;]" position="inside">
+            <BuilderSelectItem
+                title.translate="Aurora - Shop columns"
+                actionParam="{
+                    view: 'website_aurora20.s_aurora_mega_menu_shop',
+                    templateClass: 's_aurora_mega_menu_shop',
+                }">
+                <Image class="'w-75 m-auto'" src="'/website_aurora20/static/src/img/snippets_thumbs/s_aurora_mega_menu_shop.svg'"/>
+            </BuilderSelectItem>
+            <BuilderSelectItem
+                title.translate="Aurora - Featured links"
+                actionParam="{
+                    view: 'website_aurora20.s_aurora_mega_menu_features',
+                    templateClass: 's_aurora_mega_menu_features',
+                }">
+                <Image class="'w-75 m-auto'" src="'/website_aurora20/static/src/img/snippets_thumbs/s_aurora_mega_menu_features.svg'"/>
+            </BuilderSelectItem>
+        </xpath>
+    </t>
+</templates>

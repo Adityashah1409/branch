@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Mega menu: category columns with a promotional card. -->
+    <template id="s_aurora_mega_menu_shop" name="Aurora - Shop columns" groups="base.group_user">
+        <section class="s_aurora_mega_menu_shop o_colored_level o_cc o_cc1 py-4">
+            <div class="container">
+                <div class="row oe_structure oe_empty"/>
+                <div class="row g-4">
+                    <t t-foreach="[('Clothing', ['Shirts', 'T-Shirts', 'Jackets', 'Knitwear']), ('Shoes', ['Sneakers', 'Boots', 'Formal', 'Sandals']), ('Accessories', ['Bags', 'Belts', 'Hats', 'Watches'])]" t-as="column">
+                        <div class="col-6 col-lg-2">
+                            <p class="s_aurora_mega_menu_title h6 text-uppercase" t-out="column[0]"/>
+                            <nav class="nav flex-column">
+                                <a t-foreach="column[1]" t-as="item" href="/shop" class="nav-link px-0 py-1" data-name="Menu Item" t-out="item"/>
+                            </nav>
+                        </div>
+                    </t>
+                    <div class="col-6 col-lg-2">
+                        <p class="s_aurora_mega_menu_title h6 text-uppercase">Highlights</p>
+                        <nav class="nav flex-column">
+                            <a href="/shop" class="nav-link px-0 py-1" data-name="Menu Item">New in <span class="badge text-bg-primary ms-1">New</span></a>
+                            <a href="/shop" class="nav-link px-0 py-1" data-name="Menu Item">Best sellers</a>
+                            <a href="/shop" class="nav-link px-0 py-1" data-name="Menu Item">Sale <span class="badge text-bg-danger ms-1">Sale</span></a>
+                            <a href="/brands" class="nav-link px-0 py-1" data-name="Menu Item">All brands</a>
+                        </nav>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <a href="/shop" class="s_aurora_mega_menu_promo d-block position-relative rounded-4 overflow-hidden text-decoration-none">
+                            <img src="/web/image/website.s_carousel_intro_default_image_2" alt="" class="img img-fluid w-100 object-fit-cover"/>
+                            <span class="position-absolute start-0 bottom-0 m-3 px-3 py-2 rounded-3 o_cc o_cc1">
+                                <strong class="d-block">The new season</strong>
+                                <small>Discover the collection</small>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+
+    <!-- Mega menu: icon links with descriptions and a call to action column. -->
+    <template id="s_aurora_mega_menu_features" name="Aurora - Featured links" groups="base.group_user">
+        <section class="s_aurora_mega_menu_features o_colored_level o_cc o_cc1 py-4">
+            <div class="container">
+                <div class="row oe_structure oe_empty"/>
+                <div class="row g-3">
+                    <t t-foreach="[('local_offer', 'Deals of the week', 'Hand-picked prices that end on Sunday'), ('new_releases', 'New arrivals', 'Fresh products added every day'), ('workspace_premium', 'Premium brands', 'Our most loved labels'), ('redeem', 'Gift cards', 'The present that always fits')]" t-as="entry">
+                        <div class="col-12 col-md-6 col-lg-3">
+                            <a href="/shop" class="s_aurora_mega_menu_feature nav-link d-flex gap-3 p-3 rounded-3 h-100" data-name="Menu Item">
+                                <i class="oi fs-3" t-att-data-icon="entry[0]" role="presentation"/>
+                                <span>
+                                    <strong class="d-block" t-out="entry[1]"/>
+                                    <small class="text-muted" t-out="entry[2]"/>
+                                </span>
+                            </a>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

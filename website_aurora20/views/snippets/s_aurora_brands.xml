@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Brand logos: the list is loaded from the published brands when the page
+         is displayed, so it stays up to date without editing the page. -->
+    <template id="s_aurora_brands" name="Aurora Brand Logos">
+        <section class="s_aurora_brands pt48 pb48" data-limit="12" data-featured-only="">
+            <div class="container">
+                <div class="d-flex flex-wrap align-items-end justify-content-between gap-2 mb-4">
+                    <h2 class="h3 mb-0">Our brands</h2>
+                    <a href="/brands" class="link-primary">See all brands</a>
+                </div>
+                <div class="s_aurora_brands_content o_not_editable">
+                    <p class="css_non_editable_mode_hidden text-muted small mb-0">The published brands are listed here.</p>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>

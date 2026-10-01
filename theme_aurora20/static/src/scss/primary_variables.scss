@@ -1,0 +1,106 @@
+// -------------------------------------------------------------------------- //
+// Aurora: presets used when the theme is applied to a website.
+// Every value stays editable in the website editor (Theme tab).
+// -------------------------------------------------------------------------- //
+
+$o-website-values-palettes: (
+    (
+        'color-palettes-name': 'aurora-1',
+
+        'font': 'Inter',
+        'headings-font': 'Manrope',
+        'navbar-font': 'Inter',
+        'buttons-font': 'Inter',
+
+        'header-template': 'aurora-classic',
+        'header-links-style': 'default',
+        'logo-height': 2.5rem,
+
+        'footer-template': 'aurora-store',
+        'footer-scrolltop': true,
+
+        'btn-border-radius': 0.6rem,
+        'btn-border-radius-sm': 0.5rem,
+        'btn-border-radius-lg': 0.75rem,
+        'input-border-radius': 0.6rem,
+    ),
+);
+
+// -------------------------------------------------------------------------- //
+// Fonts (Google Fonts, loaded by Odoo only when selected)
+// -------------------------------------------------------------------------- //
+
+$o-theme-font-configs: (
+    'Inter': (
+        'family': ('Inter', sans-serif),
+        'url': 'Inter:300,300i,400,400i,500,600,700',
+    ),
+    'Manrope': (
+        'family': ('Manrope', sans-serif),
+        'url': 'Manrope:400,500,600,700,800',
+    ),
+    'DM Serif Display': (
+        'family': ('DM Serif Display', serif),
+        'url': 'DM+Serif+Display:400,400i',
+    ),
+);
+
+// -------------------------------------------------------------------------- //
+// Color palettes
+// o-color-1: primary, 2: secondary, 3: light surface, 4: white, 5: dark text
+// 'menu', 'footer' and 'copyright' pick a color combination (o_cc1..o_cc5).
+// -------------------------------------------------------------------------- //
+
+$o-color-palettes: map-merge($o-color-palettes,
+    (
+        // Aurora Indigo: default, versatile
+        'aurora-1': (
+            'o-color-1': #4F46E5,
+            'o-color-2': #F59E0B,
+            'o-color-3': #F5F6FA,
+            'o-color-4': #FFFFFF,
+            'o-color-5': #111827,
+            'menu': 1,
+            'footer': 2,
+            'copyright': 5,
+        ),
+        // Aurora Emerald: grocery, wellness
+        'aurora-2': (
+            'o-color-1': #047857,
+            'o-color-2': #F97316,
+            'o-color-3': #F1F7F4,
+            'o-color-4': #FFFFFF,
+            'o-color-5': #0F1F1A,
+            'menu': 1,
+            'footer': 2,
+            'copyright': 5,
+        ),
+        // Aurora Rose: beauty, fashion
+        'aurora-3': (
+            'o-color-1': #BE185D,
+            'o-color-2': #1F2937,
+            'o-color-3': #FDF2F6,
+            'o-color-4': #FFFFFF,
+            'o-color-5': #1C1917,
+            'menu': 1,
+            'footer': 2,
+            'copyright': 5,
+        ),
+        // Aurora Midnight: electronics, luxury
+        'aurora-4': (
+            'o-color-1': #2563EB,
+            'o-color-2': #EAB308,
+            'o-color-3': #E5E7EB,
+            'o-color-4': #FFFFFF,
+            'o-color-5': #0B1120,
+            'menu': 5,
+            'footer': 5,
+            'copyright': 5,
+        ),
+    )
+);
+
+$o-selected-color-palettes-names: append($o-selected-color-palettes-names, 'aurora-1');
+$o-selected-color-palettes-names: append($o-selected-color-palettes-names, 'aurora-2');
+$o-selected-color-palettes-names: append($o-selected-color-palettes-names, 'aurora-3');
+$o-selected-color-palettes-names: append($o-selected-color-palettes-names, 'aurora-4');

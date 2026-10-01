@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Storefront configuration exposed to the frontend code, announcement bar,
+         and the containers of the cart drawer and the quick view dialog. -->
+    <template id="layout" inherit_id="website.layout" name="Aurora Storefront Layout">
+        <xpath expr="//div[@id='wrapwrap']" position="attributes">
+            <attribute name="t-att-data-aurora-card-style">website and website.aurora_product_card_style</attribute>
+            <attribute name="t-att-data-aurora-quick-view">website and website.aurora_enable_quick_view and '1' or None</attribute>
+            <attribute name="t-att-data-aurora-cart-drawer">website and website.aurora_enable_cart_drawer and '1' or None</attribute>
+            <attribute name="t-att-data-aurora-drawer-auto-open">website and website.aurora_enable_cart_drawer and website.aurora_cart_drawer_auto_open and '1' or None</attribute>
+            <attribute name="t-att-data-aurora-recent-searches">website and website.aurora_enable_recent_searches and '1' or None</attribute>
+        </xpath>
+        <xpath expr="//header" position="before">
+            <t t-call="website_aurora20.announcement_bar"/>
+        </xpath>
+        <!-- Inside #wrapwrap: frontend interactions only start within it. -->
+        <xpath expr="//footer" position="after">
+            <t t-if="website and website.aurora_enable_cart_drawer">
+                <t t-call="website_aurora20.cart_drawer"/>
+            </t>
+            <t t-if="website and website.aurora_enable_quick_view">
+                <t t-call="website_aurora20.quick_view_dialog"/>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="announcement_bar" name="Announcement Bar">
+        <div t-if="website and website.aurora_announcement_enabled and website.aurora_announcement_text"
+             class="o_aurora_announcement o_not_editable text-center small py-2 px-3"
+             role="region" aria-label="Announcement">
+            <a t-if="website.aurora_announcement_url" t-att-href="website.aurora_announcement_url"
+               class="text-reset text-decoration-none" t-out="website.aurora_announcement_text"/>
+            <span t-else="" t-out="website.aurora_announcement_text"/>
+        </div>
+    </template>
+</odoo>

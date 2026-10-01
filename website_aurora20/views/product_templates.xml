@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Product page: brand link under the title -->
+    <template id="product_title_brand" inherit_id="website_sale.product_title" name="Product page: brand">
+        <xpath expr="//h1" position="before">
+            <a t-if="product.aurora_brand_id.website_published and website.aurora_enable_brand_pages"
+               t-att-href="product.aurora_brand_id.website_url"
+               class="o_aurora_brand_link d-inline-block small text-uppercase text-decoration-none mb-1"
+               t-out="product.aurora_brand_id.name"/>
+        </xpath>
+    </template>
+
+    <!-- B2B mode: message for guests, wholesale information for customers -->
+    <template id="b2b_guest_notice" name="B2B Guest Notice">
+        <div t-if="website.aurora_block_purchase()" class="o_aurora_b2b_notice alert alert-info d-flex flex-wrap align-items-center gap-2" role="status">
+            <i class="oi" data-icon="lock" role="presentation"/>
+            <span class="flex-grow-1" t-out="website.aurora_b2b_message"/>
+            <a t-attf-href="/web/login?redirect=#{product.website_url if product else '/shop'}" class="btn btn-sm btn-primary">Sign in</a>
+        </div>
+    </template>
+
+    <template id="cta_wrapper_b2b" inherit_id="website_sale.cta_wrapper" name="Product page: B2B mode">
+        <xpath expr="//div[@id='o_wsale_cta_wrapper']" position="before">
+            <t t-call="website_aurora20.b2b_guest_notice"/>
+        </xpath>
+        <xpath expr="//div[@id='contact_us_wrapper']" position="attributes">
+            <attribute name="t-if">not website.aurora_block_purchase() or website.aurora_b2b_show_inquiry</attribute>
+        </xpath>
+        <xpath expr="//div[@id='o_wsale_cta_wrapper']" position="after">
+            <div t-if="website.aurora_show_wholesale_info()"
+                 class="o_aurora_wholesale_info small border rounded p-3 mb-4">
+                <div t-field="website.aurora_b2b_wholesale_info"/>
+            </div>
+        </xpath>
+    </template>
+</odoo>

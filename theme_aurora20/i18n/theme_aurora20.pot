@@ -1,0 +1,535 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* theme_aurora20
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-01 21:11+0000\n"
+"PO-Revision-Date: 2026-10-01 21:11+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: theme_aurora20
+#: model:ir.module.module,description:base.module_theme_aurora20
+msgid ""
+"\n"
+"Aurora Theme\n"
+"============\n"
+"\n"
+"A modern storefront theme for Odoo 20 websites. It brings:\n"
+"\n"
+"* eight headers (classic, centered, mega, minimal, split, B2B, modern, compact)\n"
+"  and eight footers, all selectable in the website editor;\n"
+"* four color palettes and a refined type scale;\n"
+"* product card styles, sticky add-to-cart friendly product pages and polished\n"
+"  shop pages, with right-to-left and keyboard support;\n"
+"* all the storefront features of *Aurora Storefront* (``website_aurora20``):\n"
+"  brands, quick view, cart drawer, B2B mode, building blocks, mega menus and\n"
+"  ten homepage designs.\n"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_service
+msgid "30 days to change your mind"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_mega_dark
+msgid ""
+"<i class=\"oi me-1\" data-icon=\"lock\"/>Secure payments<span "
+"class=\"mx-2\">·</span><i class=\"oi me-1\" data-"
+"icon=\"local_shipping\"/>Fast delivery<span class=\"mx-2\">·</span><i "
+"class=\"oi me-1\" data-icon=\"autorenew\"/>30-day returns"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_service
+msgid ""
+"<i class=\"oi oi-2x d-block mb-2\" data-icon=\"autorenew\"/><b>Easy "
+"returns</b>"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_service
+msgid ""
+"<i class=\"oi oi-2x d-block mb-2\" data-icon=\"headphones\"/><b>Real "
+"people</b>"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_service
+msgid ""
+"<i class=\"oi oi-2x d-block mb-2\" data-icon=\"local_shipping\"/><b>Free "
+"delivery</b>"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_service
+msgid "<i class=\"oi oi-2x d-block mb-2\" data-icon=\"lock\"/><b>Secure checkout</b>"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_b2b
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_mega_dark
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_service
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_store
+msgid ""
+"<i class=\"oi oi-fw me-2\" data-icon=\"location_on\"/>250 Executive Park "
+"Blvd, San Francisco"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_b2b
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_mega_dark
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_service
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_store
+msgid "<span class=\"o_force_ltr\">+1 555-555-5556</span>"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_centered_brand
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_cta
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_mega_dark
+msgid "About us"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_minimal_line
+msgid "Account"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_b2b
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_cta
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_mega_dark
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_service
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_split
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_store
+msgid "All products"
+msgstr ""
+
+#. module: theme_aurora20
+#. odoo-javascript
+#: code:addons/theme_aurora20/static/src/builder/header_footer_option_plugin.js:0
+msgid "Aurora B2B"
+msgstr ""
+
+#. module: theme_aurora20
+#. odoo-javascript
+#: code:addons/theme_aurora20/static/src/builder/header_footer_option_plugin.js:0
+msgid "Aurora Business"
+msgstr ""
+
+#. module: theme_aurora20
+#. odoo-javascript
+#: code:addons/theme_aurora20/static/src/builder/header_footer_option_plugin.js:0
+msgid "Aurora Call to Action"
+msgstr ""
+
+#. module: theme_aurora20
+#. odoo-javascript
+#: code:addons/theme_aurora20/static/src/builder/header_footer_option_plugin.js:0
+msgid "Aurora Centered"
+msgstr ""
+
+#. module: theme_aurora20
+#. odoo-javascript
+#: code:addons/theme_aurora20/static/src/builder/header_footer_option_plugin.js:0
+msgid "Aurora Classic"
+msgstr ""
+
+#. module: theme_aurora20
+#. odoo-javascript
+#: code:addons/theme_aurora20/static/src/builder/header_footer_option_plugin.js:0
+msgid "Aurora Compact"
+msgstr ""
+
+#. module: theme_aurora20
+#. odoo-javascript
+#: code:addons/theme_aurora20/static/src/builder/header_footer_option_plugin.js:0
+msgid "Aurora Mega"
+msgstr ""
+
+#. module: theme_aurora20
+#. odoo-javascript
+#: code:addons/theme_aurora20/static/src/builder/header_footer_option_plugin.js:0
+msgid "Aurora Mega Dark"
+msgstr ""
+
+#. module: theme_aurora20
+#. odoo-javascript
+#: code:addons/theme_aurora20/static/src/builder/header_footer_option_plugin.js:0
+msgid "Aurora Minimal"
+msgstr ""
+
+#. module: theme_aurora20
+#. odoo-javascript
+#: code:addons/theme_aurora20/static/src/builder/header_footer_option_plugin.js:0
+msgid "Aurora Modern"
+msgstr ""
+
+#. module: theme_aurora20
+#. odoo-javascript
+#: code:addons/theme_aurora20/static/src/builder/header_footer_option_plugin.js:0
+msgid "Aurora Services"
+msgstr ""
+
+#. module: theme_aurora20
+#. odoo-javascript
+#: code:addons/theme_aurora20/static/src/builder/header_footer_option_plugin.js:0
+msgid "Aurora Split"
+msgstr ""
+
+#. module: theme_aurora20
+#. odoo-javascript
+#: code:addons/theme_aurora20/static/src/builder/header_footer_option_plugin.js:0
+msgid "Aurora Store"
+msgstr ""
+
+#. module: theme_aurora20
+#: model:ir.module.module,shortdesc:base.module_theme_aurora20
+msgid "Aurora Theme"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_b2b
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_centered_brand
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_cta
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_mega_dark
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_minimal_line
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_service
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_split
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_store
+msgid "Brands"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_b2b
+msgid "Business"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_cta
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_mega_dark
+msgid "Careers"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.header_offcanvas_menu
+msgid "Close"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_cta
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_mega_dark
+msgid "Company"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_centered_brand
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_mega_dark
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_minimal_line
+msgid "Contact"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_cta
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_mega_dark
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_service
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_split
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_store
+msgid "Contact us"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_cta
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_mega_dark
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_service
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_split
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_store
+msgid "Customer care"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_centered_brand
+msgid "Designed with care, made to last."
+msgstr ""
+
+#. module: theme_aurora20
+#: model:ir.model.fields,field_description:theme_aurora20.field_theme_utils__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_service
+msgid "Encrypted payments"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_mega_dark
+msgid ""
+"Everything you need, from the everyday essentials to the exceptional finds."
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_centered_brand
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_cta
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_mega_dark
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_minimal_line
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_service
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_split
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_store
+msgid "Facebook"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_centered_brand
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_cta
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_mega_dark
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_minimal_line
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_service
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_split
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_store
+msgid "Follow us"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_store
+msgid "Get in touch"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_service
+msgid "Help seven days a week"
+msgstr ""
+
+#. module: theme_aurora20
+#: model:ir.model.fields,field_description:theme_aurora20.field_theme_utils__id
+msgid "ID"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_centered_brand
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_cta
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_mega_dark
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_minimal_line
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_service
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_split
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_store
+msgid "Instagram"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_b2b
+msgid "Invoices"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_split
+msgid "Join the list"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_centered_brand
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_cta
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_mega_dark
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_minimal_line
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_service
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_split
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_store
+msgid "LinkedIn"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_b2b
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_centered_brand
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_cta
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_mega_dark
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_minimal_line
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_service
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_store
+msgid "Logo"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_cta
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_mega_dark
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_service
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_split
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_store
+msgid "My account"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_b2b
+msgid "My orders"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_b2b
+msgid "My quotations"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_cta
+msgid "Need help choosing?"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_b2b
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_cta
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_mega_dark
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_service
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_split
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_store
+msgid "New arrivals"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_split
+msgid "New collections, restocks and offers. No more than one email a month."
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_service
+msgid "On orders over 50"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_cta
+msgid "Our team answers within one business day."
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_b2b
+msgid "Payment terms"
+msgstr ""
+
+#. module: theme_aurora20
+#: model:ir.module.module,summary:base.module_theme_aurora20
+msgid ""
+"Premium eCommerce theme: 8 headers, 8 footers, mega menus, 10 homepage "
+"designs, quick view, cart drawer, brands and B2B mode"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_cta
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_mega_dark
+msgid "Privacy Policy"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_b2b
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_header_b2b
+msgid "Request a quote"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_b2b
+msgid "Sales desk"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_cta
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_mega_dark
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_service
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_split
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_store
+msgid "Shipping &amp; returns"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_b2b
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_centered_brand
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_cta
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_mega_dark
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_minimal_line
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_service
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_split
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_store
+msgid "Shop"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_split
+msgid "Stay in the loop"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_cta
+msgid "Talk to us"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_cta
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_mega_dark
+msgid "Terms &amp; Conditions"
+msgstr ""
+
+#. module: theme_aurora20
+#: model:ir.model,name:theme_aurora20.model_theme_utils
+msgid "Theme Utils"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_store
+msgid ""
+"Thoughtfully selected products, delivered with care. Sign up for an account "
+"to follow your orders and save your favourites."
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_cta
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_mega_dark
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_service
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_split
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_store
+msgid "Track an order"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_b2b
+msgid ""
+"Trade accounts get volume pricing, payment terms and a dedicated account "
+"manager."
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_b2b
+msgid "Trade sign in"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_b2b
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_cta
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_mega_dark
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_service
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_split
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_store
+msgid "Wishlist"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_centered_brand
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_cta
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_mega_dark
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_minimal_line
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_service
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_split
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_store
+msgid "X"
+msgstr ""
+
+#. module: theme_aurora20
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_b2b
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_mega_dark
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_service
+#: model_terms:theme.ir.ui.view,arch:theme_aurora20.template_footer_store
+msgid "hello@yourcompany.example.com"
+msgstr ""

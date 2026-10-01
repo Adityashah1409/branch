@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        Aurora footers. Each one replaces the footer content of website.layout;
+        the copyright bar of Odoo stays. Selected in the website editor
+        (Footer > Template); only one is active at a time.
+    -->
+
+    <template id="template_footer_store" inherit_id="website.layout" name="Aurora Store" active="False">
+        <xpath expr="//div[@id='footer']" position="replace">
+            <div id="footer" class="oe_structure oe_structure_solo o_aurora_footer o_aurora_footer_store text-break" t-ignore="true" t-if="not no_footer">
+                <section class="s_text_block pt48 pb32" data-snippet="s_text_block" data-name="Container">
+                    <div class="container s_allow_columns">
+                        <div class="row">
+                            <div class="col-lg-4 pb24">
+                                <a href="/" class="o_footer_logo logo d-inline-block mb-3"><img src="/website/static/src/img/website_logo.svg" class="img-fluid" style="max-height: 40px;" alt="Logo" title="Logo"/></a>
+                                <p>Thoughtfully selected products, delivered with care. Sign up for an account to follow your orders and save your favourites.</p>
+                                <div class="s_social_media text-start o_not_editable" data-snippet="s_social_media" data-name="Social Media" contenteditable="false">
+                                <h5 class="s_social_media_title d-none" contenteditable="true">Follow us</h5>
+                                <a href="#" class="s_social_media_facebook" target="_blank" aria-label="Facebook"><i class="oi rounded-circle shadow-sm o_editable_media" data-icon="oi_facebook"/></a>
+                                <a href="#" class="s_social_media_instagram" target="_blank" aria-label="Instagram"><i class="oi rounded-circle shadow-sm o_editable_media" data-icon="oi_instagram"/></a>
+                                <a href="#" class="s_social_media_twitter" target="_blank" aria-label="X"><i class="oi rounded-circle shadow-sm o_editable_media" data-icon="oi_x"/></a>
+                                <a href="#" class="s_social_media_linkedin" target="_blank" aria-label="LinkedIn"><i class="oi rounded-circle shadow-sm o_editable_media" data-icon="oi_linkedin"/></a>
+                            </div>
+                            </div>
+                            <div class="col-6 col-lg-2 offset-lg-1 pb24">
+                            <h6 class="text-uppercase fw-bold small">Shop</h6>
+                            <ul class="list-unstyled o_aurora_footer_links">
+                                <li><a href="/shop">All products</a></li>
+                                <li><a href="/shop?order=create_date+desc">New arrivals</a></li>
+                                <li><a href="/brands">Brands</a></li>
+                                <li><a href="/shop/wishlist">Wishlist</a></li>
+                            </ul>
+                            </div>
+                            <div class="col-6 col-lg-2 pb24">
+                            <h6 class="text-uppercase fw-bold small">Customer care</h6>
+                            <ul class="list-unstyled o_aurora_footer_links">
+                                <li><a href="/my">My account</a></li>
+                                <li><a href="/my/orders">Track an order</a></li>
+                                <li><a href="#">Shipping &amp; returns</a></li>
+                                <li><a href="/contactus">Contact us</a></li>
+                            </ul>
+                            </div>
+                            <div class="col-lg-3 pb24">
+                            <h6 class="text-uppercase fw-bold small">Get in touch</h6>
+                            <ul class="list-unstyled o_aurora_footer_contact">
+                                <li><i class="oi oi-fw me-2" data-icon="phone"/><a href="tel:+1 555-555-5556"><span class="o_force_ltr">+1 555-555-5556</span></a></li>
+                                <li><i class="oi oi-fw me-2" data-icon="mail"/><a href="mailto:hello@yourcompany.example.com">hello@yourcompany.example.com</a></li>
+                                <li><i class="oi oi-fw me-2" data-icon="location_on"/>250 Executive Park Blvd, San Francisco</li>
+                            </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="template_footer_centered_brand" inherit_id="website.layout" name="Aurora Centered" active="False">
+        <xpath expr="//div[@id='footer']" position="replace">
+            <div id="footer" class="oe_structure oe_structure_solo o_aurora_footer o_aurora_footer_centered text-center text-break" t-ignore="true" t-if="not no_footer">
+                <section class="s_text_block pt64 pb48" data-snippet="s_text_block" data-name="Container">
+                    <div class="container s_allow_columns">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <a href="/" class="o_footer_logo logo d-inline-block mb-3"><img src="/website/static/src/img/website_logo.svg" class="img-fluid" style="max-height: 40px;" alt="Logo" title="Logo"/></a>
+                                <p class="lead">Designed with care, made to last.</p>
+                                <nav class="nav justify-content-center flex-wrap gap-1 mb-3">
+                                    <a class="nav-link" href="/shop">Shop</a>
+                                    <a class="nav-link" href="/brands">Brands</a>
+                                    <a class="nav-link" href="#">About us</a>
+                                    <a class="nav-link" href="/contactus">Contact</a>
+                                </nav>
+                                <div class="s_social_media text-center o_not_editable" data-snippet="s_social_media" data-name="Social Media" contenteditable="false">
+                                <h5 class="s_social_media_title d-none" contenteditable="true">Follow us</h5>
+                                <a href="#" class="s_social_media_facebook" target="_blank" aria-label="Facebook"><i class="oi rounded-circle o_editable_media" data-icon="oi_facebook"/></a>
+                                <a href="#" class="s_social_media_instagram" target="_blank" aria-label="Instagram"><i class="oi rounded-circle o_editable_media" data-icon="oi_instagram"/></a>
+                                <a href="#" class="s_social_media_twitter" target="_blank" aria-label="X"><i class="oi rounded-circle o_editable_media" data-icon="oi_x"/></a>
+                                <a href="#" class="s_social_media_linkedin" target="_blank" aria-label="LinkedIn"><i class="oi rounded-circle o_editable_media" data-icon="oi_linkedin"/></a>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="template_footer_mega_dark" inherit_id="website.layout" name="Aurora Mega Dark" active="False">
+        <xpath expr="//div[@id='footer']" position="replace">
+            <div id="footer" class="oe_structure oe_structure_solo o_aurora_footer o_aurora_footer_mega o_cc o_cc5 text-break" t-ignore="true" t-if="not no_footer">
+                <section class="s_text_block pt64 pb32" data-snippet="s_text_block" data-name="Container">
+                    <div class="container s_allow_columns">
+                        <div class="row">
+                            <div class="col-lg-3 pb24">
+                                <a href="/" class="o_footer_logo logo d-inline-block mb-3"><img src="/website/static/src/img/website_logo.svg" class="img-fluid" style="max-height: 40px;" alt="Logo" title="Logo"/></a>
+                                <p class="small">Everything you need, from the everyday essentials to the exceptional finds.</p>
+                                <div class="s_social_media text-start o_not_editable" data-snippet="s_social_media" data-name="Social Media" contenteditable="false">
+                                <h5 class="s_social_media_title d-none" contenteditable="true">Follow us</h5>
+                                <a href="#" class="s_social_media_facebook" target="_blank" aria-label="Facebook"><i class="oi rounded o_editable_media" data-icon="oi_facebook"/></a>
+                                <a href="#" class="s_social_media_instagram" target="_blank" aria-label="Instagram"><i class="oi rounded o_editable_media" data-icon="oi_instagram"/></a>
+                                <a href="#" class="s_social_media_twitter" target="_blank" aria-label="X"><i class="oi rounded o_editable_media" data-icon="oi_x"/></a>
+                                <a href="#" class="s_social_media_linkedin" target="_blank" aria-label="LinkedIn"><i class="oi rounded o_editable_media" data-icon="oi_linkedin"/></a>
+                            </div>
+                            </div>
+                            <div class="col-6 col-lg-2 offset-lg-1 pb24">
+                            <h6 class="text-uppercase fw-bold small">Shop</h6>
+                            <ul class="list-unstyled o_aurora_footer_links">
+                                <li><a href="/shop">All products</a></li>
+                                <li><a href="/shop?order=create_date+desc">New arrivals</a></li>
+                                <li><a href="/brands">Brands</a></li>
+                                <li><a href="/shop/wishlist">Wishlist</a></li>
+                            </ul>
+                            </div>
+                            <div class="col-6 col-lg-2 pb24">
+                            <h6 class="text-uppercase fw-bold small">Customer care</h6>
+                            <ul class="list-unstyled o_aurora_footer_links">
+                                <li><a href="/my">My account</a></li>
+                                <li><a href="/my/orders">Track an order</a></li>
+                                <li><a href="#">Shipping &amp; returns</a></li>
+                                <li><a href="/contactus">Contact us</a></li>
+                            </ul>
+                            </div>
+                            <div class="col-6 col-lg-2 pb24">
+                            <h6 class="text-uppercase fw-bold small">Company</h6>
+                            <ul class="list-unstyled o_aurora_footer_links">
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">Terms &amp; Conditions</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <t t-set="configurator_footer_links" t-value="[]"/>
+                                <li t-foreach="configurator_footer_links" t-as="link"><a t-att-href="link['href']" t-out="link['text']"/></li>
+                            </ul>
+                            </div>
+                            <div class="col-6 col-lg-2 pb24">
+                            <h6 class="text-uppercase fw-bold small">Contact</h6>
+                            <ul class="list-unstyled o_aurora_footer_contact">
+                                <li><i class="oi oi-fw me-2" data-icon="phone"/><a href="tel:+1 555-555-5556"><span class="o_force_ltr">+1 555-555-5556</span></a></li>
+                                <li><i class="oi oi-fw me-2" data-icon="mail"/><a href="mailto:hello@yourcompany.example.com">hello@yourcompany.example.com</a></li>
+                                <li><i class="oi oi-fw me-2" data-icon="location_on"/>250 Executive Park Blvd, San Francisco</li>
+                            </ul>
+                            </div>
+                        </div>
+                        <div class="row border-top pt-3 mt-2">
+                            <div class="col-12"><p class="o_aurora_footer_payments small mb-0"><i class="oi me-1" data-icon="lock"/>Secure payments<span class="mx-2">·</span><i class="oi me-1" data-icon="local_shipping"/>Fast delivery<span class="mx-2">·</span><i class="oi me-1" data-icon="autorenew"/>30-day returns</p></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="template_footer_minimal_line" inherit_id="website.layout" name="Aurora Minimal" active="False">
+        <xpath expr="//div[@id='footer']" position="replace">
+            <div id="footer" class="oe_structure oe_structure_solo o_aurora_footer o_aurora_footer_minimal border-top text-break" t-ignore="true" t-if="not no_footer">
+                <section class="s_text_block pt24 pb24" data-snippet="s_text_block" data-name="Container">
+                    <div class="container s_allow_columns">
+                        <div class="row align-items-center">
+                            <div class="col-lg-3 pt8 pb8"><a href="/" class="o_footer_logo logo d-inline-block mb-3"><img src="/website/static/src/img/website_logo.svg" class="img-fluid" style="max-height: 40px;" alt="Logo" title="Logo"/></a></div>
+                            <div class="col-lg-6 pt8 pb8">
+                                <nav class="nav justify-content-center flex-wrap">
+                                    <a class="nav-link" href="/shop">Shop</a>
+                                    <a class="nav-link" href="/brands">Brands</a>
+                                    <a class="nav-link" href="/my">Account</a>
+                                    <a class="nav-link" href="/contactus">Contact</a>
+                                </nav>
+                            </div>
+                            <div class="col-lg-3 pt8 pb8"><div class="s_social_media text-lg-end text-center o_not_editable" data-snippet="s_social_media" data-name="Social Media" contenteditable="false">
+                                <h5 class="s_social_media_title d-none" contenteditable="true">Follow us</h5>
+                                <a href="#" class="s_social_media_facebook" target="_blank" aria-label="Facebook"><i class="oi oi-stack o_editable_media" data-icon="oi_facebook"/></a>
+                                <a href="#" class="s_social_media_instagram" target="_blank" aria-label="Instagram"><i class="oi oi-stack o_editable_media" data-icon="oi_instagram"/></a>
+                                <a href="#" class="s_social_media_twitter" target="_blank" aria-label="X"><i class="oi oi-stack o_editable_media" data-icon="oi_x"/></a>
+                                <a href="#" class="s_social_media_linkedin" target="_blank" aria-label="LinkedIn"><i class="oi oi-stack o_editable_media" data-icon="oi_linkedin"/></a>
+                            </div></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="template_footer_cta" inherit_id="website.layout" name="Aurora Call to Action" active="False">
+        <xpath expr="//div[@id='footer']" position="replace">
+            <div id="footer" class="oe_structure oe_structure_solo o_aurora_footer o_aurora_footer_cta text-break" t-ignore="true" t-if="not no_footer">
+                <section class="s_text_block pt48 pb0" data-snippet="s_text_block" data-name="Call to Action">
+                    <div class="container s_allow_columns">
+                        <div class="row align-items-center o_aurora_footer_cta_band rounded-3 p-4 o_cc o_cc4">
+                            <div class="col-lg-8">
+                                <h3 class="mb-1">Need help choosing?</h3>
+                                <p class="mb-0">Our team answers within one business day.</p>
+                            </div>
+                            <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                                <a href="/contactus" class="btn btn-lg btn-light">Talk to us</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="s_text_block pt48 pb24" data-snippet="s_text_block" data-name="Container">
+                    <div class="container s_allow_columns">
+                        <div class="row">
+                            <div class="col-lg-4 pb24"><a href="/" class="o_footer_logo logo d-inline-block mb-3"><img src="/website/static/src/img/website_logo.svg" class="img-fluid" style="max-height: 40px;" alt="Logo" title="Logo"/></a><div class="s_social_media text-start o_not_editable" data-snippet="s_social_media" data-name="Social Media" contenteditable="false">
+                                <h5 class="s_social_media_title d-none" contenteditable="true">Follow us</h5>
+                                <a href="#" class="s_social_media_facebook" target="_blank" aria-label="Facebook"><i class="oi rounded-circle shadow-sm o_editable_media" data-icon="oi_facebook"/></a>
+                                <a href="#" class="s_social_media_instagram" target="_blank" aria-label="Instagram"><i class="oi rounded-circle shadow-sm o_editable_media" data-icon="oi_instagram"/></a>
+                                <a href="#" class="s_social_media_twitter" target="_blank" aria-label="X"><i class="oi rounded-circle shadow-sm o_editable_media" data-icon="oi_x"/></a>
+                                <a href="#" class="s_social_media_linkedin" target="_blank" aria-label="LinkedIn"><i class="oi rounded-circle shadow-sm o_editable_media" data-icon="oi_linkedin"/></a>
+                            </div></div>
+                            <div class="col-6 col-lg-2 offset-lg-2 pb24">
+                            <h6 class="text-uppercase fw-bold small">Shop</h6>
+                            <ul class="list-unstyled o_aurora_footer_links">
+                                <li><a href="/shop">All products</a></li>
+                                <li><a href="/shop?order=create_date+desc">New arrivals</a></li>
+                                <li><a href="/brands">Brands</a></li>
+                                <li><a href="/shop/wishlist">Wishlist</a></li>
+                            </ul>
+                            </div>
+                            <div class="col-6 col-lg-2 pb24">
+                            <h6 class="text-uppercase fw-bold small">Customer care</h6>
+                            <ul class="list-unstyled o_aurora_footer_links">
+                                <li><a href="/my">My account</a></li>
+                                <li><a href="/my/orders">Track an order</a></li>
+                                <li><a href="#">Shipping &amp; returns</a></li>
+                                <li><a href="/contactus">Contact us</a></li>
+                            </ul>
+                            </div>
+                            <div class="col-lg-2 pb24">
+                            <h6 class="text-uppercase fw-bold small">Company</h6>
+                            <ul class="list-unstyled o_aurora_footer_links">
+                                <li><a href="#">About us</a></li>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">Terms &amp; Conditions</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <t t-set="configurator_footer_links" t-value="[]"/>
+                                <li t-foreach="configurator_footer_links" t-as="link"><a t-att-href="link['href']" t-out="link['text']"/></li>
+                            </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="template_footer_b2b" inherit_id="website.layout" name="Aurora Business" active="False">
+        <xpath expr="//div[@id='footer']" position="replace">
+            <div id="footer" class="oe_structure oe_structure_solo o_aurora_footer o_aurora_footer_b2b o_cc o_cc2 text-break" t-ignore="true" t-if="not no_footer">
+                <section class="s_text_block pt48 pb32" data-snippet="s_text_block" data-name="Container">
+                    <div class="container s_allow_columns">
+                        <div class="row">
+                            <div class="col-lg-4 pb24">
+                                <a href="/" class="o_footer_logo logo d-inline-block mb-3"><img src="/website/static/src/img/website_logo.svg" class="img-fluid" style="max-height: 40px;" alt="Logo" title="Logo"/></a>
+                                <p class="small">Trade accounts get volume pricing, payment terms and a dedicated account manager.</p>
+                                <a href="/contactus" class="btn btn-primary">Request a quote</a>
+                                <a href="/web/login" class="btn btn-outline-primary ms-1">Trade sign in</a>
+                            </div>
+                            <div class="col-6 col-lg-2 offset-lg-1 pb24">
+                            <h6 class="text-uppercase fw-bold small">Shop</h6>
+                            <ul class="list-unstyled o_aurora_footer_links">
+                                <li><a href="/shop">All products</a></li>
+                                <li><a href="/shop?order=create_date+desc">New arrivals</a></li>
+                                <li><a href="/brands">Brands</a></li>
+                                <li><a href="/shop/wishlist">Wishlist</a></li>
+                            </ul>
+                            </div>
+                            <div class="col-6 col-lg-2 pb24">
+                            <h6 class="text-uppercase fw-bold small">Business</h6>
+                            <ul class="list-unstyled o_aurora_footer_links">
+                                <li><a href="/my/quotes">My quotations</a></li>
+                                <li><a href="/my/orders">My orders</a></li>
+                                <li><a href="/my/invoices">Invoices</a></li>
+                                <li><a href="#">Payment terms</a></li>
+                            </ul>
+                            </div>
+                            <div class="col-lg-3 pb24">
+                            <h6 class="text-uppercase fw-bold small">Sales desk</h6>
+                            <ul class="list-unstyled o_aurora_footer_contact">
+                                <li><i class="oi oi-fw me-2" data-icon="phone"/><a href="tel:+1 555-555-5556"><span class="o_force_ltr">+1 555-555-5556</span></a></li>
+                                <li><i class="oi oi-fw me-2" data-icon="mail"/><a href="mailto:hello@yourcompany.example.com">hello@yourcompany.example.com</a></li>
+                                <li><i class="oi oi-fw me-2" data-icon="location_on"/>250 Executive Park Blvd, San Francisco</li>
+                            </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="template_footer_split" inherit_id="website.layout" name="Aurora Split" active="False">
+        <xpath expr="//div[@id='footer']" position="replace">
+            <div id="footer" class="oe_structure oe_structure_solo o_aurora_footer o_aurora_footer_split text-break" t-ignore="true" t-if="not no_footer">
+                <section class="s_text_block pt48 pb48" data-snippet="s_text_block" data-name="Container">
+                    <div class="container s_allow_columns">
+                        <div class="row g-0 rounded-3 overflow-hidden">
+                            <div class="col-lg-5 o_cc o_cc4 p-4 p-lg-5">
+                                <h3>Stay in the loop</h3>
+                                <p>New collections, restocks and offers. No more than one email a month.</p>
+                                <a href="/contactus" class="btn btn-light">Join the list</a>
+                            </div>
+                            <div class="col-lg-7 o_cc o_cc2 p-4 p-lg-5">
+                                <div class="row">
+                                    <div class="col-6">
+                                    <h6 class="text-uppercase fw-bold small">Shop</h6>
+                            <ul class="list-unstyled o_aurora_footer_links">
+                                <li><a href="/shop">All products</a></li>
+                                <li><a href="/shop?order=create_date+desc">New arrivals</a></li>
+                                <li><a href="/brands">Brands</a></li>
+                                <li><a href="/shop/wishlist">Wishlist</a></li>
+                            </ul>
+                                    </div>
+                                    <div class="col-6">
+                                    <h6 class="text-uppercase fw-bold small">Customer care</h6>
+                            <ul class="list-unstyled o_aurora_footer_links">
+                                <li><a href="/my">My account</a></li>
+                                <li><a href="/my/orders">Track an order</a></li>
+                                <li><a href="#">Shipping &amp; returns</a></li>
+                                <li><a href="/contactus">Contact us</a></li>
+                            </ul>
+                                    </div>
+                                </div>
+                                <div class="s_social_media text-start o_not_editable" data-snippet="s_social_media" data-name="Social Media" contenteditable="false">
+                                <h5 class="s_social_media_title d-none" contenteditable="true">Follow us</h5>
+                                <a href="#" class="s_social_media_facebook" target="_blank" aria-label="Facebook"><i class="oi rounded-circle shadow-sm o_editable_media" data-icon="oi_facebook"/></a>
+                                <a href="#" class="s_social_media_instagram" target="_blank" aria-label="Instagram"><i class="oi rounded-circle shadow-sm o_editable_media" data-icon="oi_instagram"/></a>
+                                <a href="#" class="s_social_media_twitter" target="_blank" aria-label="X"><i class="oi rounded-circle shadow-sm o_editable_media" data-icon="oi_x"/></a>
+                                <a href="#" class="s_social_media_linkedin" target="_blank" aria-label="LinkedIn"><i class="oi rounded-circle shadow-sm o_editable_media" data-icon="oi_linkedin"/></a>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="template_footer_service" inherit_id="website.layout" name="Aurora Services" active="False">
+        <xpath expr="//div[@id='footer']" position="replace">
+            <div id="footer" class="oe_structure oe_structure_solo o_aurora_footer o_aurora_footer_service text-break" t-ignore="true" t-if="not no_footer">
+                <section class="s_text_block pt40 pb40 border-bottom" data-snippet="s_text_block" data-name="Services">
+                    <div class="container s_allow_columns">
+                        <div class="row text-center g-3 o_aurora_footer_services">
+                            <div class="col-6 col-lg-3"><i class="oi oi-2x d-block mb-2" data-icon="local_shipping"/><b>Free delivery</b><p class="small mb-0">On orders over 50</p></div>
+                            <div class="col-6 col-lg-3"><i class="oi oi-2x d-block mb-2" data-icon="autorenew"/><b>Easy returns</b><p class="small mb-0">30 days to change your mind</p></div>
+                            <div class="col-6 col-lg-3"><i class="oi oi-2x d-block mb-2" data-icon="lock"/><b>Secure checkout</b><p class="small mb-0">Encrypted payments</p></div>
+                            <div class="col-6 col-lg-3"><i class="oi oi-2x d-block mb-2" data-icon="headphones"/><b>Real people</b><p class="small mb-0">Help seven days a week</p></div>
+                        </div>
+                    </div>
+                </section>
+                <section class="s_text_block pt48 pb24" data-snippet="s_text_block" data-name="Container">
+                    <div class="container s_allow_columns">
+                        <div class="row">
+                            <div class="col-lg-4 pb24"><a href="/" class="o_footer_logo logo d-inline-block mb-3"><img src="/website/static/src/img/website_logo.svg" class="img-fluid" style="max-height: 40px;" alt="Logo" title="Logo"/></a><ul class="list-unstyled o_aurora_footer_contact">
+                                <li><i class="oi oi-fw me-2" data-icon="phone"/><a href="tel:+1 555-555-5556"><span class="o_force_ltr">+1 555-555-5556</span></a></li>
+                                <li><i class="oi oi-fw me-2" data-icon="mail"/><a href="mailto:hello@yourcompany.example.com">hello@yourcompany.example.com</a></li>
+                                <li><i class="oi oi-fw me-2" data-icon="location_on"/>250 Executive Park Blvd, San Francisco</li>
+                            </ul></div>
+                            <div class="col-6 col-lg-2 offset-lg-2 pb24">
+                            <h6 class="text-uppercase fw-bold small">Shop</h6>
+                            <ul class="list-unstyled o_aurora_footer_links">
+                                <li><a href="/shop">All products</a></li>
+                                <li><a href="/shop?order=create_date+desc">New arrivals</a></li>
+                                <li><a href="/brands">Brands</a></li>
+                                <li><a href="/shop/wishlist">Wishlist</a></li>
+                            </ul>
+                            </div>
+                            <div class="col-6 col-lg-2 pb24">
+                            <h6 class="text-uppercase fw-bold small">Customer care</h6>
+                            <ul class="list-unstyled o_aurora_footer_links">
+                                <li><a href="/my">My account</a></li>
+                                <li><a href="/my/orders">Track an order</a></li>
+                                <li><a href="#">Shipping &amp; returns</a></li>
+                                <li><a href="/contactus">Contact us</a></li>
+                            </ul>
+                            </div>
+                            <div class="col-lg-2 pb24"><div class="s_social_media text-start o_not_editable" data-snippet="s_social_media" data-name="Social Media" contenteditable="false">
+                                <h5 class="s_social_media_title d-none" contenteditable="true">Follow us</h5>
+                                <a href="#" class="s_social_media_facebook" target="_blank" aria-label="Facebook"><i class="oi rounded-circle shadow-sm o_editable_media" data-icon="oi_facebook"/></a>
+                                <a href="#" class="s_social_media_instagram" target="_blank" aria-label="Instagram"><i class="oi rounded-circle shadow-sm o_editable_media" data-icon="oi_instagram"/></a>
+                                <a href="#" class="s_social_media_twitter" target="_blank" aria-label="X"><i class="oi rounded-circle shadow-sm o_editable_media" data-icon="oi_x"/></a>
+                                <a href="#" class="s_social_media_linkedin" target="_blank" aria-label="LinkedIn"><i class="oi rounded-circle shadow-sm o_editable_media" data-icon="oi_linkedin"/></a>
+                            </div></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </xpath>
+    </template>
+</odoo>

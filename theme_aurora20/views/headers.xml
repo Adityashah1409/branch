@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--
+        Aurora headers. Each one replaces the desktop navbar of website.layout
+        and keeps Odoo's mobile header (website.template_header_mobile), which
+        eCommerce already completes with the cart and the wishlist.
+        They are selected in the website editor (Header > Template) and only
+        one is active at a time (see models/theme_aurora20.py).
+    -->
+
+    <!-- Shared: shop icons (search, wishlist, cart) -->
+    <template id="header_shop_icons" name="Aurora header shop icons">
+        <t t-call="website.placeholder_header_search_box"
+           _layout.f="modal"
+           _simple_button_layout="True"
+           _simple_button_classes.f="o_navlink_background rounded-circle p-1 lh-1 text-reset"/>
+        <t t-call="website_sale.header_wishlist_link"
+           _icon="True"
+           _link_class.f="o_navlink_background btn position-relative rounded-circle p-1 text-reset"
+           _badge_class.f="position-absolute top-0 end-0 mt-n1 me-n1 rounded-pill"/>
+        <t t-call="website_sale.header_cart_link"
+           _icon="True"
+           _link_class.f="o_navlink_background btn position-relative rounded-circle p-1 text-reset"
+           _badge_class.f="position-absolute top-0 end-0 mt-n1 me-n1 rounded-pill"/>
+    </template>
+
+    <!-- Shared: account (sign in / user menu) -->
+    <template id="header_account" name="Aurora header account">
+        <t t-call="portal.placeholder_user_sign_in"
+           _link_class.f="o_navlink_background btn text-reset"/>
+        <t t-call="portal.user_dropdown"
+           _icon="true"
+           _item_class.f="dropdown"
+           _icon_class.f="oi-stack"
+           _link_class.f="o_navlink_background btn d-flex align-items-center rounded-circle p-1 pe-2 text-reset"
+           _dropdown_menu_class.f="dropdown-menu-end"/>
+    </template>
+
+    <!-- Shared: language and pricelist selectors -->
+    <template id="header_locale" name="Aurora header language and currency">
+        <t t-call="website.placeholder_header_language_selector"
+           _btn_class.f="nav-link"
+           _dropdown_menu_class.f="dropdown-menu-end"/>
+        <t t-call="website_sale.placeholder_header_pricelist_selector"
+           _btn_class.f="nav-link"
+           _dropdown_menu_class.f="dropdown-menu-end"/>
+    </template>
+
+    <!-- Shared: main menu entries -->
+    <template id="header_menu_items" name="Aurora header menu items">
+        <t t-foreach="website.menu_id.child_id" t-as="submenu">
+            <t t-call="website.submenu" item_class.f="nav-item" link_class.f="nav-link"/>
+        </t>
+    </template>
+
+    <!-- 1. Classic: logo | menu | icons -->
+    <template id="template_header_classic" inherit_id="website.layout" name="Aurora Header Classic" active="False">
+        <xpath expr="//header//nav" position="replace">
+            <t t-call="website.navbar" _navbar_classes.f="o_aurora_header o_aurora_header_classic d-none d-lg-block">
+                <div id="o_main_nav" t-attf-class="o_main_nav #{header_content_width}">
+                    <t t-call="website.placeholder_header_brand" _link_class.f="me-4"/>
+                    <t t-call="website.navbar_nav" _nav_class.f="mx-auto">
+                        <t t-call="theme_aurora20.header_menu_items"/>
+                    </t>
+                    <ul class="navbar-nav align-items-center gap-2 flex-shrink-0 ps-3">
+                        <t t-call="theme_aurora20.header_locale"/>
+                        <t t-call="theme_aurora20.header_shop_icons"/>
+                        <t t-call="theme_aurora20.header_account"/>
+                    </ul>
+                </div>
+            </t>
+            <t t-call="website.template_header_mobile"/>
+        </xpath>
+    </template>
+
+    <!-- 2. Centered: search | logo | icons, then the menu centered below -->
+    <template id="template_header_centered" inherit_id="website.layout" name="Aurora Header Centered" active="False">
+        <xpath expr="//header//nav" position="replace">
+            <t t-call="website.navbar" _navbar_classes.f="o_aurora_header o_aurora_header_centered d-none d-lg-block py-0">
+                <div id="o_main_nav" t-attf-class="o_main_nav flex-column #{header_content_width}">
+                    <div class="o_aurora_header_row d-grid w-100 align-items-center py-3">
+                        <ul class="navbar-nav align-items-center gap-2">
+                            <t t-call="website.placeholder_header_search_box"
+                               _input_classes.f="border-0 text-bg-light"
+                               _submit_classes.f="bg-o-color-3"/>
+                        </ul>
+                        <t t-call="website.placeholder_header_brand" _link_class.f="mx-auto"/>
+                        <ul class="navbar-nav align-items-center justify-content-end gap-2">
+                            <t t-call="theme_aurora20.header_locale"/>
+                            <t t-call="website_sale.header_wishlist_link"
+                               _icon="True"
+                               _link_class.f="o_navlink_background btn position-relative rounded-circle p-1 text-reset"
+                               _badge_class.f="position-absolute top-0 end-0 mt-n1 me-n1 rounded-pill"/>
+                            <t t-call="website_sale.header_cart_link"
+                               _icon="True"
+                               _link_class.f="o_navlink_background btn position-relative rounded-circle p-1 text-reset"
+                               _badge_class.f="position-absolute top-0 end-0 mt-n1 me-n1 rounded-pill"/>
+                            <t t-call="theme_aurora20.header_account"/>
+                        </ul>
+                    </div>
+                    <div class="w-100 border-top">
+                        <t t-call="website.navbar_nav" _nav_class.f="justify-content-center">
+                            <t t-call="theme_aurora20.header_menu_items"/>
+                        </t>
+                    </div>
+                </div>
+            </t>
+            <t t-call="website.template_header_mobile"/>
+        </xpath>
+    </template>
+
+    <!-- 3. Mega: contact bar, logo + large search + icons, menu bar for mega menus -->
+    <template id="template_header_mega" inherit_id="website.layout" name="Aurora Header Mega" active="False">
+        <xpath expr="//header//nav" position="replace">
+            <t t-call="website.navbar" _navbar_classes.f="o_aurora_header o_aurora_header_mega d-none d-lg-block p-0">
+                <div class="w-100">
+                    <div class="o_aurora_header_topbar o_cc o_cc5">
+                        <div t-attf-class="#{header_content_width} d-flex align-items-center justify-content-between">
+                            <ul class="navbar-nav flex-row gap-3 align-items-center">
+                                <t t-call="website.placeholder_header_text_element" _txt_elt_content.f="list"/>
+                            </ul>
+                            <ul class="navbar-nav flex-row gap-2 align-items-center">
+                                <t t-call="theme_aurora20.header_locale"/>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="o_main_nav" t-attf-class="o_main_nav #{header_content_width} py-3 gap-4">
+                        <t t-call="website.placeholder_header_brand"/>
+                        <ul class="navbar-nav flex-grow-1 o_aurora_header_search">
+                            <t t-call="website.placeholder_header_search_box"
+                               _form_classes.f="w-100"
+                               _input_classes.f="border-0 rounded-start-pill text-bg-light ps-4"
+                               _submit_classes.f="rounded-end-pill bg-o-color-1 text-white pe-3"/>
+                        </ul>
+                        <ul class="navbar-nav align-items-center gap-2 flex-shrink-0">
+                            <t t-call="website_sale.header_wishlist_link"
+                               _icon="True"
+                               _link_class.f="o_navlink_background btn position-relative rounded-circle p-1 text-reset"
+                               _badge_class.f="position-absolute top-0 end-0 mt-n1 me-n1 rounded-pill"/>
+                            <t t-call="website_sale.header_cart_link"
+                               _icon="True" _text="True" _text_class.f="ms-2 small fw-semibold"
+                               _link_class.f="o_navlink_background btn position-relative d-flex align-items-center rounded-pill px-3 text-reset"
+                               _badge_class.f="position-absolute top-0 start-0 mt-n1 rounded-pill"/>
+                            <t t-call="theme_aurora20.header_account"/>
+                        </ul>
+                    </div>
+                    <div class="o_aurora_header_menubar border-top">
+                        <div t-attf-class="#{header_content_width}">
+                            <t t-call="website.navbar_nav" _nav_class.f="gap-1">
+                                <t t-call="theme_aurora20.header_menu_items"/>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+            </t>
+            <t t-call="website.template_header_mobile"/>
+        </xpath>
+    </template>
+
+    <!-- 4. Minimal: logo and icons only; the menu stays one click away -->
+    <template id="template_header_minimal" inherit_id="website.layout" name="Aurora Header Minimal" active="False">
+        <xpath expr="//header//nav" position="replace">
+            <t t-call="website.navbar" _navbar_classes.f="o_aurora_header o_aurora_header_minimal d-none d-lg-block" _navbar_expand_class.f="">
+                <div id="o_main_nav" t-attf-class="o_main_nav d-flex align-items-center #{header_content_width}">
+                    <t t-call="website.placeholder_header_brand" _link_class.f="me-auto"/>
+                    <ul class="navbar-nav flex-row align-items-center gap-2">
+                        <t t-call="theme_aurora20.header_shop_icons"/>
+                        <t t-call="theme_aurora20.header_account"/>
+                    </ul>
+                    <t t-call="website.navbar_toggler" _toggler_class.f="btn ms-2 p-2"/>
+                    <t t-call="theme_aurora20.header_offcanvas_menu"/>
+                </div>
+            </t>
+            <t t-call="website.template_header_mobile"/>
+        </xpath>
+    </template>
+
+    <!-- Offcanvas menu used by the minimal and compact headers on desktop -->
+    <template id="header_offcanvas_menu" name="Aurora header offcanvas menu">
+        <div class="offcanvas offcanvas-end o_navbar_mobile" id="top_menu_collapse">
+            <div class="offcanvas-header justify-content-end">
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"/>
+            </div>
+            <div class="offcanvas-body d-flex flex-column justify-content-between pt-0">
+                <ul class="navbar-nav">
+                    <li>
+                        <t t-set="is_vertical_nav" t-valuef="True"/>
+                        <t t-call="website.navbar_nav" _nav_class.f="mt-3">
+                            <t t-foreach="website.menu_id.child_id" t-as="submenu">
+                                <t t-call="website.submenu"
+                                   item_class.f="nav-item border-top #{submenu_last and 'border-bottom'}"
+                                   link_class.f="nav-link p-3 text-wrap"
+                                   dropdown_toggler_classes.f="d-flex justify-content-between align-items-center"
+                                   dropdown_menu_classes.f="position-relative rounded-0 o_dropdown_without_offset"/>
+                            </t>
+                        </t>
+                    </li>
+                    <t t-call="website.placeholder_header_text_element" _txt_elt_content.f="phone_mail" _div_class.f="mt-3"/>
+                </ul>
+                <ul class="navbar-nav gap-2 mt-3 w-100">
+                    <t t-call="website.placeholder_header_language_selector"
+                       _btn_class.f="nav-link d-flex align-items-center w-100"
+                       _txt_class.f="me-auto small"
+                       _flag_class.f="me-2"
+                       _div_classes.f="dropup"
+                       _dropdown_menu_class.f="w-100"/>
+                    <t t-call="website.header_call_to_action_large"/>
+                </ul>
+            </div>
+        </div>
+    </template>
+
+    <!-- 5. Split: menu | logo | icons (looks best with "Header over the content") -->
+    <template id="template_header_split" inherit_id="website.layout" name="Aurora Header Split" active="False">
+        <xpath expr="//header//nav" position="replace">
+            <t t-call="website.navbar" _navbar_classes.f="o_aurora_header o_aurora_header_split d-none d-lg-block">
+                <div id="o_main_nav" t-attf-class="o_main_nav d-grid align-items-center #{header_content_width}">
+                    <t t-call="website.navbar_nav">
+                        <t t-call="theme_aurora20.header_menu_items"/>
+                    </t>
+                    <t t-call="website.placeholder_header_brand" _link_class.f="mx-auto"/>
+                    <ul class="navbar-nav align-items-center justify-content-end gap-2">
+                        <t t-call="theme_aurora20.header_locale"/>
+                        <t t-call="theme_aurora20.header_shop_icons"/>
+                        <t t-call="theme_aurora20.header_account"/>
+                    </ul>
+                </div>
+            </t>
+            <t t-call="website.template_header_mobile"/>
+        </xpath>
+    </template>
+
+    <!-- 6. B2B: business contact bar, prominent account and quick search -->
+    <template id="template_header_b2b" inherit_id="website.layout" name="Aurora Header B2B" active="False">
+        <xpath expr="//header//nav" position="replace">
+            <t t-call="website.navbar" _navbar_classes.f="o_aurora_header o_aurora_header_b2b d-none d-lg-block p-0">
+                <div class="w-100">
+                    <div class="o_aurora_header_topbar o_cc o_cc2 border-bottom">
+                        <div t-attf-class="#{header_content_width} d-flex align-items-center justify-content-between">
+                            <ul class="navbar-nav flex-row gap-3 align-items-center">
+                                <t t-call="website.placeholder_header_text_element" _txt_elt_content.f="phone_mail" _div_class.f="d-flex gap-3"/>
+                            </ul>
+                            <ul class="navbar-nav flex-row gap-2 align-items-center small">
+                                <li class="nav-item"><a href="/contactus" class="nav-link">Request a quote</a></li>
+                                <t t-call="theme_aurora20.header_locale"/>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="o_main_nav" t-attf-class="o_main_nav #{header_content_width} py-3 gap-4">
+                        <t t-call="website.placeholder_header_brand"/>
+                        <t t-call="website.navbar_nav" _nav_class.f="me-auto">
+                            <t t-call="theme_aurora20.header_menu_items"/>
+                        </t>
+                        <ul class="navbar-nav align-items-center gap-2 flex-shrink-0">
+                            <t t-call="theme_aurora20.header_shop_icons"/>
+                            <t t-call="portal.placeholder_user_sign_in"
+                               _link_class.f="btn btn-primary"/>
+                            <t t-call="portal.user_dropdown"
+                               _user_name="True"
+                               _item_class.f="dropdown"
+                               _link_class.f="btn btn-outline-primary"
+                               _dropdown_menu_class.f="dropdown-menu-end"/>
+                        </ul>
+                    </div>
+                </div>
+            </t>
+            <t t-call="website.template_header_mobile"/>
+        </xpath>
+    </template>
+
+    <!-- 7. Modern: floating rounded bar -->
+    <template id="template_header_modern" inherit_id="website.layout" name="Aurora Header Modern" active="False">
+        <xpath expr="//header//nav" position="replace">
+            <t t-call="website.navbar" _navbar_classes.f="o_aurora_header o_aurora_header_modern d-none d-lg-block bg-transparent">
+                <div t-attf-class="#{header_content_width}">
+                    <div id="o_main_nav" class="o_main_nav o_aurora_header_pill o_cc o_cc1 shadow-sm rounded-pill px-4 py-2">
+                        <t t-call="website.placeholder_header_brand" _link_class.f="me-4"/>
+                        <t t-call="website.navbar_nav" _nav_class.f="me-auto">
+                            <t t-call="theme_aurora20.header_menu_items"/>
+                        </t>
+                        <ul class="navbar-nav align-items-center gap-2 flex-shrink-0">
+                            <t t-call="website.placeholder_header_search_box"
+                               _layout.f="modal"
+                               _simple_button_layout="True"
+                               _simple_button_classes.f="o_navlink_background rounded-circle p-1 lh-1 text-reset"/>
+                            <t t-call="website_sale.header_wishlist_link"
+                               _icon="True"
+                               _link_class.f="o_navlink_background btn position-relative rounded-circle p-1 text-reset"
+                               _badge_class.f="position-absolute top-0 end-0 mt-n1 me-n1 rounded-pill"/>
+                            <t t-call="theme_aurora20.header_account"/>
+                            <t t-call="website_sale.header_cart_link"
+                               _icon="True" _text="True" _text_class.f="ms-2 small fw-semibold"
+                               _link_class.f="btn btn-primary position-relative d-flex align-items-center rounded-pill px-3"
+                               _badge_class.f="ms-2 text-bg-light rounded-pill"/>
+                        </ul>
+                    </div>
+                </div>
+            </t>
+            <t t-call="website.template_header_mobile"/>
+        </xpath>
+    </template>
+
+    <!-- 8. Compact: the mobile layout on every screen (menu button, logo, search, cart) -->
+    <template id="template_header_compact" inherit_id="website.layout" name="Aurora Header Compact" active="False">
+        <xpath expr="//header//nav" position="replace">
+            <t t-call="website.navbar" _navbar_classes.f="o_aurora_header o_aurora_header_compact d-none d-lg-block" _navbar_expand_class.f="">
+                <div id="o_main_nav" t-attf-class="o_main_nav d-grid align-items-center #{header_content_width}">
+                    <t t-call="website.navbar_toggler" _toggler_class.f="btn me-auto p-2"/>
+                    <t t-call="website.placeholder_header_brand" _link_class.f="mx-auto"/>
+                    <ul class="navbar-nav flex-row align-items-center justify-content-end gap-2">
+                        <t t-call="theme_aurora20.header_shop_icons"/>
+                    </ul>
+                    <t t-call="theme_aurora20.header_offcanvas_menu"/>
+                </div>
+            </t>
+            <t t-call="website.template_header_mobile"/>
+        </xpath>
+    </template>
+</odoo>

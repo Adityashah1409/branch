@@ -1,0 +1,25 @@
+// Aurora: accessibility.
+
+// Visible keyboard focus on every interactive element of the theme.
+.o_aurora_header,
+.o_aurora_footer {
+    a,
+    button,
+    .btn {
+        &:focus-visible {
+            outline: 3px solid var(--o-color-1);
+            outline-offset: 2px;
+            box-shadow: none;
+        }
+    }
+}
+
+// Respect the visitor's motion preference.
+@media (prefers-reduced-motion: reduce) {
+    #wrapwrap {
+        .btn,
+        .oe_product_cart {
+            transition: none;
+        }
+    }
+}

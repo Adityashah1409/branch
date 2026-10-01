@@ -1,0 +1,29 @@
+// Aurora: shop pages.
+
+.oe_website_sale {
+    .o_wsale_product_grid_wrapper .oe_product_cart,
+    .oe_product_cart {
+        border-radius: var(--aurora-radius);
+        overflow: hidden;
+        transition: box-shadow var(--aurora-transition), transform var(--aurora-transition);
+        &:hover {
+            box-shadow: var(--aurora-shadow);
+        }
+    }
+    .o_wsale_products_main_row .products_attributes_filters h6,
+    #o_wsale_offcanvas_content h6 {
+        font-weight: 700;
+    }
+    // Brand chips
+    .o_aurora_brand_filter .btn {
+        border-radius: 999px;
+    }
+}
+
+// Ribbons used as product labels.
+.o_ribbons,
+.o_product_label_style_1_left,
+.o_wsale_ribbon {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}

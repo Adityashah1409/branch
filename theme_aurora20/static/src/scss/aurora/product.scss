@@ -1,0 +1,24 @@
+// Aurora: product page.
+
+#product_detail {
+    #product_details h1 {
+        font-weight: 800;
+    }
+    .product_price .oe_price {
+        font-weight: 700;
+    }
+    #o_wsale_cta_wrapper .btn {
+        min-height: 3rem;
+    }
+    .o_aurora_product_brand {
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        font-size: 0.8125rem;
+    }
+}
+
+.o_aurora_qv {
+    .o_aurora_qv_name {
+        font-weight: 800;
+    }
+}

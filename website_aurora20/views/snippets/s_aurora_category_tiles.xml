@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="s_aurora_category_tiles" name="Aurora Category Tiles">
+        <section class="s_aurora_category_tiles pt48 pb48">
+            <div class="container">
+                <div class="d-flex flex-wrap align-items-end justify-content-between gap-2 mb-4">
+                    <h2 class="mb-0">Shop by category</h2>
+                    <a href="/shop" class="link-primary">All categories</a>
+                </div>
+                <div class="row g-3">
+                    <div class="col-6 col-lg-3">
+                        <a href="/shop" class="s_aurora_tile d-block position-relative rounded-4 overflow-hidden text-decoration-none">
+                            <img src="/web/image/website.s_ecomm_categories_showcase_1" alt="" class="img w-100 object-fit-cover"/>
+                            <span class="s_aurora_tile_label position-absolute start-0 bottom-0 m-3 px-3 py-2 rounded-pill o_cc o_cc1 fw-semibold">Women</span>
+                        </a>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <a href="/shop" class="s_aurora_tile d-block position-relative rounded-4 overflow-hidden text-decoration-none">
+                            <img src="/web/image/website.s_ecomm_categories_showcase_2" alt="" class="img w-100 object-fit-cover"/>
+                            <span class="s_aurora_tile_label position-absolute start-0 bottom-0 m-3 px-3 py-2 rounded-pill o_cc o_cc1 fw-semibold">Men</span>
+                        </a>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <a href="/shop" class="s_aurora_tile d-block position-relative rounded-4 overflow-hidden text-decoration-none">
+                            <img src="/web/image/website.s_ecomm_categories_showcase_3" alt="" class="img w-100 object-fit-cover"/>
+                            <span class="s_aurora_tile_label position-absolute start-0 bottom-0 m-3 px-3 py-2 rounded-pill o_cc o_cc1 fw-semibold">Home</span>
+                        </a>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <a href="/shop" class="s_aurora_tile d-block position-relative rounded-4 overflow-hidden text-decoration-none">
+                            <img src="/web/image/website.s_ecomm_categories_showcase_4" alt="" class="img w-100 object-fit-cover"/>
+                            <span class="s_aurora_tile_label position-absolute start-0 bottom-0 m-3 px-3 py-2 rounded-pill o_cc o_cc1 fw-semibold">Accessories</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
+</odoo>
